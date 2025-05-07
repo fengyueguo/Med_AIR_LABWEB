@@ -38,7 +38,7 @@ plugins:
 highlighter: rouge
 
 # jekyll theme
-theme: minima
+theme: null
 
 # sass settings
 sass:
