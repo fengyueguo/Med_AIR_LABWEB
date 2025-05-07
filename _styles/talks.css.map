@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["talks.scss"],"names":[],"mappings":"AAAA;EACI","sourcesContent":[".talk_content {\n    text-align: left;\n}\n"],"file":"talks.css"}

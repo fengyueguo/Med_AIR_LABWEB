@@ -1,0 +1,82 @@
+.professor-container {
+  display: flex;
+  align-items: center;
+}
+
+.professor-content {
+  width: 400px;
+  margin-right: 1rem;
+}
+
+.professor-bio {
+  width: 600px;
+  word-wrap: break-word;
+  text-align: justify;
+  margin-right: 1rem;
+}
+
+.professor img {
+  width: 14rem;
+  height: 14rem;
+  border-radius: 7rem;
+  margin: 0.5rem;
+  border: rgba(4, 43, 64, 0.5) 0.5rem solid;
+}
+
+@media screen and (max-width: 992px) {
+  .professor img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 5rem;
+    border: var(--primary) 0.3rem solid;
+  }
+}
+.student-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  align-items: flex-start;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.student-container .student {
+  width: 25%;
+  height: 100%;
+  padding: 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.student-container .student img {
+  width: 14rem;
+  height: 14rem;
+  border-radius: 7rem;
+  margin: 0.5rem;
+  border: rgba(4, 43, 64, 0.5) 0.5rem solid;
+}
+
+@media screen and (max-width: 992px) {
+  .student-container .student {
+    width: 45%;
+  }
+  .student-container .student img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 5rem;
+    border: var(--primary) 0.3rem solid;
+  }
+}
+@media screen and (max-width: 600px) {
+  .student-container .student {
+    width: 100%;
+  }
+}
+.requirements .alumnus {
+  text-align: left;
+}
+
+/*# sourceMappingURL=group.css.map */

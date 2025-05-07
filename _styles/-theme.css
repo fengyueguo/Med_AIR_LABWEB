@@ -1,0 +1,49 @@
+:root {
+  --title: "Barlow", sans-serif;
+  --heading: "Barlow", sans-serif;
+  --body: "Arial", sans-serif;
+  --code: "Arial", sans-serif;
+  --medium: 0.8rem;
+  --large: 1rem;
+  --xl: 1.2rem;
+  --xxl: 1.4rem;
+  --thin: 200;
+  --regular: 400;
+  --semi-bold: 500;
+  --bold: 600;
+  --spacing: 1.5;
+  --rounded: 3px;
+  --shadow: 0 0 10px 0 var(--overlay);
+  --msk-navy: #0a6ea482;
+  --msk-blue: #0a6ea4;
+  --msk-blue-medium: #0a6ea4;
+  --msk-teal: #0a6ea4;
+  --msk-light-blue: #0a6ea4;
+  --msk-light-gray: #FBF9F7;
+  --msk-font: "MSK Sans Web";
+  --msk-bold: "MSK Sans Web Bold";
+}
+
+[data-dark=false] {
+  --primary: #0a6ea4;
+  --secondary: #0a6ea4;
+  --text: #000000;
+  --background: #ffffff;
+  --background-alt: #fafafa;
+  --light-gray: #e0e0e0;
+  --gray: #808080;
+  --overlay: #00000020;
+}
+
+[data-dark=true] {
+  --primary: #0a6ea4;
+  --secondary: #0a6ea4;
+  --text: #ffffff;
+  --background: #181818;
+  --background-alt: #1c1c1c;
+  --light-gray: #404040;
+  --gray: #808080;
+  --overlay: #ffffff10;
+}
+
+/*# sourceMappingURL=-theme.css.map */

@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en" data-dark="false">
+  <head>
+  <!--
+  put your analytics (e.g. Google Analytics) tracking code here
+-->
+
+  <!--
+  put your search engine verification (e.g. Google Search Console) tag here
+-->
+
+   
+                 
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Med-AIR Lab</title>
+
+<link rel="icon" href="/Med_AIR_LABWEB/images/Med-AIR.png" />
+
+<meta name="title" content="" />
+<meta name="description" content="Department of Computer Science and Engineering @ CUHK. Medical Image Analysis, Machine Learning, Surgical Data Science, Robotics." />
+
+<meta property="og:title" content="" />
+<meta property="og:site_title" content="Med-AIR Lab" />
+<meta property="og:description" content="Department of Computer Science and Engineering @ CUHK. Medical Image Analysis, Machine Learning, Surgical Data Science, Robotics." />
+<meta property="og:url" content="" />
+<meta property="og:image" content="" />
+<meta property="og:locale" content="en_US" />
+
+<meta property="twitter:title" content="" />
+<meta property="twitter:description" content="Department of Computer Science and Engineering @ CUHK. Medical Image Analysis, Machine Learning, Surgical Data Science, Robotics." />
+<meta property="twitter:url" content="" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="" />
+
+
+<meta property="og:type" content="website" />
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "WebSite",
+    
+    "name": "",
+    "description": "Department of Computer Science and Engineering @ CUHK. Medical Image Analysis, Machine Learning, Surgical Data Science, Robotics.",
+    "headline": "",
+    "publisher": {
+      "@type": "Organization",
+      "logo": { "@type": "ImageObject", "url": "/Med_AIR_LABWEB/images/Med-AIR.png" }
+    },
+    "url": ""
+  }
+</script>
+
+<link rel="alternate" type="application/rss+xml" href="/Med_AIR_LABWEB/feed.xml" />
+
+  <!-- Google Fonts -->
+<!-- automatically get url from fonts used in theme file -->
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?display=swap&&family=Arial:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600&family=Barlow:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600&family=MSK+Sans Web:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600&family=MSK+Sans Web Bold:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600" rel="stylesheet">
+
+<!-- Font Awesome icons (load asynchronously due to size) -->
+
+<link
+  href="https://use.fontawesome.com/releases/v6.3.0/css/all.css"
+  rel="preload"
+  as="style"
+  onload="this.onload = null; this.rel = 'stylesheet';"
+>
+<noscript>
+  <link href="https://use.fontawesome.com/releases/v6.3.0/css/all.css" rel="stylesheet">
+</noscript>
+
+  <!-- third party styles -->
+<!-- https://stylishthemes.github.io/Syntax-Themes/pygments/ -->
+<link 
+  href="https://cdn.jsdelivr.net/gh/StylishThemes/Syntax-Themes/pygments/css-github/pygments-tomorrow-night-eighties.css"
+  rel="stylesheet"
+/>
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<!-- include all sass in styles folder -->
+
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/-theme.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/alert.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/all.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/anchor.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/background.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/body.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/bold.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/button.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/card.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/checkbox.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/citation.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/code.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/cols.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/dark-toggle.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/feature.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/figure.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/flickity.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/float.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/font.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/footer.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/form.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/grid.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/group.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/header.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/heading.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/highlight.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/icon.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/image.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/link.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/list.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/main.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/more.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/paragraph.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/publication.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/quote.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/rule.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/search-box.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/search-info.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/section.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/table.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/tags.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/talks.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/textbox.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/tooltip.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
+      href="/Med_AIR_LABWEB/_styles/util.css"
+      rel="stylesheet"
+    />
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<!-- include all css in styles folder -->
+
+
+  <link href="/Med_AIR_LABWEB/_styles/fonts.css" rel="stylesheet" />
+
+
+  <!-- third party scripts -->
+<script src="https://unpkg.com/@popperjs/core@2" defer></script>
+<script src="https://unpkg.com/tippy.js@6" defer></script>
+<script src="https://unpkg.com/mark.js@8" defer></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<!-- include all js in scripts folder -->
+
+
+  <script src="/Med_AIR_LABWEB/_scripts/anchors.js"></script>
+
+  <script src="/Med_AIR_LABWEB/_scripts/dark-mode.js"></script>
+
+  <script src="/Med_AIR_LABWEB/_scripts/fetch-tags.js"></script>
+
+  <script src="/Med_AIR_LABWEB/_scripts/flickity.pkgd.min.js"></script>
+
+  <script src="/Med_AIR_LABWEB/_scripts/gallery.js"></script>
+
+  <script src="/Med_AIR_LABWEB/_scripts/publication.js"></script>
+
+  <script src="/Med_AIR_LABWEB/_scripts/search.js"></script>
+
+  <script src="/Med_AIR_LABWEB/_scripts/site-search.js"></script>
+
+  <script src="/Med_AIR_LABWEB/_scripts/tooltip.js"></script>
+
+
+</head>
+
+  <body>
+    
+
+
+
+
+
+<header
+  class="background"
+  style="--image: url('/Med_AIR_LABWEB/images/cuhk_background.jpg')"
+  
+    data-dark="true"
+  
+  
+>
+  <a href="https://www.cse.cuhk.edu.hk/" class="home">
+    
+      <span class="logo">
+        
+          <img src="/Med_AIR_LABWEB/images/CUHK_logol.png" alt="logo">
+        
+      </span>
+    
+    
+    <span class="title" data-tooltip="CSE@CUHK">
+      <span>Med-AIR Lab</span>
+      <span>Department of Computer Science and Engineering @ CUHK</span>
+    </span>
+    
+  </a>
+
+  <input class="nav-toggle" type="checkbox" aria-label="show/hide nav">
+
+  <nav>
+    
+    
+      
+        <a
+          href="/Med_AIR_LABWEB/"
+          data-tooltip="Home"
+        >
+          Home
+        </a>
+      
+    
+      
+        <a
+          href="/Med_AIR_LABWEB/team/"
+          data-tooltip="Team and positions"
+        >
+          Team
+        </a>
+      
+    
+      
+        <a
+          href="/Med_AIR_LABWEB/research/"
+          data-tooltip="Research directions"
+        >
+          Research
+        </a>
+      
+    
+      
+        <a
+          href="/Med_AIR_LABWEB/talks/"
+          data-tooltip="Invited talks"
+        >
+          Talks
+        </a>
+      
+    
+      
+        <a
+          href="/Med_AIR_LABWEB/publication/"
+          data-tooltip="Published works"
+        >
+          Publication
+        </a>
+      
+    
+      
+        <a
+          href="/Med_AIR_LABWEB/media/"
+          data-tooltip="Press release"
+        >
+          Media
+        </a>
+      
+    
+      
+        <a
+          href="/Med_AIR_LABWEB/more/"
+          data-tooltip="Awards, services and contact"
+        >
+          More
+        </a>
+      
+    
+  </nav>
+</header>
+
+    <main>
+      <!--
+  modify main content of page:
+  - add section breaks
+  - attach section properties
+  - wrap each table in div to allow for scrolling
+  - filter out blank sections
+-->
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  <section
+    class="background"
+    data-size="50px"
+    
+    
+      style="--image: url('/Med_AIR_LABWEB/hsla(0,%200%25,%20100%25,%200.75)')"
+    
+  >
+    .flickity-enabled {
+    position: relative;
+  }
+  
+  .flickity-enabled:focus { outline: none; }
+  
+  .flickity-viewport {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+  }
+  
+  .flickity-slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* draggable */
+  
+  .flickity-enabled.is-draggable {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  
+  .flickity-enabled.is-draggable .flickity-viewport {
+    cursor: move;
+    cursor: -webkit-grab;
+    cursor: grab;
+  }
+  
+  .flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+  }
+  
+  /* ---- flickity-button ---- */
+  
+  .flickity-button {
+    position: absolute;
+    background: hsla(0, 0%, 100%, 0.75);
+    border: none;
+    color: #333;
+  }
+  
+  .flickity-button:hover {
+    background: white;
+    cursor: pointer;
+  }
+  
+  .flickity-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 5px #19F;
+  }
+  
+  .flickity-button:active {
+    opacity: 0.6;
+  }
+  
+  .flickity-button:disabled {
+    opacity: 0.3;
+    cursor: auto;
+    /* prevent disabled button from capturing pointer up event. #716 */
+    pointer-events: none;
+  }
+  
+  .flickity-button-icon {
+    fill: currentColor;
+  }
+  
+  /* ---- previous/next buttons ---- */
+  
+  .flickity-prev-next-button {
+    top: 50%;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    /* vertically center */
+    transform: translateY(-50%);
+  }
+  
+  .flickity-prev-next-button.previous { left: 10px; }
+  .flickity-prev-next-button.next { right: 10px; }
+  /* right to left */
+  .flickity-rtl .flickity-prev-next-button.previous {
+    left: auto;
+    right: 30px;
+  }
+  .flickity-rtl .flickity-prev-next-button.next {
+    right: auto;
+    left: 30px;
+  }
+  
+  .flickity-prev-next-button .flickity-button-icon {
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    width: 60%;
+    height: 60%;
+  }
+
+    /* user customized */
+  * {
+    box-sizing: border-box;
+  }
+
+  
+  .carousel {
+    background: transparent;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .carousel-main-cell {
+    width: 70%;
+    height: 400px;
+    /* flex-box, center image in cell */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  
+  .carousel-main-cell img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    /* dim unselected */
+    opacity: 0.7;
+    -webkit-transform: scale(0.85);
+    transform: scale(0.85);
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s, transform 0.3s, -webkit-filter 0.3s, filter 0.3s;
+    transition: opacity 0.3s, transform 0.3s, filter 0.3s;
+  }
+  
+  /* brighten selected image */
+  .carousel-main-cell.is-selected img {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-filter: none;
+    filter: none;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .carousel-main-cell {
+      height: 400px;
+    }
+  }
+  @media screen and (min-width: 960px) {
+    .carousel-main-cell {
+      width: 60%;
+    }
+  }
+  
+  /* buttons, no circle */
+  .flickity-prev-next-button {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.6);
+    opacity: 0.5;
+  }
+  
+  .flickity-prev-next-button:hover {
+    background: rgba(245, 245, 245, 0.8);
+    opacity: 0.8;
+  }
+  
+  /* arrow color */
+  .flickity-prev-next-button .arrow {
+    fill: var(--primary);
+  }
+  
+  .flickity-prev-next-button.no-svg {
+    color: var(--primary);
+  }
+  
+  /* closer to edge */
+  .flickity-prev-next-button.previous {
+    left: 10px;
+  }
+  
+  .flickity-prev-next-button.next {
+    right: 10px;
+  }
+  
+  /* hide disabled button */
+  .flickity-prev-next-button:disabled {
+    display: none;
+  }
+  
+  .carousel-nav .carousel-cell {
+    height: 60px;
+    width: 92px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carousel-nav .carousel-cell:before {
+    font-size: 50px;
+    line-height: 50px;
+  }
+  
+  .carousel-nav .carousel-cell.is-nav-selected img {
+    border: 2px solid var(--primary);
+    height: 60px;
+    width: 92px;
+    opacity: 0.5;
+  }
+  
+  .carousel-cell img {
+    height: 50px;
+    width: 80px;
+  }
+  </section>
+
+
+    </main>
+    
+
+
+<footer
+  class="background"
+  style="--image: url('/Med_AIR_LABWEB/images/CUHK_edge.png')"
+  
+    data-dark="true"
+  
+  data-size="wide"
+>
+
+  <div class="footer">
+    &copy; 2025
+    Med-AIR Lab
+    &nbsp; | &nbsp; Department of Computer Science and Engineering @ CUHK &nbsp;|&nbsp; Built with
+    <a href="https://github.com/greenelab/lab-website-template" target="__blank">
+      Lab Website Template
+    </a>
+  </div>
+</footer>
+
+  </body>
+</html>
