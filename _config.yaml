@@ -28,6 +28,7 @@ defaults:
 
 # jekyll plugins
 plugins:
+  - jekyll-seo-tag
   - jekyll-spaceship
   - jekyll-sitemap
   - jekyll-redirect-from
