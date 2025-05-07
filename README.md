@@ -14,6 +14,10 @@ The whole website was built based on greene-lab template, please read through th
 
 For the details for daily updating each pages are list below.
 
+## Changing the URL
+ "Settings" -> "Pages" -> "Build and deployment" -> "Branch" -> choose "gh-pages /root" -> "save"
+
+ Add a new empty file named ".nojekyll" in the Branch of "gh-pages"
 
 ### Home page
 For the **Introduction, News, Selected Awards, Teaching and Recent Services** blocks, the content can be modified in the _./_includes/news.html_ file. 
