@@ -1,0 +1,56 @@
+# site properties and page defaults
+title: Med-AIR Lab
+subtitle: Department of Computer Science and Engineering @ CUHK
+description: Medical Image Analysis, Machine Learning, Surgical Data Science, Robotics.
+header: images/cuhk_background.jpg
+footer: images/CUHK_edge.png
+header-dark: true
+footer-dark: true
+
+# site social media and other links
+links:
+  github: med-air
+  twitter: QiDou_
+  email: qidou@cuhk.edu.hk
+  website: https://carrend.github.io/
+  google-scholar: iHh7IJQAAAAJ&hl=zh-CN
+  orcid: 0000-0002-3416-9950
+
+### jekyll settings
+
+# front matter defaults
+defaults:
+  # all markdown files
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# jekyll plugins
+plugins:
+  - jekyll-spaceship
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-feed
+  - jekyll-last-modified-at
+
+# code block syntax highlighting
+highlighter: rouge
+
+# jekyll theme
+theme: null
+
+# sass settings
+sass:
+  sass_dir: _styles
+
+# force jekyll to include certain files/folders
+include:
+  - _styles
+  - _scripts
+
+# force jekyll to exclude certain files/folders
+exclude:
+  - README.md
+  - LICENSE.md
+  - CITATION.cff

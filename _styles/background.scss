@@ -1,0 +1,21 @@
+---
+---
+
+.background {
+  position: relative;
+  color: var(--text);
+  z-index: 1;
+  background: var(--background);
+}
+
+.background:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--image);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 15%;
+  opacity: 0.5;
+  z-index: -1;
+}

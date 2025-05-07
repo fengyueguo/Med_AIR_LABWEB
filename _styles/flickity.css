@@ -1,0 +1,228 @@
+---
+---
+
+  .flickity-enabled {
+    position: relative;
+  }
+  
+  .flickity-enabled:focus { outline: none; }
+  
+  .flickity-viewport {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+  }
+  
+  .flickity-slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* draggable */
+  
+  .flickity-enabled.is-draggable {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  
+  .flickity-enabled.is-draggable .flickity-viewport {
+    cursor: move;
+    cursor: -webkit-grab;
+    cursor: grab;
+  }
+  
+  .flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+  }
+  
+  /* ---- flickity-button ---- */
+  
+  .flickity-button {
+    position: absolute;
+    background: hsla(0, 0%, 100%, 0.75);
+    border: none;
+    color: #333;
+  }
+  
+  .flickity-button:hover {
+    background: white;
+    cursor: pointer;
+  }
+  
+  .flickity-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 5px #19F;
+  }
+  
+  .flickity-button:active {
+    opacity: 0.6;
+  }
+  
+  .flickity-button:disabled {
+    opacity: 0.3;
+    cursor: auto;
+    /* prevent disabled button from capturing pointer up event. #716 */
+    pointer-events: none;
+  }
+  
+  .flickity-button-icon {
+    fill: currentColor;
+  }
+  
+  /* ---- previous/next buttons ---- */
+  
+  .flickity-prev-next-button {
+    top: 50%;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    /* vertically center */
+    transform: translateY(-50%);
+  }
+  
+  .flickity-prev-next-button.previous { left: 10px; }
+  .flickity-prev-next-button.next { right: 10px; }
+  /* right to left */
+  .flickity-rtl .flickity-prev-next-button.previous {
+    left: auto;
+    right: 30px;
+  }
+  .flickity-rtl .flickity-prev-next-button.next {
+    right: auto;
+    left: 30px;
+  }
+  
+  .flickity-prev-next-button .flickity-button-icon {
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    width: 60%;
+    height: 60%;
+  }
+
+    /* user customized */
+  * {
+    box-sizing: border-box;
+  }
+
+  
+  .carousel {
+    background: transparent;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .carousel-main-cell {
+    width: 70%;
+    height: 400px;
+    /* flex-box, center image in cell */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  
+  .carousel-main-cell img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    /* dim unselected */
+    opacity: 0.7;
+    -webkit-transform: scale(0.85);
+    transform: scale(0.85);
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s, transform 0.3s, -webkit-filter 0.3s, filter 0.3s;
+    transition: opacity 0.3s, transform 0.3s, filter 0.3s;
+  }
+  
+  /* brighten selected image */
+  .carousel-main-cell.is-selected img {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-filter: none;
+    filter: none;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .carousel-main-cell {
+      height: 400px;
+    }
+  }
+  @media screen and (min-width: 960px) {
+    .carousel-main-cell {
+      width: 60%;
+    }
+  }
+  
+  /* buttons, no circle */
+  .flickity-prev-next-button {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.6);
+    opacity: 0.5;
+  }
+  
+  .flickity-prev-next-button:hover {
+    background: rgba(245, 245, 245, 0.8);
+    opacity: 0.8;
+  }
+  
+  /* arrow color */
+  .flickity-prev-next-button .arrow {
+    fill: var(--primary);
+  }
+  
+  .flickity-prev-next-button.no-svg {
+    color: var(--primary);
+  }
+  
+  /* closer to edge */
+  .flickity-prev-next-button.previous {
+    left: 10px;
+  }
+  
+  .flickity-prev-next-button.next {
+    right: 10px;
+  }
+  
+  /* hide disabled button */
+  .flickity-prev-next-button:disabled {
+    display: none;
+  }
+  
+  .carousel-nav .carousel-cell {
+    height: 60px;
+    width: 92px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carousel-nav .carousel-cell:before {
+    font-size: 50px;
+    line-height: 50px;
+  }
+  
+  .carousel-nav .carousel-cell.is-nav-selected img {
+    border: 2px solid var(--primary);
+    height: 60px;
+    width: 92px;
+    opacity: 0.5;
+  }
+  
+  .carousel-cell img {
+    height: 50px;
+    width: 80px;
+  }

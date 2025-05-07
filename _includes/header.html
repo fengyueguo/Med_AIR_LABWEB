@@ -1,0 +1,53 @@
+{% assign image = page.header | default: site.header | relative_url %}
+{% assign dark = page.header-dark | is_nil: site.header-dark | is_nil: false %}
+
+{% assign png = "images/CUHK_logol.png" | file_exists %}
+{% assign logo = png | default: nil %}
+
+<header
+  class="background"
+  style="--image: url('{{ image }}')"
+  {% if dark == true or dark == false %}
+    data-dark="{{ dark }}"
+  {% endif %}
+  {% if page.url == "/" %}
+    data-big
+  {% endif %}
+>
+  <a href="https://www.cse.cuhk.edu.hk/" class="home">
+    {% if logo %}
+      <span class="logo">
+        {% if svg %}
+          {{ svg | file_read }}
+        {% else %}
+          <img src="{{ logo | relative_url }}" alt="logo">
+        {% endif %}
+      </span>
+    {% endif %}
+    {% if site.logo-text != false %}
+    <span class="title" data-tooltip="CSE@CUHK">
+      <span>Med-AIR Lab</span>
+      <span>Department of Computer Science and Engineering @ CUHK</span>
+    </span>
+    {% endif %}
+  </a>
+
+  <input class="nav-toggle" type="checkbox" aria-label="show/hide nav">
+
+  <nav>
+    {% assign pages = site.pages
+      | where_exp: "page", "page.nav"
+      | sort: "nav.order"
+    %}
+    {% for page in pages %}
+      {% if page.nav %}
+        <a
+          href="{{ page.dir | relative_url }}"
+          data-tooltip="{{ page.nav.tooltip }}"
+        >
+          {{ page.title }}
+        </a>
+      {% endif %}
+    {% endfor %}
+  </nav>
+</header>
