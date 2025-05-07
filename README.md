@@ -4,7 +4,7 @@
 
 # Med-AIR Lab's Website
 
-Visit **[xue-qi-yao.github.io/Med_AIR_LABWEB](https://xue-qi-yao.github.io/Med_AIR_LABWEB)** 🚀
+Visit **[fengyueguo.github.io/Med_AIR_LABWEB](https://fengyueguo.github.io/Med_AIR_LABWEB)** 🚀
 
 _Built with [Lab Website Template](https://github.com/greenelab/lab-website-template)_
 
