@@ -62,23 +62,6 @@ header a {
   font-weight: var(--thin);
 }
 
-.logo-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.logo {
-  height: 40px;
-  display: flex;
-  align-items: center;
-}
-
-.logo img {
-  height: 100%;
-  display: block;
-}
-
 .nav-toggle {
   display: none;
   position: relative;
@@ -150,16 +133,16 @@ header[data-big] {
   top: unset;
 }
 header[data-big] .home {
-  flex-direction: column;
+  flex-direction: row;
   flex-grow: 0;
 }
 header[data-big] .logo {
   height: 80px;
 }
 header[data-big] .title {
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  text-align: center;
+  text-align: left;
 }
 header[data-big] .title > *:first-child {
   font-size: var(--xxl);
