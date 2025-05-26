@@ -6,6 +6,6 @@ nav:
 ---
 
 <!-- # The Med-AIR Lab -->
-{%include introcution.html%}
+{%include introduction.html%}
 {%include news.html%}
 {%include gallery.html%}
