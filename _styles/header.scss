@@ -76,6 +76,24 @@ header a {
   font-weight: var(--thin);
 }
 
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo {
+  height: $logo;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 100%;
+  display: block;
+}
+
+
 .nav-toggle {
   display: none;
   position: relative;
@@ -143,9 +161,9 @@ header:not([data-big]) {
 }
 
 header[data-big] {
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   padding: $big-padding 20px;
 
   @if $sticky {
