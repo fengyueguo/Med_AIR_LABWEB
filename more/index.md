@@ -1,7 +1,7 @@
 ---
 title: More
 nav:
-  order: 6
+  order: 7
   tooltip: Awards, services and contact
 ---
 
