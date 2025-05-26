@@ -29,28 +29,31 @@ header a {
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
-  flex-basis: 0;
-  flex-grow: 1;
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
   max-width: 100%;
 }
 
 .logo {
-  height: 40px;
+  display: flex;
+  align-items: center;
+  height: auto;
+  max-height: 80px;
 }
 
 .logo > * {
-  height: 100%;
+  height: auto;
+  width: auto;
+  max-height: 80px;
+  object-fit: contain;
 }
 
 .title {
-  display: flex;
-  justify-content: flex-start;
-  align-items: baseline;
+  flex-direction: row;
+  align-items: center;
   flex-wrap: wrap;
   gap: 5px;
-  min-width: 0;
-  font-family: var(--title);
-  text-align: left;
 }
 
 .title > *:first-child {
