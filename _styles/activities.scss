@@ -1,75 +1,84 @@
 ---
 ---
-.timeline {
-  position: relative;
-  padding: 50px 0;
+html,
+
+.blue-bg {
+  color: #ED8D8D;
+  height: 100%;
 }
 
-.timeline-item {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-bottom: 40px;
-  position: relative;
-}
-
-.timeline-item.left {
-  flex-direction: row;
-}
-
-.timeline-item.right {
-  flex-direction: row-reverse;
-}
-
-.timeline-circle {
-  background-color: #4A90E2;
-  color: #ffffff;
+.circle {
   font-weight: bold;
   padding: 15px 20px;
   border-radius: 50%;
-  text-align: center;
-  min-width: 90px;
-  max-height: 60px;
+  color: #4D4545;
+  max-height: 50px;
+  z-index: 2;
+}
+
+.how-it-works.row {
   display: flex;
+}
+.how-it-works.row .col-2 {
+  display: inline-flex;
+  align-self: stretch;
   align-items: center;
   justify-content: center;
-  z-index: 2;
-  margin: 0 20px;
-  box-shadow: 0 0 0 4px white;
+}
+.how-it-works.row .col-2::after {
+  content: "";
+  position: absolute;
+  border-left: 3px solid #ED8D8D;
+  z-index: 1;
+}
+.how-it-works.row .col-2.bottom::after {
+  height: 50%;
+  left: 50%;
+  top: 50%;
+}
+.how-it-works.row .col-2.full::after {
+  height: 100%;
+  left: calc(50% - 3px);
+}
+.how-it-works.row .col-2.top::after {
+  height: 50%;
+  left: 50%;
+  top: 0;
 }
 
-.timeline-content {
-  background: #f9f9f9;
-  padding: 20px 30px;
-  border-radius: 6px;
-  max-width: 600px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+.timeline div {
+  padding: 0;
+  height: 40px;
 }
-
-.timeline-content h5 {
-  margin-top: 0;
-  font-weight: 600;
-}
-
-.timeline-content p {
+.timeline hr {
+  border-top: 3px solid #ED8D8D;
   margin: 0;
-  line-height: 1.6;
+  top: 17px;
+  position: relative;
 }
-
-@media screen and (max-width: 768px) {
-  .timeline-item,
-  .timeline-item.left,
-  .timeline-item.right {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .timeline-circle {
-    margin: 0 auto 15px auto;
-  }
-
-  .timeline-content {
-    max-width: 100%;
-  }
+.timeline .col-2 {
+  display: flex;
+  overflow: hidden;
 }
-
+.timeline .corner {
+  border: 3px solid #ED8D8D;
+  width: 100%;
+  position: relative;
+  border-radius: 15px;
+}
+.timeline .top-right {
+  left: 50%;
+  top: -50%;
+}
+.timeline .left-bottom {
+  left: -50%;
+  top: calc(50% - 3px);
+}
+.timeline .top-left {
+  left: -50%;
+  top: -50%;
+}
+.timeline .right-bottom {
+  left: 50%;
+  top: calc(50% - 3px);
+}
