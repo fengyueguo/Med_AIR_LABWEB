@@ -23,7 +23,6 @@
   bottom: 0;
   left: var(--timeline-offset-left);
   width: var(--timeline-line-width);
-  height: calc(100% - 120px);
   background-color: var(--timeline-color);
 }
 
@@ -36,7 +35,8 @@
 
 .timeline-entry {
   position: relative;
-  margin-left: calc(var(--timeline-offset-left) + 20px);
+  margin-left: 0;
+  padding-left: calc(var(--timeline-offset-left) + 20px);
   max-width: 700px;
 }
 
