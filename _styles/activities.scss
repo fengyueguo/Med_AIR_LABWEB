@@ -1,9 +1,23 @@
 ---
 ---
+
+:root {
+  --timeline-offset-left: 60px;     /* 控制时间轴整体右移距离 */
+  --timeline-color: #A1CAF1;        /* 时间轴主色（线、圆点、阴影） */
+  --timeline-line-width: 3px;
+  --timeline-entry-gap: 30px;
+  --dot-size: 16px;
+  --dot-border-width: 3px;
+  --dot-shadow-size: 2px;
+  --content-gap: 15px;
+  --content-img-width: 150px;
+}
+
 .timeline {
   position: relative;
   padding: 50px 20px;
-  border-left: 3px solid #A1CAF1;
+  border-left: var(--timeline-line-width) solid var(--timeline-color);
+  margin-left: var(--timeline-offset-left); /* 控制时间轴整体偏移 */
 }
 
 .timeline-year {
@@ -15,29 +29,20 @@
 
 .timeline-entry {
   position: relative;
-  margin: 30px 0 30px 20px;
+  margin: var(--timeline-entry-gap) 0 var(--timeline-entry-gap) calc(var(--timeline-offset-left) - 10px);
   max-width: 600px;
-}
-
-.timeline-entry.left {
-  margin-left: 20px;
-}
-
-.timeline-entry.right {
-  margin-left: 20px;
-  margin-right: auto;
 }
 
 .dot {
   position: absolute;
-  left: -33px;
+  left: calc(-1 * var(--timeline-offset-left) + 5px); /* 相对时间轴线调整 */
   top: 5px;
-  width: 16px;
-  height: 16px;
-  background: #A1CAF1;
+  width: var(--dot-size);
+  height: var(--dot-size);
+  background: var(--timeline-color);
   border-radius: 50%;
-  border: 3px solid #fff;
-  box-shadow: 0 0 0 2px #A1CAF1;
+  border: var(--dot-border-width) solid #fff;
+  box-shadow: 0 0 0 var(--dot-shadow-size) var(--timeline-color);
 }
 
 .date {
@@ -50,16 +55,28 @@
   background: #fff;
   padding: 15px 20px;
   border-radius: 5px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.05);
-  
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+
   display: flex;
   align-items: flex-start;
-  gap: 15px; 
+  gap: var(--content-gap);
 }
 
 .content img {
-  width: 150px; 
+  width: var(--content-img-width);
   height: auto;
-  flex-shrink: 0; 
+  flex-shrink: 0;
 }
 
+/* 可选：响应式优化（小屏改为上下排布） */
+@media (max-width: 600px) {
+  .content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .content img {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
