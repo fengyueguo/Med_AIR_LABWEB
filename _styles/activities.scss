@@ -8,7 +8,7 @@ body {
 }
 
 .blue-bg {
-  color: #ED8D8D;
+  color: #A1CAF1;
   height: 100%;
 }
 
@@ -16,8 +16,8 @@ body {
   font-weight: bold;
   padding: 15px 20px;
   border-radius: 50%;
-  background-color: #ED8D8D;
-  color: #A1CAF1;
+  background-color: #A1CAF1;
+  color: #4D4545;
   max-height: 50px;
   z-index: 2;
 }
@@ -34,7 +34,7 @@ body {
 .how-it-works.row .col-2::after {
   content: "";
   position: absolute;
-  border-left: 3px solid #ED8D8D;
+  border-left: 3px solid #4D4545;
   z-index: 1;
 }
 .how-it-works.row .col-2.bottom::after {
@@ -57,7 +57,7 @@ body {
   height: 40px;
 }
 .timeline hr {
-  border-top: 3px solid #ED8D8D;
+  border-top: 3px solid #A1CAF1;
   margin: 0;
   top: 17px;
   position: relative;
@@ -67,7 +67,7 @@ body {
   overflow: hidden;
 }
 .timeline .corner {
-  border: 3px solid #ED8D8D;
+  border: 3px solid #A1CAF1;
   width: 100%;
   position: relative;
   border-radius: 15px;
