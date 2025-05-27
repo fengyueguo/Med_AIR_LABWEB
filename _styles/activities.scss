@@ -8,7 +8,7 @@ body {
 }
 
 .blue-bg {
-  color: #A1CAF1;
+  color: #4D4545;
   height: 100%;
 }
 
@@ -34,7 +34,7 @@ body {
 .how-it-works.row .col-2::after {
   content: "";
   position: absolute;
-  border-left: 3px solid #4D4545;
+  border-left: 3px solid #A1CAF1;
   z-index: 1;
 }
 .how-it-works.row .col-2.bottom::after {
