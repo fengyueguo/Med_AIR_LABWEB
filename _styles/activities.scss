@@ -51,4 +51,15 @@
   padding: 15px 20px;
   border-radius: 5px;
   box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  
+  display: flex;
+  align-items: flex-start;
+  gap: 15px; 
 }
+
+.content img {
+  width: 150px; 
+  height: auto;
+  flex-shrink: 0; 
+}
+
