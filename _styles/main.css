@@ -1,30 +1,39 @@
 --- --- .timeline {
   position: relative;
   margin: 50px 0;
-  padding-left: 30px;
-  border-left: 2px solid #A1CAF1;
+  padding-left: 40px;
+  border-left: 3px solid #A1CAF1;
 }
 
 .timeline-item {
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  padding-left: 30px;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -9px;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  background-color: #A1CAF1;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px #A1CAF1;
 }
 
 .timeline-date {
-  position: absolute;
-  left: -80px;
-  top: 0;
-  width: 60px;
-  text-align: right;
   font-weight: bold;
-  color: #A1CAF1;
+  color: #4D4545;
+  margin-bottom: 8px;
 }
 
 .timeline-content {
   background: #fff;
   padding: 15px 20px;
   border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 main {
