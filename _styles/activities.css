@@ -1,3 +1,4 @@
+html,
 body {
   font: 100% "Lato", sans-serif;
   font-weight: 300;
@@ -5,6 +6,7 @@ body {
 }
 
 .blue-bg {
+  color: #ED8D8D;
   height: 100%;
 }
 
@@ -12,8 +14,8 @@ body {
   font-weight: bold;
   padding: 15px 20px;
   border-radius: 50%;
-  background-color: #A1CAF1;
-  color: #4D4545;
+  background-color: #ED8D8D;
+  color: #A1CAF1;
   max-height: 50px;
   z-index: 2;
 }
@@ -32,7 +34,7 @@ body {
 .how-it-works.row .col-2::after {
   content: "";
   position: absolute;
-  border-left: 3px solid #A1CAF1;
+  border-left: 3px solid #ED8D8D;
   z-index: 1;
 }
 
@@ -59,7 +61,7 @@ body {
 }
 
 .timeline hr {
-  border-top: 3px solid #A1CAF1;
+  border-top: 3px solid #ED8D8D;
   margin: 0;
   top: 17px;
   position: relative;
@@ -70,13 +72,8 @@ body {
   overflow: hidden;
 }
 
-.timeline .col-6 {
-  flex: 0 0 70%;
-  max_width: 90%;
-}
-
 .timeline .corner {
-  border: 3px solid #A1CAF1;
+  border: 3px solid #ED8D8D;
   width: 100%;
   position: relative;
   border-radius: 15px;
@@ -100,22 +97,6 @@ body {
 .timeline .right-bottom {
   left: 50%;
   top: calc(50% - 3px);
-}
-
-.activity-block {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 20px;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
-}
-@media screen and (max-width: 768px) {
-  .activity-block {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
 }
 
 /*# sourceMappingURL=activities.css.map */
