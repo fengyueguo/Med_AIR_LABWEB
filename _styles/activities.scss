@@ -19,25 +19,15 @@
   margin-left: 0;
 }
 
-// .timeline::before {
-//   content: '';
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: var(--timeline-line-width);
-//   height: 100%;
-//   background-color: var(--timeline-color);
-// }
 .timeline::before {
   content: '';
   position: absolute;
   top: 0;
-  bottom: 0;
-  left: var(--timeline-offset-left);
+  left: 0;
   width: var(--timeline-line-width);
+  height: 100%;
   background-color: var(--timeline-color);
 }
-
 
 .timeline-year {
   font-size: 1.5em;
@@ -48,27 +38,13 @@
 
 .timeline-entry {
   position: relative;
-  margin-left: 0;
-  padding-left: calc(var(--timeline-offset-left) + 20px);
+  margin: var(--timeline-entry-gap) 0 var(--timeline-entry-gap) calc(var(--timeline-offset-left) - 10px);
   max-width: 700px;
 }
 
-
-// .dot {
-//   position: absolute;
-//   left: calc(-1 * var(--timeline-offset-left) + 5px); /* 相对时间轴线调整 */
-//   top: 5px;
-//   width: var(--dot-size);
-//   height: var(--dot-size);
-//   background: var(--timeline-color);
-//   border-radius: 50%;
-//   border: var(--dot-border-width) solid #fff;
-//   box-shadow: 0 0 0 var(--dot-shadow-size) var(--timeline-color);
-// }
-
 .dot {
   position: absolute;
-  left: calc(var(--timeline-offset-left) - var(--dot-size) / 2);
+  left: calc(-1 * var(--timeline-offset-left) + 5px); /* 相对时间轴线调整 */
   top: 5px;
   width: var(--dot-size);
   height: var(--dot-size);
