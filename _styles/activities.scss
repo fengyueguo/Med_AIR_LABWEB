@@ -2,8 +2,8 @@
 ---
 
 :root {
-  --timeline-offset-left: 100px;     /* 控制时间轴整体右移距离 */
-  --timeline-color: #0a6ea4;        /* 时间轴主色（线、圆点、阴影） */
+  --timeline-offset-left: 100px; 
+  --timeline-color: #0a6ea4; 
   --timeline-line-width: 3px;
   --timeline-entry-gap: 30px;
   --dot-size: 16px;
@@ -13,29 +13,21 @@
   --content-img-width: 150px;
 }
 
-// .timeline {
-//   position: relative;
-//   padding: 50px 20px;
-//   border-left: var(--timeline-line-width) solid var(--timeline-color);
-//   margin-left: var(--timeline-offset-left); 
-// }
-
 .timeline {
   position: relative;
-  padding: 50px 20px;
+  padding: 0 20px;
   margin-left: var(--timeline-offset-left);
 }
 
 .timeline::before {
   content: '';
   position: absolute;
-  top: 120px;
+  top: 0;
   left: 0;
   width: var(--timeline-line-width);
-  height: calc(100% - 120px);
+  height: 80%;
   background-color: var(--timeline-color);
 }
-
 
 .timeline-year {
   font-size: 1.5em;
@@ -69,23 +61,26 @@
 }
 
 .content {
+  display: flex;
+  align-items: center;
+  gap: var(--content-gap);
   background: #fff;
   padding: 15px 20px;
   border-radius: 5px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
 
-  display: flex;
-  align-items: center;
-  gap: var(--content-gap);
+.text {
+  flex: 1;
 }
 
 .content img {
-  width: var(--content-img-width);
-  max-height: 160px;
-  object-fit: contain;
+  width: var(--content-img-width); 
+  max-width: 100%;
+  height: auto;
   flex-shrink: 0;
+  object-fit: contain;
 }
-
 
 @media (max-width: 700px) {
   .content {
