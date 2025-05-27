@@ -2,7 +2,6 @@ body {
   font: 100% "Lato", sans-serif;
   font-weight: 300;
   height: 100%;
-  background-color: #4D4545;
 }
 
 .blue-bg {
@@ -71,6 +70,11 @@ body {
 .timeline .col-2 {
   display: flex;
   overflow: hidden;
+}
+
+.timeline .col-6 {
+  flex: 0 0 70%;
+  max_width: 90%;
 }
 
 .timeline .corner {
