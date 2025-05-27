@@ -5,7 +5,7 @@
   --timeline-offset-left: 100px; 
   --timeline-color: #0a6ea4; 
   --timeline-line-width: 3px;
-  --timeline-entry-gap: 15px;
+  --timeline-entry-gap: 20px;
   --dot-size: 16px;
   --dot-border-width: 3px;
   --dot-shadow-size: 2px;
@@ -16,7 +16,7 @@
 .timeline {
   position: relative;
   padding: 0 20px;
-  margin-left: var(--timeline-offset-left);
+  margin-left: 0;
 }
 
 // .timeline::before {
@@ -32,7 +32,8 @@
   content: '';
   position: absolute;
   top: 0;
-  left: calc(var(--timeline-offset-left) + var(--dot-size) / 2 - var(--timeline-line-width) / 2);
+  bottom: 0;
+  left: var(--timeline-offset-left);
   width: var(--timeline-line-width);
   height: calc(100% - 120px);
   background-color: var(--timeline-color);
@@ -47,7 +48,7 @@
 
 .timeline-entry {
   position: relative;
-  margin-left: calc(var(--timeline-offset-left) + 10px);
+  margin-left: calc(var(--timeline-offset-left) + 20px);
   max-width: 700px;
 }
 
@@ -65,7 +66,7 @@
 
 .dot {
   position: absolute;
-  left: var(--timeline-offset-left); /* 正好和线对齐 */
+  left: calc(var(--timeline-offset-left) - var(--dot-size) / 2);
   top: 5px;
   width: var(--dot-size);
   height: var(--dot-size);
