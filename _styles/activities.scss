@@ -96,7 +96,7 @@
 // }
 
 :root {
-  --timeline-offset-left: 100px;
+  --timeline-offset-left: 100px;       /* 控制线和内容整体偏移 */
   --timeline-color: #0a6ea4;
   --timeline-line-width: 3px;
   --timeline-entry-gap: 20px;
@@ -108,9 +108,11 @@
 }
 
 .timeline {
+  position: relative;
   padding: 0 20px;
 }
 
+/* ✅ 整条时间轴线，贯穿整个 timeline 容器 */
 .timeline::before {
   content: '';
   position: absolute;
@@ -119,8 +121,8 @@
   left: var(--timeline-offset-left);
   width: var(--timeline-line-width);
   background-color: var(--timeline-color);
+  z-index: 0;
 }
-
 
 .timeline-year {
   font-size: 1.5em;
@@ -132,36 +134,24 @@
 .timeline-entry {
   position: relative;
   margin-bottom: var(--timeline-entry-gap);
-  padding-left: calc(var(--timeline-offset-left) + 20px);
+  padding-left: calc(var(--timeline-offset-left) + 20px); /* 内容整体右移 */
   max-width: 800px;
 }
 
-
-/* 时间轴线在每条记录中 */
-.timeline-entry::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: var(--timeline-offset-left);
-  width: var(--timeline-line-width);
-  background-color: var(--timeline-color);
-}
-
+/* ✅ 圆点精确在时间轴线上 */
 .dot {
   position: absolute;
   top: 5px;
-  left: calc(var(--timeline-offset-left) - var(--dot-size) / 2);
+  left: calc(var(--timeline-offset-left) - var(--dot-size) / 2); /* 点中心在轴线上 */
   width: var(--dot-size);
   height: var(--dot-size);
   background: var(--timeline-color);
   border-radius: 50%;
   border: var(--dot-border-width) solid #fff;
   box-shadow: 0 0 0 var(--dot-shadow-size) var(--timeline-color);
+  z-index: 1;
 }
 
-
-/* 日期 */
 .date {
   font-size: 0.9em;
   color: #888;
@@ -169,7 +159,6 @@
   text-align: left;
 }
 
-/* 时间块内容区（右侧） */
 .content {
   display: flex;
   align-items: center;
@@ -180,12 +169,10 @@
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
 }
 
-/* 文本部分 */
 .text {
   flex: 1;
 }
 
-/* 图片部分 */
 .content img {
   width: var(--content-img-width);
   max-width: 100%;
@@ -194,7 +181,7 @@
   object-fit: contain;
 }
 
-/* 移动端优化 */
+/* ✅ 移动端优化 */
 @media (max-width: 700px) {
   .content {
     flex-direction: column;
@@ -206,3 +193,4 @@
     margin-top: 10px;
   }
 }
+
