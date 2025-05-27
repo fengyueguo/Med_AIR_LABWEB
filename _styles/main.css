@@ -1,6 +1,6 @@
 @charset "UTF-8";
 --- --- :root {
-  --timeline-offset-left: 100px; /* 控制线和内容整体偏移 */
+  --timeline-offset-left: 100px;
   --timeline-color: #0a6ea4;
   --timeline-line-width: 3px;
   --timeline-entry-gap: 20px;
@@ -14,9 +14,10 @@
 .timeline {
   position: relative;
   padding: 0 20px;
+  margin-left: 0;
 }
 
-/* ✅ 整条时间轴线，贯穿整个 timeline 容器 */
+/* ✅ 一整条主线，贯穿整个时间轴 */
 .timeline::before {
   content: "";
   position: absolute;
@@ -25,7 +26,6 @@
   left: var(--timeline-offset-left);
   width: var(--timeline-line-width);
   background-color: var(--timeline-color);
-  z-index: 0;
 }
 
 .timeline-year {
@@ -38,22 +38,21 @@
 .timeline-entry {
   position: relative;
   margin-bottom: var(--timeline-entry-gap);
-  padding-left: calc(var(--timeline-offset-left) + 20px); /* 内容整体右移 */
+  margin-left: calc(var(--timeline-offset-left) + 20px); /* 控制时间块离时间线多远 */
   max-width: 800px;
 }
 
-/* ✅ 圆点精确在时间轴线上 */
+/* ✅ 圆点独立控制，手动对齐主线 */
 .dot {
   position: absolute;
+  left: calc(var(--timeline-offset-left) - var(--dot-size) / 2);
   top: 5px;
-  left: calc(var(--timeline-offset-left) - var(--dot-size) / 2); /* 点中心在轴线上 */
   width: var(--dot-size);
   height: var(--dot-size);
   background: var(--timeline-color);
   border-radius: 50%;
   border: var(--dot-border-width) solid #fff;
   box-shadow: 0 0 0 var(--dot-shadow-size) var(--timeline-color);
-  z-index: 1;
 }
 
 .date {
@@ -85,7 +84,6 @@
   object-fit: contain;
 }
 
-/* ✅ 移动端优化 */
 @media (max-width: 700px) {
   .content {
     flex-direction: column;
