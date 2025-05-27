@@ -1,7 +1,7 @@
 @charset "UTF-8";
 --- --- :root {
-  --timeline-offset-left: 60px; /* 控制时间轴整体右移距离 */
-  --timeline-color: #A1CAF1; /* 时间轴主色（线、圆点、阴影） */
+  --timeline-offset-left: 100px; /* 控制时间轴整体右移距离 */
+  --timeline-color: #0a6ea4; /* 时间轴主色（线、圆点、阴影） */
   --timeline-line-width: 3px;
   --timeline-entry-gap: 30px;
   --dot-size: 16px;
@@ -20,10 +20,10 @@
 .timeline::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: 120px;
   left: 0;
   width: var(--timeline-line-width);
-  height: 80%;
+  height: calc(100% - 120px);
   background-color: var(--timeline-color);
 }
 
@@ -64,13 +64,14 @@
   border-radius: 5px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: var(--content-gap);
 }
 
 .content img {
   width: var(--content-img-width);
-  height: auto;
+  max-height: 160px;
+  object-fit: contain;
   flex-shrink: 0;
 }
 
