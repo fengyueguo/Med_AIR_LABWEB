@@ -15,6 +15,16 @@
   padding: 0 20px;
 }
 
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--timeline-offset-left);
+  width: var(--timeline-line-width);
+  background-color: var(--timeline-color);
+}
+
 .timeline-year {
   font-size: 1.5em;
   font-weight: bold;
@@ -22,7 +32,6 @@
   color: #2c3e50;
 }
 
-/* 每条时间记录整体块 */
 .timeline-entry {
   position: relative;
   margin-bottom: var(--timeline-entry-gap);
@@ -41,7 +50,6 @@
   background-color: var(--timeline-color);
 }
 
-/* 圆点居中在线上 */
 .dot {
   position: absolute;
   top: 5px;
