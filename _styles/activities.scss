@@ -1,9 +1,103 @@
 ---
 ---
 
+// :root {
+//   --timeline-offset-left: 100px; 
+//   --timeline-color: #0a6ea4; 
+//   --timeline-line-width: 3px;
+//   --timeline-entry-gap: 20px;
+//   --dot-size: 16px;
+//   --dot-border-width: 3px;
+//   --dot-shadow-size: 2px;
+//   --content-gap: 15px;
+//   --content-img-width: 150px;
+// }
+
+// .timeline {
+//   position: relative;
+//   padding: 0 20px;
+//   margin-left: 0;
+// }
+
+// .timeline::before {
+//   content: '';
+//   position: absolute;
+//   top: 0;
+//   left: var(--timeline-offset-left);
+//   width: var(--timeline-line-width);
+//   height: 100%;
+//   background-color: var(--timeline-color);
+// }
+
+// .timeline-year {
+//   font-size: 1.5em;
+//   font-weight: bold;
+//   margin: 40px 0 20px;
+//   color: #2c3e50;
+// }
+
+// .timeline-entry {
+//   position: relative;
+//   margin: 10px;
+//   max-width: 800px;
+// }
+
+// .dot {
+//   position: absolute;
+//   left: -36px;
+//   top: 5px;
+//   width: var(--dot-size);
+//   height: var(--dot-size);
+//   background: var(--timeline-color);
+//   border-radius: 50%;
+//   border: var(--dot-border-width) solid #fff;
+//   box-shadow: 0 0 0 var(--dot-shadow-size) var(--timeline-color);
+// }
+
+// .date {
+//   font-size: 0.9em;
+//   color: #888;
+//   margin-bottom: 5px;
+//   text-align: left;
+// }
+
+// .content {
+//   display: flex;
+//   align-items: center;
+//   gap: var(--content-gap);
+//   background: #fff;
+//   padding: 15px 20px;
+//   border-radius: 5px;
+//   box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+// }
+
+// .text {
+//   flex: 1;
+// }
+
+// .content img {
+//   width: var(--content-img-width); 
+//   max-width: 100%;
+//   height: auto;
+//   flex-shrink: 0;
+//   object-fit: contain;
+// }
+
+// @media (max-width: 700px) {
+//   .content {
+//     flex-direction: column;
+//     align-items: flex-start;
+//   }
+
+//   .content img {
+//     width: 100%;
+//     margin-top: 10px;
+//   }
+// }
+
 :root {
-  --timeline-offset-left: 100px; 
-  --timeline-color: #0a6ea4; 
+  --timeline-offset-left: 100px;
+  --timeline-color: #0a6ea4;
   --timeline-line-width: 3px;
   --timeline-entry-gap: 20px;
   --dot-size: 16px;
@@ -14,19 +108,7 @@
 }
 
 .timeline {
-  position: relative;
   padding: 0 20px;
-  margin-left: 0;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: var(--timeline-offset-left);
-  width: var(--timeline-line-width);
-  height: 100%;
-  background-color: var(--timeline-color);
 }
 
 .timeline-year {
@@ -36,16 +118,30 @@
   color: #2c3e50;
 }
 
+/* 每条时间记录整体块 */
 .timeline-entry {
   position: relative;
-  margin: 10px;
+  margin-bottom: var(--timeline-entry-gap);
+  padding-left: calc(var(--timeline-offset-left) + 20px);
   max-width: 800px;
 }
 
+/* 时间轴线在每条记录中 */
+.timeline-entry::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--timeline-offset-left);
+  width: var(--timeline-line-width);
+  background-color: var(--timeline-color);
+}
+
+/* 圆点居中在线上 */
 .dot {
   position: absolute;
-  left: -36px;
   top: 5px;
+  left: calc(var(--timeline-offset-left) - var(--dot-size) / 2);
   width: var(--dot-size);
   height: var(--dot-size);
   background: var(--timeline-color);
@@ -54,6 +150,7 @@
   box-shadow: 0 0 0 var(--dot-shadow-size) var(--timeline-color);
 }
 
+/* 日期 */
 .date {
   font-size: 0.9em;
   color: #888;
@@ -61,6 +158,7 @@
   text-align: left;
 }
 
+/* 时间块内容区（右侧） */
 .content {
   display: flex;
   align-items: center;
@@ -71,18 +169,21 @@
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
 }
 
+/* 文本部分 */
 .text {
   flex: 1;
 }
 
+/* 图片部分 */
 .content img {
-  width: var(--content-img-width); 
+  width: var(--content-img-width);
   max-width: 100%;
   height: auto;
   flex-shrink: 0;
   object-fit: contain;
 }
 
+/* 移动端优化 */
 @media (max-width: 700px) {
   .content {
     flex-direction: column;
