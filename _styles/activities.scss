@@ -111,6 +111,17 @@
   padding: 0 20px;
 }
 
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--timeline-offset-left);
+  width: var(--timeline-line-width);
+  background-color: var(--timeline-color);
+}
+
+
 .timeline-year {
   font-size: 1.5em;
   font-weight: bold;
@@ -118,13 +129,13 @@
   color: #2c3e50;
 }
 
-/* 每条时间记录整体块 */
 .timeline-entry {
   position: relative;
   margin-bottom: var(--timeline-entry-gap);
   padding-left: calc(var(--timeline-offset-left) + 20px);
   max-width: 800px;
 }
+
 
 /* 时间轴线在每条记录中 */
 .timeline-entry::before {
@@ -137,7 +148,6 @@
   background-color: var(--timeline-color);
 }
 
-/* 圆点居中在线上 */
 .dot {
   position: absolute;
   top: 5px;
@@ -149,6 +159,7 @@
   border: var(--dot-border-width) solid #fff;
   box-shadow: 0 0 0 var(--dot-shadow-size) var(--timeline-color);
 }
+
 
 /* 日期 */
 .date {
