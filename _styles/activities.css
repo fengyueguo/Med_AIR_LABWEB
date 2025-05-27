@@ -1,95 +1,30 @@
-/* Base styles */
-body {
-  font: 100% "Lato", sans-serif;
-  font-weight: 300;
-  margin: 0;
-}
-
-.container-fluid.blue-bg {
-  color: #4D4545;
-  background: #f4f8fc;
-  padding: 50px 0;
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-/* Timeline entry structure */
-.timeline-entry {
+.timeline {
   position: relative;
-  width: 100%;
-  display: flex;
-  margin-bottom: 50px;
-  align-items: center;
+  margin: 50px 0;
+  padding-left: 30px;
+  border-left: 2px solid #A1CAF1;
 }
 
-.timeline-entry .circle {
-  font-weight: bold;
-  padding: 15px 20px;
-  border-radius: 50%;
-  background-color: #A1CAF1;
-  color: #4D4545;
-  min-width: 80px;
-  text-align: center;
-  z-index: 2;
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
 }
 
-.timeline-entry .content {
-  background: white;
-  padding: 15px 20px;
-  margin: 0 20px;
-  border-radius: 5px;
-  flex: 1;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-}
-
-/* Line */
-.timeline-entry::before {
-  content: "";
+.timeline-date {
   position: absolute;
-  top: 50%;
-  width: 3px;
-  height: 100%;
-  background-color: #A1CAF1;
-  transform: translateY(-50%);
-  z-index: 0;
+  left: -80px;
+  top: 0;
+  width: 60px;
+  text-align: right;
+  font-weight: bold;
+  color: #A1CAF1;
 }
 
-/* Alternating sides */
-.timeline-entry.left {
-  flex-direction: row;
-}
-
-.timeline-entry.left::before {
-  left: 10%;
-}
-
-.timeline-entry.right {
-  flex-direction: row-reverse;
-}
-
-.timeline-entry.right::before {
-  right: 10%;
-}
-
-/* Responsive layout */
-@media (max-width: 768px) {
-  .timeline-entry {
-    flex-direction: column !important;
-    align-items: flex-start;
-  }
-  .timeline-entry::before {
-    left: 0 !important;
-    right: auto;
-    top: 0;
-    height: 100%;
-    transform: none;
-  }
-  .timeline-entry .content {
-    margin: 20px 0 0 0;
-  }
+.timeline-content {
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 /*# sourceMappingURL=activities.css.map */
