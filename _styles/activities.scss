@@ -112,7 +112,6 @@
   margin-left: 0;
 }
 
-/* ✅ 一整条主线，贯穿整个时间轴 */
 .timeline::before {
   content: '';
   position: absolute;
@@ -137,10 +136,9 @@
   max-width: 800px;
 }
 
-/* ✅ 圆点独立控制，手动对齐主线 */
 .dot {
   position: absolute;
-  left: calc(var(--timeline-offset-left) - var(--dot-size) / 2);
+  left: -46px;
   top: 5px;
   width: var(--dot-size);
   height: var(--dot-size);
