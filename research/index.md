@@ -7,7 +7,7 @@ nav:
 
 <h2>Research</h2>
 
-Our research is at the interdisciplinary field of **medical image analysis**, **machine learning** and **robotic surgery intelligence**, aiming to create synergistic advancements for innovative intelligent systems that achieve an impact to support delivery of higher-quality medical diagnosis, intervention and education via next-generation healthcare technology. Previous representative works include 3D deep learning for high-dimensional image computing, domain adaptation and generalization on heterogeneous medical data, surgical video analysis with efficient spatial-temporal learning, and visual-kinematics surgical robotics perception and automation.
+Our research sits at the interdisciplinary nexus of **medical image analysis**, **machine learning**, and **robotic surgical intelligence**, aiming to develop innovative intelligent systems that advance diagnosis, intervention, and medical education through next-generation healthcare technologies. Our work spans embodied AI for surgical robotics, medical image understanding, robot sensing and planning in dynamic environments, agentic AI systems for clinical decision-making, and LLM-powered smart XR for medical training. Representative contributions include 3D deep learning for high-dimensional image computing, domain adaptation and generalization across heterogeneous medical data, surgical video analysis with efficient spatio-temporal learning, and visual-kinematic perception and automation in surgical robotics.
 
 Recent focus: 1) **Embodied AI** for Elderly Care Robotics, 2) **LLM and smart XR** for medical education, 3) **Agentic AI systems** for healthcare applications, 4) **Surgical Robotics**, 5) **Medical Image Analysis**.
 {% 
@@ -31,7 +31,7 @@ We aim to reform and innovate research, applications, and design to advance the 
 {% include feature.html image="images/research/llm_healthcare.jpg" link="publication" title="LLMs and smart XR for Medical Education" text=text flip=true className="feature-image" %}
 
 {% capture text %}
-This research topic aims to develop autonomous,multi-agent AI systems that integrate clinical and patient data to enable end-to-end automation of healthcare workflows. We aim to pioneer multimodal, multi-agent AI systems to revolutionize clinical intelligence by integrating diverse data streams—including medical imaging, genomic profiles, electronic health records (EHRs), and biomedical literature—into collaborative AI networks. These systems deploy specialized agents (e.g., diagnostic, predictive, and evidence-synthesis agents) that dynamically interact to enhance precision medicine, accelerate disease detection, and generate patient-specific therapeutic insights. The core aim is to overcome data fragmentation and clinical complexity through coordinated AI cognition, ultimately advancing diagnostic accuracy, treatment personalization, and real-time decision support in high-stakes healthcare scenarios.
+This research topic aims to develop autonomous, multi-agent AI systems that integrate clinical and patient data to enable end-to-end automation of healthcare workflows. We aim to pioneer multimodal, multi-agent AI systems to revolutionize clinical intelligence by integrating diverse data streams—including medical imaging, genomic profiles, electronic health records (EHRs), and biomedical literature—into collaborative AI networks. These systems deploy specialized agents (e.g., diagnostic, predictive, and evidence-synthesis agents) that dynamically interact to enhance precision medicine, accelerate disease detection, and generate patient-specific therapeutic insights. The core aim is to overcome data fragmentation and clinical complexity through coordinated AI cognition, ultimately advancing diagnostic accuracy, treatment personalization, and real-time decision support in high-stakes healthcare scenarios.
 {% endcapture %}
 {% include feature.html image="images/research/agentic.jpg" link="publication" title="Agentic AI Systems for Healthcare Applications" text=text flip=true className="feature-image" %}
 
@@ -43,16 +43,8 @@ This research topic aims to develop autonomous,multi-agent AI systems that integ
 {% include feature.html image="images/research/robotic.jpg" link="publication" title="Surgical Robotics" text=text className="feature-image" %}
 
 {% capture text %}
-**Theoretical Analysis**: we focuse on two key areas, federated learning and addressing label imbalance as well as noisy labels. We explore the application of federated learning techniques to train medical image analysis models while preserving data privacy. Additionally, we investigate methods to handle imbalanced label distributions in medical imaging data, improving detection and classification capabilities for underrepresented classes. Furthermore, our research delves into mitigating the impact of noisy labels, enhancing the reliability and performance of medical image analysis models.
+**Theoretical Analysis**: we focus on two key areas, federated learning and addressing label imbalance as well as noisy labels. We explore the application of federated learning techniques to train medical image analysis models while preserving data privacy. Additionally, we investigate methods to handle imbalanced label distributions in medical imaging data, improving detection and classification capabilities for underrepresented classes. Furthermore, our research delves into mitigating the impact of noisy labels, enhancing the reliability and performance of medical image analysis models.
 
-**Clinical application**: we aim to translate advanced analysis techniques into real-world medical practice. We concentrate on utilizing automated image analysis and recognition to assist physicians in disease diagnosis. By leveraging these techniques, we aim to support healthcare professionals in quickly and accurately determining the type and severity of diseases. Moreover, our work focuses on the development of automated disease segmentation and localization techniques, which enable the identification and precise mapping of abnormal regions in medical images. 
+**Clinical Application**: we aim to translate advanced analysis techniques into real-world medical practice. We concentrate on utilizing automated image analysis and recognition to assist physicians in disease diagnosis. By leveraging these techniques, we aim to support healthcare professionals in quickly and accurately determining the type and severity of diseases. Moreover, our work focuses on the development of automated disease segmentation and localization techniques, which enable the identification and precise mapping of abnormal regions in medical images. 
 {% endcapture %}
-{%
-  include feature.html
-  image="images/research/research1.png"
-  link="publication"
-  title="Medical Image Analysis"
-  text=text
-  flip=true
-  className="feature-image"
-%}
+{% include feature.html image="images/research/research1.png" link="publication" title="Medical Image Analysis" text=text flip=true className="feature-image" %}
