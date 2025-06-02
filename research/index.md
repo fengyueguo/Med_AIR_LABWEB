@@ -42,7 +42,7 @@ Recent focus: 1) **Embodied AI** for surgical robots, 2) **LLM and smart XR** fo
 {% endcapture %}
 {% include feature.html image="images/research/llm_healthcare.jpg" link="publication" title="LLMs for Medical Education" text=text flip=true className="feature-image" %}
 
-<!-- {% capture text %}
+{% capture text %}
 **Theoretical Analysis**: we focuse on two key areas, federated learning and addressing label imbalance as well as noisy labels. We explore the application of federated learning techniques to train medical image analysis models while preserving data privacy. Additionally, we investigate methods to handle imbalanced label distributions in medical imaging data, improving detection and classification capabilities for underrepresented classes. Furthermore, our research delves into mitigating the impact of noisy labels, enhancing the reliability and performance of medical image analysis models.
 
 **Clinical application**: we aim to translate advanced analysis techniques into real-world medical practice. We concentrate on utilizing automated image analysis and recognition to assist physicians in disease diagnosis. By leveraging these techniques, we aim to support healthcare professionals in quickly and accurately determining the type and severity of diseases. Moreover, our work focuses on the development of automated disease segmentation and localization techniques, which enable the identification and precise mapping of abnormal regions in medical images. 
@@ -91,4 +91,4 @@ This research direction encompass a wide range of interdisciplinary studies, com
   text=text
   flip=true
   className="feature-image"
-%} -->
+%}
