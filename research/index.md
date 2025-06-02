@@ -19,7 +19,6 @@ Recent focus: 1) **Embodied AI** for surgical robots, 2) **LLM and smart XR** fo
 <h2> Topics </h2>
 
 {% capture text %}
-**Surgical Robotics**  
 **Data Analytics and Cognitive Augmentation**: It focuses on developing intelligent methods and systems that improve surgical efficiency. The work encompasses multi-modal data analysis to understand surgical scenes at multiple levels of granularity (i.e. surgical workflows, actions and anatomical structures), safety analysis to prevent adverse events during procedures, development of domain-specific large vision-language models, design of intelligent educational platforms, building augmented reality systems that provide intraoperative guidance, and virtual reality systems for immersive surgical simulation and training.
  
 **Embodied Intelligence for Task Autonomy**: It concentrates on creating autonomous robotic systems capable of performing surgical tasks with minimal human intervention and optimal outcomes. The work involves developing surgical robot simulators that provide realistic training and testing environments for AI agents, designing the semantic and depth-aware perception algorithms for automation, advancing policy learning algorithms (i.e. imitation learning and reinforcement learning), and implementing robust frameworks capable of performing specific tasks with high safety and precision.
@@ -28,26 +27,20 @@ Recent focus: 1) **Embodied AI** for surgical robots, 2) **LLM and smart XR** fo
 {% include feature.html image="images/research/robotic.jpg" link="publication" title="Surgical Robotics" text=text className="feature-image" %}
 
 {% capture text %}
-**Embodied AI for Elderly Care Robotics**  
 **Enhancing Spatial Intelligence and Risk Awareness in Vision-Language Model Planning for Elderly Care Robotics**: Current Vision-Language Models (VLMs) fall short in spatial reasoning capabilities and dynamic risk assessment required to navigate unstructured and ever-changing scenarios, such as assisting with mobility in cluttered spaces or retrieving objects in dynamic conditions. This research aims to develop advanced VLM planning frameworks that integrate spatial intelligence and real-time risk awareness. By leveraging multimodal perception and reasoning, we seek to enhance the robot's ability to interpret natural language commands, model spatial layouts, and identify potential risks in dynamic environments. The focus will be on creating a robust, task-aware planning pipeline capable of ensuring safety, efficiency, and adaptability in elderly care scenarios.
 
 **Robust Vision-Language-Action (VLA) Models with Adaptive Force Perception and Control**: This research aims to develop robust Vision-Language-Action (VLA) models that integrate multimodal inputs and adaptive force perception to enable fine-grained interaction with elderly individuals and their environments. The focus is on building systems that can interpret complex commands, perceive subtle force feedback, and adapt their actions accordingly during tasks like assisting with dressing and feeding. By combining vision, language, and force feedback, the robots can perform precise, safe, and context-aware interactions to support both physical and cognitive needs.
 
 {% endcapture %}
-{% include feature.html image="images/research/elderlycare.png" link="publication" title="Embodied AI for Elderly Care" text=text flip=true className="feature-image" %}
+{% include feature.html image="images/research/elderlycare.png" link="publication" title="Embodied AI for Elderly Care Robotics" text=text flip=true className="feature-image" %}
 
 {% capture text %}
-**LLM for Healthcare and Medical Education**  
 **Agentic AI Systems for Healthcare Applications**: This research topic aims to develop autonomous,multi-agent AI systems that integrate clinical and patient data to enable end-to-end automation of healthcare workflows. We aim to pioneer multimodal, multi-agent AI systems to revolutionize clinical intelligence by integrating diverse data streams—including medical imaging, genomic profiles, electronic health records (EHRs), and biomedical literature—into collaborative AI networks. These systems deploy specialized agents (e.g., diagnostic, predictive, and evidence-synthesis agents) that dynamically interact to enhance precision medicine, accelerate disease detection, and generate patient-specific therapeutic insights. The core aim is to overcome data fragmentation and clinical complexity through coordinated AI cognition, ultimately advancing diagnostic accuracy, treatment personalization, and real-time decision support in high-stakes healthcare scenarios.
 
-{% endcapture %}
-{% include feature.html image="images/research/agentic.jpg" link="publication" title="Agentic AI in Healthcare" text=text className="feature-image" %}
-
-{% capture text %}
 **LLMs for Medical Education**: We aim to reform and innovate research, applications, and design to advance the next generation of medical education. Our focus lies in creating a new paradigm for human-computer interaction in medical teaching, enabling medical students worldwide to access higher-quality, more reliable, and effective education and resources. Beyond professional medical training, we are equally committed to promoting public health education. By designing new interactive media and information dissemination methods, we strive to deliver health knowledge and information to people worldwide—particularly in underserved and underdeveloped regions—in a more accessible and impactful way.
 
 {% endcapture %}
-{% include feature.html image="images/research/llm_healthcare.png" link="publication" title="LLMs in Medical Education" text=text flip=true className="feature-image" %}
+{% include feature.html image="images/research/llm_healthcare.png" link="publication" title="LLMs for Medical Education" text=text flip=true className="feature-image" %}
 
 <!-- {% capture text %}
 **Theoretical Analysis**: we focuse on two key areas, federated learning and addressing label imbalance as well as noisy labels. We explore the application of federated learning techniques to train medical image analysis models while preserving data privacy. Additionally, we investigate methods to handle imbalanced label distributions in medical imaging data, improving detection and classification capabilities for underrepresented classes. Furthermore, our research delves into mitigating the impact of noisy labels, enhancing the reliability and performance of medical image analysis models.
