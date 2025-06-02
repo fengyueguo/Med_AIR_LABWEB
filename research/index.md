@@ -24,7 +24,7 @@ Recent focus: 1) **Embodied AI** for surgical robots, 2) **LLM and smart XR** fo
 **Embodied Intelligence for Task Autonomy**: It concentrates on creating autonomous robotic systems capable of performing surgical tasks with minimal human intervention and optimal outcomes. The work involves developing surgical robot simulators that provide realistic training and testing environments for AI agents, designing the semantic and depth-aware perception algorithms for automation, advancing policy learning algorithms (i.e. imitation learning and reinforcement learning), and implementing robust frameworks capable of performing specific tasks with high safety and precision.
 {% endcapture %}
 
-{% include feature.html image="images/research/research2.jpeg" link="publication" title="Surgical Robotics" text=text className="feature-image" %}
+{% include feature.html image="images/research/robotic.jpg" link="publication" title="Surgical Robotics" text=text className="feature-image" %}
 
 {% capture text %}
 **Embodied AI for Elderly Care Robotics**  
@@ -38,6 +38,8 @@ Recent focus: 1) **Embodied AI** for surgical robots, 2) **LLM and smart XR** fo
 {% capture text %}
 **LLM for Healthcare and Medical Education**  
 **Agentic AI Systems for Healthcare Applications**: This research topic aims to develop autonomous, multi-agent AI systems that integrate clinical and patient data to enable end-to-end automation of healthcare workflows. We aim to pioneer multimodal, multi-agent AI systems to revolutionize clinical intelligence by integrating diverse data streams—including medical imaging, genomic profiles, electronic health records (EHRs), and biomedical literature—into collaborative AI networks. These systems deploy specialized agents (e.g., diagnostic, predictive, and evidence-synthesis agents) that dynamically interact to enhance precision medicine, accelerate disease detection, and generate patient-specific therapeutic insights. The core aim is to overcome data fragmentation and clinical complexity through coordinated AI cognition, ultimately advancing diagnostic accuracy, treatment personalization, and real-time decision support in high-stakes healthcare scenarios.  
+
+{% include feature.html image="images/research/agentic.jpg" link="publication" title="Embodied AI for Elderly Care" text=text flip=true className="feature-image" %}
 
 **LLMs for Medical Education**: We aim to reform and innovate research, applications, and design to advance the next generation of medical education. Our focus lies in creating a new paradigm for human-computer interaction in medical teaching, enabling medical students worldwide to access higher-quality, more reliable, and effective education and resources. Beyond professional medical training, we are equally committed to promoting public health education. By designing new interactive media and information dissemination methods, we strive to deliver health knowledge and information to people worldwide—particularly in underserved and underdeveloped regions—in a more accessible and impactful way.
 {% endcapture %}
