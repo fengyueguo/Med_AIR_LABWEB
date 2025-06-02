@@ -40,7 +40,7 @@ Recent focus: 1) **Embodied AI** for surgical robots, 2) **LLM and smart XR** fo
 **LLMs for Medical Education**: We aim to reform and innovate research, applications, and design to advance the next generation of medical education. Our focus lies in creating a new paradigm for human-computer interaction in medical teaching, enabling medical students worldwide to access higher-quality, more reliable, and effective education and resources. Beyond professional medical training, we are equally committed to promoting public health education. By designing new interactive media and information dissemination methods, we strive to deliver health knowledge and information to people worldwide—particularly in underserved and underdeveloped regions—in a more accessible and impactful way.
 
 {% endcapture %}
-{% include feature.html image="images/research/llm_healthcare.png" link="publication" title="LLMs for Medical Education" text=text flip=true className="feature-image" %}
+{% include feature.html image="images/research/llm_healthcare.jpg" link="publication" title="LLMs for Medical Education" text=text flip=true className="feature-image" %}
 
 <!-- {% capture text %}
 **Theoretical Analysis**: we focuse on two key areas, federated learning and addressing label imbalance as well as noisy labels. We explore the application of federated learning techniques to train medical image analysis models while preserving data privacy. Additionally, we investigate methods to handle imbalanced label distributions in medical imaging data, improving detection and classification capabilities for underrepresented classes. Furthermore, our research delves into mitigating the impact of noisy labels, enhancing the reliability and performance of medical image analysis models.
