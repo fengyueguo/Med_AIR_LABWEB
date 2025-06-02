@@ -40,7 +40,7 @@ This research topic aims to develop autonomous, multi-agent AI systems that inte
 
 **Embodied Intelligence for Task Autonomy**: It concentrates on creating autonomous robotic systems capable of performing surgical tasks with minimal human intervention and optimal outcomes. The work involves developing surgical robot simulators that provide realistic training and testing environments for AI agents, designing the semantic and depth-aware perception algorithms for automation, advancing policy learning algorithms (i.e. imitation learning and reinforcement learning), and implementing robust frameworks capable of performing specific tasks with high safety and precision.
 {% endcapture %}
-{% include feature.html image="images/research/robotic.jpg" link="publication" title="Surgical Robotics" text=text className="feature-image" %}
+{% include feature.html image="images/research/robotic.jpg" link="publication" title="Surgical Robotics" text=text flip=true className="feature-image" %}
 
 {% capture text %}
 **Theoretical Analysis**: we focus on two key areas, federated learning and addressing label imbalance as well as noisy labels. We explore the application of federated learning techniques to train medical image analysis models while preserving data privacy. Additionally, we investigate methods to handle imbalanced label distributions in medical imaging data, improving detection and classification capabilities for underrepresented classes. Furthermore, our research delves into mitigating the impact of noisy labels, enhancing the reliability and performance of medical image analysis models.
