@@ -9,7 +9,7 @@ nav:
 
 Our research sits at the interdisciplinary nexus of **medical image analysis**, **machine learning**, and **robotic surgical intelligence**, aiming to develop innovative intelligent systems that advance diagnosis, intervention, and medical education through next-generation healthcare technologies. Our work spans embodied AI for surgical robotics, medical image understanding, robot sensing and planning in dynamic environments, agentic AI systems for clinical decision-making, and LLM-powered smart XR for medical training. Representative contributions include 3D deep learning for high-dimensional image computing, domain adaptation and generalization across heterogeneous medical data, surgical video analysis with efficient spatio-temporal learning, and visual-kinematic perception and automation in surgical robotics.
 
-Recent focus: 1) **Embodied AI** for Elderly Care Robotics, 2) **Surgical Robotics**, 3) **LLMs** for Medical Education, 4) **Agentic AI systems** for healthcare applications.
+Recent focus: 1) **Embodied AI** for Elderly Care Robotics, 2) **Surgical Robotics**, 3) **LLMs** for Medical Education, 4) **Agentic AI systems** for healthcare applications, 5) **Smart XR** for Medical Education and Surgery Assistant.
 {% 
   include figure.html 
   image="images/wordcloud.png"
@@ -45,9 +45,7 @@ This research topic aims to develop autonomous,multi-agent AI systems that integ
 {% include feature.html image="images/research/agentic.jpg" link="publication" title="Agentic AI Systems for Healthcare Applications" flip=true text=text className="feature-image" %}
 
 {% capture text %}
-We develop practical XR (AR/VR) tools to support medical education and surgical workflows. Our work focuses on improving learning through interactive simulations and visualizations, and assisting surgeons with spatial guidance and preoperative planning.
-
-By combining medical imaging, human-computer interaction, and system design, we aim to create solutions that are accessible, reliable, and clinically useful—enhancing both training quality and surgical outcomes in real-world settings.
+This research topic focuses on developing intelligent XR (AR/VR) systems to enhance medical education and surgical assistance through immersive simulation and spatial computing. We aim to advance clinical training and intraoperative support by integrating patient-specific data, 3D anatomical modeling, and interactive visualization into adaptive XR environments. These systems combine real-time imaging, procedural guidance, and intuitive user interaction to improve anatomical understanding, skill acquisition, and surgical precision. The core goal is to bridge the gap between learning and practice by delivering context-aware, task-specific XR tools that elevate training quality, reduce surgical risk, and support decision-making in complex clinical settings.
 {% endcapture %}
 {% include feature.html image="images/research/smartXR.png" link="publication" title="Smart XR for Medical Education and Surgery Assistant" text=text className="feature-image" %}
 
