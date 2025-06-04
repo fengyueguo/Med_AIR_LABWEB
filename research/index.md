@@ -44,4 +44,11 @@ This research topic aims to develop autonomous,multi-agent AI systems that integ
 {% endcapture %}
 {% include feature.html image="images/research/agentic.jpg" link="publication" title="Agentic AI Systems for Healthcare Applications" flip=true text=text className="feature-image" %}
 
+{% capture text %}
+We develop practical XR (AR/VR) tools to support medical education and surgical workflows. Our work focuses on improving learning through interactive simulations and visualizations, and assisting surgeons with spatial guidance and preoperative planning.
+
+By combining medical imaging, human-computer interaction, and system design, we aim to create solutions that are accessible, reliable, and clinically useful—enhancing both training quality and surgical outcomes in real-world settings.
+{% endcapture %}
+{% include feature.html image="images/research/smartXR.png" link="publication" title="Smart XR for Medical Education and Surgery Assistant" text=text className="feature-image" %}
+
 
