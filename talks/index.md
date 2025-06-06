@@ -9,4 +9,4 @@ nav:
 <!-- Collection of research and clinical support tools that extend our research in computational oncology. -->
 
 {% include activities.html %}
-{%include talks.html%}
+<!-- {%include talks.html%}-->
