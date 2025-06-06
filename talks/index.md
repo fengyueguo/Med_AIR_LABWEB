@@ -1,7 +1,11 @@
 ---
-title: Activities
+title: Talks
 nav:
-  order: 6
-  tooltip: Activities
+  order: 4
+  tooltip: Invited talks
 ---
-{% include activities.html %}
+
+
+<!-- Collection of research and clinical support tools that extend our research in computational oncology. -->
+
+{%include talks.html%}
