@@ -41,11 +41,31 @@
   max-width: 800px;
 }
 
+.content {
+  display: flex;
+  align-items: center;
+  gap: var(--content-gap);
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.content.has-image {
+  flex-direction: row;
+  align-items: center;
+}
+
+.content.has-video {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .video-inline-block {
-  flex-basis: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .timeline-entry iframe,
