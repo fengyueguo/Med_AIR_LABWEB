@@ -136,10 +136,11 @@
   max-width: 800px;
 }
 
-.video-block {
+.video-inline-block {
+  flex-basis: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .timeline-entry iframe,
