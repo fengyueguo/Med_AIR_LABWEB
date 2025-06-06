@@ -95,13 +95,6 @@
 
   
     <link
-      href="/Med_AIR_LABWEB/_styles/activities.css"
-      rel="stylesheet"
-    />
-  
-
-  
-    <link
       href="/Med_AIR_LABWEB/_styles/alert.css"
       rel="stylesheet"
     />
@@ -291,6 +284,13 @@
 
   
     <link
+      href="/Med_AIR_LABWEB/_styles/lab_gallery.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
       href="/Med_AIR_LABWEB/_styles/link.css"
       rel="stylesheet"
     />
@@ -406,8 +406,6 @@
       href="/Med_AIR_LABWEB/_styles/util.css"
       rel="stylesheet"
     />
-  
-
   
 
   
@@ -572,10 +570,10 @@
     
       
         <a
-          href="/Med_AIR_LABWEB/activities/"
-          data-tooltip="Activities"
+          href="/Med_AIR_LABWEB/lab_gallery/"
+          data-tooltip="Gallery"
         >
-          Activities
+          Gallery
         </a>
       
     

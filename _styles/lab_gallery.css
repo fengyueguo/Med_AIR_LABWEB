@@ -1,4 +1,4 @@
---- --- body {
+body {
   font-family: Arial, sans-serif;
   margin: 40px;
   background-color: #f9f9f9;
@@ -45,10 +45,4 @@ h2 {
   vertical-align: middle;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=lab_gallery.css.map */
