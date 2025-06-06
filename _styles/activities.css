@@ -41,6 +41,17 @@
   max-width: 800px;
 }
 
+.video-block {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.timeline-entry iframe,
+.timeline-entry video {
+  display: block;
+  margin: auto;
+}
+
 .dot {
   position: absolute;
   left: -46px;
