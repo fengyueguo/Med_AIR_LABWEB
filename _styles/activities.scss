@@ -139,7 +139,6 @@
 .content {
   display: flex;
   align-items: center;
-  gap: var(--content-gap);
   background: #fff;
   padding: 15px 20px;
   border-radius: 5px;
@@ -160,7 +159,6 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 10px;
 }
 
 
