@@ -32,7 +32,11 @@
 
 .gallery-item.multi {
   grid-column: span 2;
-  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 480px;
+  margin: 0 auto;
 }
 
 .gallery-item.multi .multi-images {
