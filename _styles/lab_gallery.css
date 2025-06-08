@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -24,14 +25,15 @@
 
 .gallery-item.multi .multi-images {
   display: flex;
-  gap: 6px;
-  align-items: flex-start;
+  gap: 10px;
+  align-items: flex-start; /* align top edges */
   justify-content: center;
   margin-bottom: 8px;
 }
 
+/* 统一设置 max-height，按比例缩放图片 */
 .gallery-item.multi .multi-images img {
-  max-height: 220px;
+  max-height: 220px; /* 控制两图对齐的参考高度，可根据实际需要调整 */
   height: auto;
   width: auto;
   object-fit: contain;
@@ -39,6 +41,7 @@
   display: block;
 }
 
+/* Fixed-size container for each image */
 .gallery-item.multi .multi-images .img-box {
   width: 100%;
   max-width: 48%;
@@ -49,7 +52,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 1px;
 }
 
 /*# sourceMappingURL=lab_gallery.css.map */
