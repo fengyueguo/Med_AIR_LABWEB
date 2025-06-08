@@ -20,7 +20,6 @@
 
 .gallery-item img {
   width: 285px;
-  height: auto;
   object-fit: contain;
   border-radius: 8px;
   display: block;
