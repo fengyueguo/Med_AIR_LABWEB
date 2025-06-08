@@ -1,6 +1,6 @@
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 20px;
 }
 
@@ -25,11 +25,23 @@
   color: #555;
 }
 
+/* Multi-image card styling */
+.gallery-item.multi {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 2; /* Try to occupy more space for layout */
+}
+
+.gallery-item.multi .multi-images {
+  display: flex;
+  justify-content: space-between;
+  gap: 4%;
+  margin-bottom: 8px;
+}
+
 .gallery-item.multi img {
   width: 48%;
-  margin: 1%;
-  display: inline-block;
-  vertical-align: middle;
+  margin: 0;
 }
 
 /*# sourceMappingURL=lab_gallery.css.map */
