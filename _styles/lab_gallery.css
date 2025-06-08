@@ -1,7 +1,10 @@
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .gallery-item {
@@ -11,19 +14,22 @@
   overflow: hidden;
   text-align: center;
   padding: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 260px;
 }
 
-.gallery-item .caption {
-  font-size: 0.9em;
-  color: #555;
+.gallery-item.multi {
+  max-width: 520px;
+  width: 100%;
 }
 
 .gallery-item.multi .multi-images {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  gap: 6px;
+  gap: 8px;
   margin-bottom: 8px;
+  align-items: flex-start;
 }
 
 .gallery-item.multi .multi-images img {
@@ -31,7 +37,6 @@
   height: auto;
   width: auto;
   object-fit: contain;
-  display: block;
   border-radius: 4px;
 }
 
