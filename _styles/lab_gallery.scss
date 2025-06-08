@@ -1,67 +1,6 @@
 ---
 ---
 
-// .gallery {
-//   display: grid;
-//   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-//   gap: 20px;
-// }
-
-// .gallery-item {
-//   background: #fff;
-//   border-radius: 8px;
-//   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-//   overflow: hidden;
-//   text-align: center;
-//   padding: 10px;
-// }
-
-// .gallery-item .caption {
-//   font-size: 0.9em;
-//   color: #555;
-// }
-
-// .gallery {
-//   display: grid;
-//   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-//   gap: 20px;
-// }
-
-// .gallery-item {
-//   background: #fff;
-//   border-radius: 8px;
-//   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-//   overflow: hidden;
-//   text-align: center;
-//   padding: 10px;
-// }
-
-// .gallery-item .caption {
-//   font-size: 0.9em;
-//   color: #555;
-// }
-
-// .gallery-item.multi {
-//   grid-column: span 2;
-// }
-
-// .gallery-item.multi .multi-images {
-//   display: flex;
-//   gap: 6px;
-//   align-items: flex-start;
-//   justify-content: center;
-//   margin-bottom: 8px;
-//   margin: 0 1px;
-// }
-
-// .gallery-item.multi .multi-images img {
-//   max-height: 220px;
-//   height: auto;
-//   width: auto;
-//   object-fit: contain;
-//   border-radius: 4px;
-//   display: block;
-// }
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -96,7 +35,11 @@
 
 .gallery-item.multi {
   grid-column: span 2;
-  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 480px;
+  margin: 0 auto;
 }
 
 .gallery-item.multi .multi-images {
