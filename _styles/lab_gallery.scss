@@ -63,7 +63,6 @@
   justify-content: flex-start;
 }
 
-/* 单图样式 */
 .gallery-item {
   flex: 0 0 auto;
   width: 285px;
@@ -76,14 +75,12 @@
   box-sizing: border-box;
 }
 
-/* 单图图像 */
 .gallery-item img {
   width: 285px;
   height: auto;
   object-fit: contain;
   border-radius: 8px;
   display: block;
-  margin: 0 auto;
 }
 
 /* Caption 样式 */
@@ -93,10 +90,9 @@
   margin-top: 8px;
 }
 
-/* 双图容器样式 */
 .gallery-item.multi {
   flex: 0 0 auto;
-  width: 578px; /* 285px * 2 + 8px gap */
+  width: fit-content;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -106,7 +102,6 @@
   box-sizing: border-box;
 }
 
-/* 多图排列为横排并排 */
 .gallery-item.multi .multi-images {
   display: flex;
   gap: 8px;
@@ -114,7 +109,6 @@
   margin-bottom: 8px;
 }
 
-/* 主图样式 */
 .gallery-item.multi .multi-images .main-img {
   width: 285px;
   height: auto;
@@ -122,9 +116,7 @@
   border-radius: 8px;
 }
 
-/* 副图（poster）样式 */
 .gallery-item.multi .multi-images .poster-img {
-  width: 285px;
   height: 210px;
   object-fit: contain;
   border-radius: 8px;
