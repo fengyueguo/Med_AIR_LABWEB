@@ -21,24 +21,19 @@
   color: #555;
 }
 
-.gallery-item.multi {
-  grid-column: span 2;
-}
-
 .gallery-item.multi .multi-images {
   display: flex;
-  gap: 10px;
-  align-items: flex-start; /* align top edges */
   justify-content: center;
+  align-items: flex-start;
+  gap: 6px;
   margin-bottom: 8px;
 }
 
 .gallery-item.multi .multi-images img {
-  max-height: 220px; /* 控制两图对齐的参考高度，可根据实际需要调整 */
+  max-height: 200px;
   height: auto;
   width: auto;
   object-fit: contain;
-  border-radius: 4px;
   display: block;
+  border-radius: 4px;
 }
-
