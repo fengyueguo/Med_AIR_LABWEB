@@ -64,6 +64,8 @@
 }
 
 .gallery-item {
+  flex: 1 1 240px;
+  max-width: 350px;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -74,7 +76,8 @@
 }
 
 .gallery-item img {
-  width: 300px;
+  width: 100%;
+  max-width: 100%;
   height: auto;
   object-fit: contain;
   border-radius: 8px;
@@ -88,34 +91,23 @@
   margin-top: 8px;
 }
 
-/* 双图容器 */
 .gallery-item.multi {
-  padding: 10px;
+  max-width: 480px;
+  flex: 1 1 480px;
 }
 
 .gallery-item.multi .multi-images {
   display: flex;
   gap: 8px;
   justify-content: center;
-  align-items: stretch;
+  flex-wrap: wrap;
   margin-bottom: 8px;
 }
 
-/* 第一张图固定宽高，第二张根据第一张等高自动缩放宽度 */
 .gallery-item.multi .multi-images img {
+  max-height: 220px;
+  width: auto;
+  max-width: 48%;
   object-fit: contain;
   border-radius: 8px;
-  display: block;
-  max-height: 100%;
-}
-
-.gallery-item.multi .multi-images img:first-child {
-  width: 300px;
-  height: auto;
-}
-
-.gallery-item.multi .multi-images img:last-child {
-  height: auto;
-  width: auto;
-  max-height: 100%;
 }
