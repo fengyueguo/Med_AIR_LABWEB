@@ -81,40 +81,38 @@
   margin-top: 8px;
 }
 
-/* 单图图片，已定义 */
-.gallery-item img {
-  width: 100%;
-  max-width: 350px; /* 单图最大宽度 */
-  height: auto;
-  object-fit: contain;
-  border-radius: 8px;
-}
-
-/* 多图容器最大宽度与单图一致 */
 .gallery-item.multi {
-  max-width: 350px;
-  flex: 1 1 350px;
+  flex: 0 0 auto;
+  /* 宽度 = 285px * 2 + 8px gap = 578px */
+  width: calc(285px * 2 + 8px);
+  box-sizing: border-box;
 }
 
-/* 第一张图样式，强制与单图一致 */
+/* 保持多图容器为横向布局 */
+.gallery-item.multi .multi-images {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+
+/* 所有单图和主图：固定宽度，自动高度 */
+.gallery-item img,
 .gallery-item.multi .multi-images .main-img {
-  width: 100%;
-  max-width: 350px;
+  width: 285px;
   height: auto;
   object-fit: contain;
   border-radius: 8px;
   display: block;
-  margin: 0 auto;
 }
 
-/* 第二张图（海报图）可缩小 */
+/* 副图 poster 图：固定宽和高 */
 .gallery-item.multi .multi-images .poster-img {
-  width: 100%;
-  max-width: 200px; /* 或者你喜欢的宽度 */
-  height: auto;
+  width: 285px;
+  height: 210px;
   object-fit: contain;
   border-radius: 8px;
   display: block;
-  margin: 8px auto 0 auto;
 }
+
 
