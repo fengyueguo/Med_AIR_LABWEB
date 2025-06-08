@@ -20,6 +20,7 @@
   object-fit: contain;
   border-radius: 8px;
   display: block;
+  width: 285px;
 }
 
 .gallery-item .caption {
@@ -55,7 +56,6 @@
 }
 
 .gallery-item.multi .multi-images .poster-img {
-  width: auto;
   height: 210px;
   object-fit: contain;
   border-radius: 8px;
