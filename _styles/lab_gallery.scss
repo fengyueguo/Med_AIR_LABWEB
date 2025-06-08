@@ -76,13 +76,11 @@
 }
 
 .gallery-item img {
-  width: 285px;
   object-fit: contain;
   border-radius: 8px;
   display: block;
 }
 
-/* Caption 样式 */
 .gallery-item .caption {
   font-size: 0.9em;
   color: #555;
