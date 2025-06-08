@@ -47,15 +47,15 @@
 
 .gallery-item.multi .multi-images {
   display: flex;
-  gap: 10px;
-  align-items: flex-start; /* align top edges */
+  gap: 6px;
+  align-items: flex-start;
   justify-content: center;
   margin-bottom: 8px;
+  margin: 0 1px;
 }
 
-/* 统一设置 max-height，按比例缩放图片 */
 .gallery-item.multi .multi-images img {
-  max-height: 220px; /* 控制两图对齐的参考高度，可根据实际需要调整 */
+  max-height: 220px;
   height: auto;
   width: auto;
   object-fit: contain;
