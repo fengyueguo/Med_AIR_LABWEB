@@ -18,9 +18,31 @@
   box-sizing: border-box;
 }
 
+.gallery-item .caption {
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 8px;
+}
+
+/* 单图图片，已定义 */
 .gallery-item img {
   width: 100%;
-  max-width: 100%;
+  max-width: 350px; /* 单图最大宽度 */
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* 多图容器最大宽度与单图一致 */
+.gallery-item.multi {
+  max-width: 350px;
+  flex: 1 1 350px;
+}
+
+/* 第一张图样式，强制与单图一致 */
+.gallery-item.multi .multi-images .main-img {
+  width: 100%;
+  max-width: 350px;
   height: auto;
   object-fit: contain;
   border-radius: 8px;
@@ -28,40 +50,15 @@
   margin: 0 auto;
 }
 
-.gallery-item .caption {
-  font-size: 0.9em;
-  color: #555;
-  margin-top: 8px;
-}
-
-.gallery-item.multi {
-  flex: 0 0 auto; /* 不强制伸缩，宽度由内容决定 */
-  width: auto; /* 宽度由内部图片决定 */
-  max-width: 100%; /* 防止超出容器 */
-}
-
-.gallery-item.multi .multi-images {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 8px;
-}
-
-.gallery-item.multi .multi-images img {
-  width: auto;
-  max-width: 48%;
-  height: auto;
-  object-fit: contain;
-  border-radius: 8px;
-}
-
-.gallery-item.multi .multi-images .main-img {
+/* 第二张图（海报图）可缩小 */
+.gallery-item.multi .multi-images .poster-img {
   width: 100%;
-  max-width: 100%;
+  max-width: 200px; /* 或者你喜欢的宽度 */
   height: auto;
   object-fit: contain;
   border-radius: 8px;
+  display: block;
+  margin: 8px auto 0 auto;
 }
 
 /*# sourceMappingURL=lab_gallery.css.map */
