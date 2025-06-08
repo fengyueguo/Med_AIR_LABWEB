@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -9,11 +10,10 @@
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
   padding: 10px;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .gallery-item img {
@@ -22,39 +22,45 @@
   object-fit: contain;
   border-radius: 8px;
   display: block;
+  margin: 0 auto;
 }
 
 .gallery-item .caption {
   font-size: 0.9em;
   color: #555;
   margin-top: 8px;
-  text-align: center;
 }
 
-/* Double image layout */
+/* 双图容器 */
+.gallery-item.multi {
+  padding: 10px;
+}
+
 .gallery-item.multi .multi-images {
   display: flex;
-  gap: 10px;
-  align-items: stretch; /* key: makes both images equal height */
+  gap: 8px;
   justify-content: center;
+  align-items: stretch;
+  margin-bottom: 8px;
 }
 
+/* 第一张图固定宽高，第二张根据第一张等高自动缩放宽度 */
 .gallery-item.multi .multi-images img {
-  height: 100%;
   object-fit: contain;
   border-radius: 8px;
+  display: block;
+  max-height: 100%;
 }
 
-/* Ensure both double images are same height based on the first one */
-.gallery-item.multi .multi-images .main-img {
+.gallery-item.multi .multi-images img:first-child {
   width: 300px;
   height: auto;
 }
 
-.gallery-item.multi .multi-images .poster-img {
+.gallery-item.multi .multi-images img:last-child {
   height: auto;
   width: auto;
-  max-height: 100%; /* will match main-img height */
+  max-height: 100%;
 }
 
 /*# sourceMappingURL=lab_gallery.css.map */
