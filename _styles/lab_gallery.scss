@@ -92,9 +92,11 @@
 }
 
 .gallery-item.multi {
-  max-width: 480px;
-  flex: 1 1 480px;
+  flex: 0 0 auto; /* 不强制伸缩，宽度由内容决定 */
+  width: auto;    /* 宽度由内部图片决定 */
+  max-width: 100%; /* 防止超出容器 */
 }
+
 
 .gallery-item.multi .multi-images {
   display: flex;
@@ -104,13 +106,15 @@
   margin-bottom: 8px;
 }
 
+
 .gallery-item.multi .multi-images img {
-  max-height: 220px;
   width: auto;
   max-width: 48%;
+  height: auto;
   object-fit: contain;
   border-radius: 8px;
 }
+
 
 .gallery-item.multi .multi-images .main-img {
   width: 100%;
