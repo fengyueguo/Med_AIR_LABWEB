@@ -63,9 +63,10 @@
   justify-content: flex-start;
 }
 
+/* 单图样式 */
 .gallery-item {
-  flex: 1 1 240px;
-  max-width: 350px;
+  flex: 0 0 auto;
+  width: 285px;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -75,44 +76,58 @@
   box-sizing: border-box;
 }
 
+/* 单图图像 */
+.gallery-item img {
+  width: 285px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Caption 样式 */
 .gallery-item .caption {
   font-size: 0.9em;
   color: #555;
   margin-top: 8px;
 }
 
+/* 双图容器样式 */
 .gallery-item.multi {
   flex: 0 0 auto;
-  /* 宽度 = 285px * 2 + 8px gap = 578px */
-  width: calc(285px * 2 + 8px);
+  width: 578px; /* 285px * 2 + 8px gap */
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: center;
+  padding: 10px;
   box-sizing: border-box;
 }
 
-/* 保持多图容器为横向布局 */
+/* 多图排列为横排并排 */
 .gallery-item.multi .multi-images {
   display: flex;
   gap: 8px;
   justify-content: center;
+  margin-bottom: 8px;
 }
 
-
-/* 所有单图和主图：固定宽度，自动高度 */
-.gallery-item img,
+/* 主图样式 */
 .gallery-item.multi .multi-images .main-img {
   width: 285px;
   height: auto;
   object-fit: contain;
   border-radius: 8px;
-  display: block;
 }
 
-/* 副图 poster 图：固定宽和高 */
+/* 副图（poster）样式 */
 .gallery-item.multi .multi-images .poster-img {
   width: 285px;
   height: 210px;
   object-fit: contain;
   border-radius: 8px;
-  display: block;
 }
 
 
