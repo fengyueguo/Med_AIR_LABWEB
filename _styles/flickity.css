@@ -610,16 +610,16 @@
   
   
   
-<div class="main-zoom-wrapper">
-   <section
-    class="background"
-    data-size="50px"
-    
-    
-      style="--image: url('/Med_AIR_LABWEB/hsla(0,%200%25,%20100%25,%200.75)')"
-    
-  >
-    .flickity-enabled {
+ <section
+  class="background"
+  data-size="50px"
+  
+  
+    style="--image: url('/Med_AIR_LABWEB/hsla(0,%200%25,%20100%25,%200.75)')"
+  
+>
+   <div class="main-zoom-wrapper">
+   .flickity-enabled {
     position: relative;
   }
   
@@ -844,8 +844,8 @@
     height: 50px;
     width: 80px;
   }
-  </section>
-</div>
+   </div>
+</section>
 
 </main>
     
