@@ -109,21 +109,29 @@
   flex: 1;
 }
 
-.content img {
-  width: var(--content-img-width);
+.content img,
+.timeline-entry video,
+.timeline-entry iframe {
   max-width: 100%;
   height: auto;
-  flex-shrink: 0;
+  width: 100%;
   object-fit: contain;
 }
 
 @media (max-width: 700px) {
   .content {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
   }
-  .content img {
-    margin-top: 10px;
+  .content img,
+  .timeline-entry video,
+  .timeline-entry iframe {
+    width: 100%;
+    height: auto;
+  }
+  .video-inline-block {
+    width: 100%;
+    display: block;
   }
 }
 
