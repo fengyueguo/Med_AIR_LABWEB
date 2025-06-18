@@ -7,9 +7,16 @@ main {
   flex-grow: 1;
 }
 
-.main-zoom-wrapper {
-  width: 1600px;
-  max-width: 100%;
-  transform-origin: top center;
-  margin: 0 auto;
+.main-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
+
+.main-zoom-wrapper {
+  width: 1600px; 
+  transform-origin: top center;
+}
+
