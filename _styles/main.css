@@ -4,17 +4,4 @@ main {
   flex-grow: 1;
 }
 
-.main-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  overflow-x: hidden;
-  min-height: 100vh;
-}
-
-.main-zoom-wrapper {
-  width: 1600px;
-  transform-origin: top center;
-}
-
 /*# sourceMappingURL=main.css.map */
