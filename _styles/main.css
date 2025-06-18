@@ -12,4 +12,21 @@ main {
   box-sizing: border-box;
 }
 
+@media (max-width: 768px) {
+  .grid {
+    display: block;
+  }
+  .col-6 {
+    width: 100%;
+  }
+  header, footer {
+    padding: 1rem;
+    text-align: center;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */
