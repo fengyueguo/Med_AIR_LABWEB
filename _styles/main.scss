@@ -6,31 +6,3 @@ main {
   flex-direction: column;
   flex-grow: 1;
 }
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  box-sizing: border-box;
-}
-
-@media (max-width: 768px) {
-  .grid {
-    display: block;
-  }
-
-  .col-6 {
-    width: 100%;
-  }
-
-  header, footer {
-    padding: 1rem;
-    text-align: center;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-}
