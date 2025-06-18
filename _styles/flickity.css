@@ -618,9 +618,7 @@
     style="--image: url('/Med_AIR_LABWEB/hsla(0,%200%25,%20100%25,%200.75)')"
   
 >
-   <div class="main-wrapper">
-    <div class="main-zoom-wrapper">
-      .flickity-enabled {
+  .flickity-enabled {
     position: relative;
   }
   
@@ -845,8 +843,6 @@
     height: 50px;
     width: 80px;
   }
-    </div>
-  </div>
 </section>
 
 </main>
