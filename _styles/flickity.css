@@ -724,9 +724,6 @@
     /* user customized */
   * {
     box-sizing: border-box;
-  }
-
-  #container {
     max-width: 100%;
   }
   
