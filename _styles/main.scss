@@ -8,6 +8,8 @@ main {
 }
 
 .main-zoom-wrapper {
-  width: 1280px;
-  transform-origin: top left;
+  width: 1600px;
+  max-width: 100%;
+  transform-origin: top center;
+  margin: 0 auto;
 }
