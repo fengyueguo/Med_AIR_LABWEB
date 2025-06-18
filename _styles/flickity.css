@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" data-dark="false">
   <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--
   put your analytics (e.g. Google Analytics) tracking code here
 -->
@@ -543,19 +544,19 @@
     
       
         <a
-          href="/Med_AIR_LABWEB/publication/"
-          data-tooltip="Published works"
+          href="/Med_AIR_LABWEB/talks/"
+          data-tooltip="Invited talks"
         >
-          Publication
+          Talks
         </a>
       
     
       
         <a
-          href="/Med_AIR_LABWEB/talks/"
-          data-tooltip="Invited talks"
+          href="/Med_AIR_LABWEB/publication/"
+          data-tooltip="Published works"
         >
-          Talks
+          Publication
         </a>
       
     
