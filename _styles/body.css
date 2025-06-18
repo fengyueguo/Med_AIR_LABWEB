@@ -8,9 +8,6 @@ body {
   font-family: var(--body);
   font-weight: var(--regular);
   font-size: 15px;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
 }
 
 .text {
@@ -19,15 +16,6 @@ body {
   margin-bottom: 0;
   padding-top: 0;
   padding-bottom: 0;
-}
-
-@media (max-width: 768px) {
-  .scalable {
-    transform: scale(0.75);
-    transform-origin: top left;
-    width: 133.33%;
-    overflow-x: hidden;
-  }
 }
 
 /*# sourceMappingURL=body.css.map */
