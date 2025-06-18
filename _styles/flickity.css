@@ -108,9 +108,11 @@
     /* user customized */
   * {
     box-sizing: border-box;
-    max-width: 100%;
   }
 
+  #container {
+    max-width: 100%;
+  }
   
   .carousel {
     background: transparent;
