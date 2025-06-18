@@ -11,6 +11,10 @@ body {
   font-family: var(--body);
   font-weight: var(--regular);
   font-size: 15px;
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .text {
@@ -21,8 +25,12 @@ body {
   padding-bottom: 0;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+@media (max-width: 768px) {
+  .scalable {
+    transform: scale(0.75);
+    transform-origin: top left;
+    width: 133.33%;
+    overflow-x: hidden;
+  }
 }
+
