@@ -6,3 +6,8 @@ main {
   flex-direction: column;
   flex-grow: 1;
 }
+
+.main-zoom-wrapper {
+  width: 1280px;
+  transform-origin: top left;
+}
