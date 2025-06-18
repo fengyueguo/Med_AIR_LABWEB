@@ -75,6 +75,20 @@ color: rgb(34, 110, 147); */
     opacity: 1;
 }
 
+@media screen and (max-width: 768px) {
+  .carousel-caption {
+    position: relative;
+    width: 100%;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    text-align: center;
+  }
+}
+
+
 .carousel-img {
     display: flex;
     height: 400px;
