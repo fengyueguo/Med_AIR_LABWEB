@@ -608,8 +608,8 @@
   
   
   
-
-  <section
+<div class="main-zoom-wrapper">
+   <section
     class="background"
     data-size="50px"
     
@@ -843,6 +843,7 @@
     width: 80px;
   }
   </section>
+</div>
 
 </main>
     
