@@ -23,12 +23,24 @@
   border: rgba(4, 43, 64, 0.5) 0.5rem solid;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 768px) {
+  .professor-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .professor-content {
+    margin-right: 0;
+    width: 100%;
+  }
+  .professor-bio {
+    width: 90%;
+    margin-right: 0;
+    text-align: justify;
+  }
   .professor img {
-    width: 10rem;
-    height: 10rem;
-    border-radius: 5rem;
-    border: var(--primary) 0.3rem solid;
+    margin: 0 auto 1rem auto;
+    display: block;
   }
 }
 .student-container {
