@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .media-body {
   text-align: left;
 }
@@ -187,6 +188,48 @@
 
 .book-chapters .chapter {
   display: flex;
+}
+
+.carousel-combined {
+  display: flex;
+  flex-direction: row;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+.carousel-img {
+  flex: 3;
+}
+
+.carousel-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.carousel-caption-box {
+  flex: 2;
+  background-color: var(--msk-navy, #002d5c); /* 可换为你自己的颜色 */
+  color: white;
+  padding: 1.2rem;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .carousel-combined {
+    flex-direction: column;
+  }
+  .carousel-caption-box {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=publication.css.map */
