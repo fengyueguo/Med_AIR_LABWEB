@@ -1,11 +1,15 @@
 {
   function applyMainZoom() {
-    const baseWidth = 1600;
+    const baseWidth = 1280;
     const wrapper = document.querySelector('.main-zoom-wrapper');
-    if (!wrapper) return;
+    const parent = wrapper.parentElement;
+    const parentWidth = parent.clientWidth;
 
-    const parentWidth = wrapper.parentElement.clientWidth;
-    const scale = Math.min(parentWidth / baseWidth, 1); // 不放大
+    let scale = parentWidth / baseWidth;
+
+    // 设置缩放比例上下限，避免跳变或太小
+    scale = Math.min(Math.max(scale, 0.8), 1); // 缩小下限 0.8，放大上限 1
+
     wrapper.style.transform = `scale(${scale})`;
   }
 
