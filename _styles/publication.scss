@@ -14,13 +14,13 @@
     color: white;
 }
 
-.carousel-item {
-    position: relative;
-}
+// .carousel-item {
+//     position: relative;
+// }
 
-.carousel-img {
-    position: relative;
-}
+// .carousel-img {
+//     position: relative;
+// }
 
 #portrait {
     /* color: #1367a7;
@@ -57,29 +57,29 @@ color: rgb(34, 110, 147); */
     right: 0px;
 }
 
-.carousel-caption {
-    position: absolute;
-    z-index: 1;
-    text-align: center;
-    display: flex;
-    padding-top: 80px;
-    padding-bottom: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-    height: 100%;
-    width: 20%;
-    top: 0;
-    left:80%;
-    bottom: auto;
-    background-color: var(--msk-navy);
-    opacity: 1;
-}
+// .carousel-caption {
+//     position: absolute;
+//     z-index: 1;
+//     text-align: center;
+//     display: flex;
+//     padding-top: 80px;
+//     padding-bottom: auto;
+//     padding-left: 20px;
+//     padding-right: 20px;
+//     height: 100%;
+//     width: 20%;
+//     top: 0;
+//     left:80%;
+//     bottom: auto;
+//     background-color: var(--msk-navy);
+//     opacity: 1;
+// }
 
-.carousel-img {
-    display: flex;
-    height: 400px;
-    width: 80%;
-}
+// .carousel-img {
+//     display: flex;
+//     height: 400px;
+//     width: 80%;
+// }
 
 .carousel-control-prev:hover
 {
