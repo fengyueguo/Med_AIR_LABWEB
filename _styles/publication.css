@@ -189,21 +189,4 @@
   display: flex;
 }
 
-@media (max-width: 768px) {
-  .publication.media {
-    flex-direction: column;
-    align-items: center;
-  }
-  .papericon {
-    margin: 0 auto 10px auto;
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-  }
-  .media-body {
-    padding-left: 0;
-    text-align: center;
-  }
-}
-
 /*# sourceMappingURL=publication.css.map */
