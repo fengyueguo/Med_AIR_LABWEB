@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .talk_content {
   text-align: left;
 }
@@ -153,6 +154,63 @@
   .content .text {
     flex: unset;
     margin-top: 10px;
+  }
+}
+/* 控制时间轴线条在手机端的宽度 */
+@media (max-width: 768px) {
+  .timeline {
+    padding: 0 10px; /* 缩小左右边距 */
+  }
+  /* 时间轴容器宽度和位置调整 */
+  .timeline::before {
+    left: 50%; /* 时间线居中 */
+    width: 2px; /* 缩小时间线宽度 */
+  }
+  .timeline-year {
+    font-size: 1.2em; /* 减小年份字体大小 */
+    font-weight: bold;
+    margin: 20px 0 10px; /* 减少时间年和时间段之间的间距 */
+    color: #2c3e50;
+    text-align: center; /* 中心对齐 */
+  }
+  .timeline-entry {
+    position: relative;
+    margin-bottom: var(--timeline-entry-gap);
+    margin-left: 0; /* 调整时间块的间距 */
+    max-width: 100%; /* 限制最大宽度为100% */
+  }
+  .dot {
+    left: 50%; /* 圆点居中 */
+    transform: translateX(-50%); /* 确保圆点在时间线正中 */
+  }
+  /* 调整时间和内容的排列方式 */
+  .date {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 5px;
+    text-align: center; /* 居中时间文字 */
+  }
+  /* 调整文字块和图片的排列 */
+  .content {
+    display: flex;
+    flex-direction: column; /* 在手机端图文竖直排列 */
+    align-items: center; /* 内容居中 */
+    gap: 15px;
+  }
+  /* 控制图片的大小和对齐 */
+  .content.has-image img {
+    width: 80%; /* 图片占宽度80% */
+    max-width: 250px; /* 图片最大宽度为250px */
+    margin: 10px 0;
+    align-self: center; /* 确保图片居中 */
+  }
+  .content.has-video img {
+    width: 100%; /* 视频图片占满宽度 */
+    max-width: 300px; /* 视频缩略图最大宽度 */
+  }
+  .text {
+    flex: unset;
+    text-align: center; /* 文字居中 */
   }
 }
 
