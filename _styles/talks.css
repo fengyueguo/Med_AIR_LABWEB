@@ -143,7 +143,7 @@
 @media (max-width: 768px) {
   .content.has-image {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* 让内容左对齐 */
   }
   .content.has-image img {
     width: 100%;
@@ -155,6 +155,7 @@
   .content .text {
     flex: unset;
     margin-top: 10px;
+    text-align: left; /* 让文字左对齐 */
   }
   .timeline {
     padding: 0 10px;
@@ -185,13 +186,13 @@
     font-size: 0.9em;
     color: #888;
     margin: 0 0 5px 25px;
-    text-align: left; /* 居中时间文字 */
+    text-align: left; /* 居左对齐时间文字 */
   }
   /* 调整文字块和图片的排列 */
   .content {
     display: flex;
     flex-direction: column; /* 在手机端图文竖直排列 */
-    align-items: center; /* 内容居中 */
+    align-items: flex-start; /* 文字和内容左对齐 */
     gap: 15px;
   }
   /* 控制图片的大小和对齐 */
@@ -207,7 +208,7 @@
   }
   .text {
     flex: unset;
-    text-align: center; /* 文字居中 */
+    text-align: left; /* 文字左对齐 */
   }
 }
 
