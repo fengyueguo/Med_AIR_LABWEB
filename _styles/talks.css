@@ -155,15 +155,13 @@
     flex: unset;
     margin-top: 10px;
   }
-}
-/* 控制时间轴线条在手机端的宽度 */
-@media (max-width: 768px) {
+  /* 控制时间轴线条在手机端的宽度 */
   .timeline {
     padding: 0 10px; /* 缩小左右边距 */
   }
   /* 时间轴容器宽度和位置调整 */
   .timeline::before {
-    left: 50%; /* 时间线居中 */
+    left: 20%; /* 时间线左移至页面的 20% */
     width: 2px; /* 缩小时间线宽度 */
   }
   .timeline-year {
@@ -180,7 +178,7 @@
     max-width: 100%; /* 限制最大宽度为100% */
   }
   .dot {
-    left: 50%; /* 圆点居中 */
+    left: 20%; /* 圆点左移 */
     transform: translateX(-50%); /* 确保圆点在时间线正中 */
   }
   /* 调整时间和内容的排列方式 */
