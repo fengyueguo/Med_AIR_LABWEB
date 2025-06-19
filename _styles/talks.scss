@@ -44,7 +44,7 @@
   .timeline-entry {
     position: relative;
     margin-bottom: var(--timeline-entry-gap);
-    margin-left: calc(var(--timeline-offset-left) + 20px); /* 控制时间块离时间线多远 */
+    margin-left: calc(var(--timeline-offset-left) + 20px);
     max-width: 800px;
   }
   
@@ -122,18 +122,6 @@
     object-fit: contain;
   }
   
-  // @media (max-width: 700px) {
-  //   .content {
-  //     flex-direction: column;
-  //     align-items: flex-start;
-  //   }
-  
-  //   .content img {
-  //     margin-top: 10px;
-  //   }
-  // }
-
-/* 默认：电脑端横向图文排布 */
 .content.has-image {
   display: flex;
   flex-direction: row;
@@ -159,10 +147,20 @@
 @media (max-width: 768px) {
   .content.has-image {
     flex-direction: column;
+    align-items: center;
   }
 
   .content.has-image img {
     width: 100%;
     max-width: 65%;
+    margin: 10px 0;
+    display: block;
+    align-self: center;
+  }
+  
+  .content .text {
+    flex: unset;
+    margin-top: 10px;
   }
 }
+
