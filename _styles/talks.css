@@ -134,5 +134,37 @@
     display: block;
   }
 }
+/* 图文横向排列（默认桌面） */
+.content.has-image {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+/* 保证文字和图片各自的空间 */
+.content.has-image .text {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* 响应式图片样式 */
+.content.has-image img {
+  max-width: 100%;
+  height: auto;
+  flex-shrink: 0;
+  border: 1px solid #ddd; /* 可选：图片边框 */
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+/* 在手机等小屏幕下图文上下排列 */
+@media (max-width: 768px) {
+  .content.has-image {
+    flex-direction: column;
+  }
+}
 
 /*# sourceMappingURL=talks.css.map */
