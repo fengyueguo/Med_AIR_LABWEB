@@ -1,4 +1,3 @@
-@charset "UTF-8";
 :root {
   --timeline-offset-left: 100px;
   --timeline-color: #0a6ea4;
@@ -44,9 +43,8 @@
 .content {
   display: flex;
   align-items: center;
-  gap: var(--content-gap);
   background: #fff;
-  padding: 15px 20px;
+  padding: 0 20px;
   border-radius: 5px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
 }
@@ -55,6 +53,7 @@
   flex-direction: row;
   align-items: flex-start;
   gap: 20px;
+  align-items: center;
 }
 
 .content.has-video {
@@ -68,6 +67,7 @@
   height: auto;
   flex-shrink: 0;
   object-fit: contain;
+  border-radius: 8px;
 }
 
 .dot {
@@ -116,12 +116,12 @@
     margin: 10px 0;
     display: block;
     align-self: center;
+    border-radius: 8px;
   }
   .content .text {
     flex: unset;
     text-align: left;
   }
-  /* 调整时间轴 */
   .timeline {
     padding: 0 10px;
   }
@@ -153,7 +153,7 @@
   .content {
     flex-direction: column;
     align-items: flex-start;
-    gap: 15px;
+    margin-left: 10px;
   }
   .content.has-image img {
     width: 80%;
