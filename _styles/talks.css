@@ -109,6 +109,14 @@
   flex: 1;
 }
 
+.content img {
+  width: var(--content-img-width);
+  max-width: 100%;
+  height: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
 /* 默认：电脑端横向图文排布 */
 .content.has-image {
   display: flex;
