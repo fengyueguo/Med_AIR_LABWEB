@@ -375,7 +375,7 @@
     .content.has-image img {
         width: 100%;
         max-width: 65%;
-        margin: 10px 0;
+        margin: 10px 0 10px 20px;
         display: block;
         align-self: center;
     }
@@ -385,12 +385,10 @@
         margin-top: 10px;
     }
 
-    /* 控制时间轴线条在手机端的宽度 */
     .timeline {
-        padding: 0 10px; /* 缩小左右边距 */
+        padding: 0 10px;
     }
 
-    /* 时间轴容器宽度和位置调整 */
     .timeline::before {
         left: calc(10px); /* 时间线左移，保持20%左边位置并有间距 */
         width: 2px; /* 缩小时间线宽度 */
@@ -412,7 +410,7 @@
     }
     
     .dot {
-        left: 2px;
+        left: -7px;
         transform: translateX(0);
     }
 
@@ -420,8 +418,8 @@
     .date {
         font-size: 0.9em;
         color: #888;
-        margin-bottom: 5px;
-        text-align: center; /* 居中时间文字 */
+        margin: 0 0 5px 25px;
+        text-align: left; /* 居中时间文字 */
     }
 
     /* 调整文字块和图片的排列 */
