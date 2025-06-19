@@ -392,7 +392,7 @@
 
     /* 时间轴容器宽度和位置调整 */
     .timeline::before {
-        left: calc(20% + 10px); /* 时间线左移，保持20%左边位置并有间距 */
+        left: calc(10px); /* 时间线左移，保持20%左边位置并有间距 */
         width: 2px; /* 缩小时间线宽度 */
     }
 
@@ -410,10 +410,10 @@
         margin-left: 0; /* 调整时间块的间距 */
         max-width: 100%; /* 限制最大宽度为100% */
     }
-
+    
     .dot {
-        left: calc(20% + 10px); /* 圆点左移，确保它和时间线对齐 */
-        transform: translateX(-50%); /* 确保圆点在时间线正中 */
+        left: 2px;
+        transform: translateX(0);
     }
 
     /* 调整时间和内容的排列方式 */
