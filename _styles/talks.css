@@ -127,29 +127,26 @@
   box-sizing: border-box;
 }
 
-/* 左侧文字 */
 .content.has-image .text {
   flex: 1;
   min-width: 200px;
 }
 
-/* 右侧图片样式 */
 .content.has-image img {
-  width: 250px; /* 图片小一些 */
+  width: 210px;
   height: auto;
-  border-radius: 8px; /* 圆角 */
+  border-radius: 8px;
   display: block;
   object-fit: contain;
 }
 
-/* 手机端：图文上下排列 */
 @media (max-width: 768px) {
   .content.has-image {
     flex-direction: column;
   }
   .content.has-image img {
-    width: 100%; /* 手机上占满宽度 */
-    max-width: 100%;
+    width: 100%;
+    max-width: 65%;
   }
 }
 
