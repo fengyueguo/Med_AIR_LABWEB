@@ -41,7 +41,7 @@
 .timeline-entry {
   position: relative;
   margin-bottom: var(--timeline-entry-gap);
-  margin-left: calc(var(--timeline-offset-left) + 20px);
+  margin-left: calc(var(--timeline-offset-left) + 20px); /* 控制时间块离时间线多远 */
   max-width: 800px;
 }
 
@@ -161,7 +161,7 @@
   }
   /* 时间轴容器宽度和位置调整 */
   .timeline::before {
-    left: 20%; /* 时间线左移至页面的 20% */
+    left: calc(20% + 10px); /* 时间线左移，保持20%左边位置并有间距 */
     width: 2px; /* 缩小时间线宽度 */
   }
   .timeline-year {
@@ -178,7 +178,7 @@
     max-width: 100%; /* 限制最大宽度为100% */
   }
   .dot {
-    left: 20%; /* 圆点左移 */
+    left: calc(20% + 10px); /* 圆点左移，确保它和时间线对齐 */
     transform: translateX(-50%); /* 确保圆点在时间线正中 */
   }
   /* 调整时间和内容的排列方式 */
