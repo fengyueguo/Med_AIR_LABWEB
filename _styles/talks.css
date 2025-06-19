@@ -109,61 +109,39 @@
   flex: 1;
 }
 
-.content img,
-.timeline-entry video,
-.timeline-entry iframe {
-  max-width: 100%;
-  height: auto;
-  width: 100%;
-  object-fit: contain;
-}
-
-@media (max-width: 700px) {
-  .content {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .content img,
-  .timeline-entry video,
-  .timeline-entry iframe {
-    width: 100%;
-    height: auto;
-  }
-  .video-inline-block {
-    width: 100%;
-    display: block;
-  }
-}
-/* 图文横向排列（默认桌面） */
+/* 默认：电脑端横向图文排布 */
 .content.has-image {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 16px;
-  flex-wrap: wrap;
+  gap: 20px;
+  flex-wrap: nowrap;
   box-sizing: border-box;
 }
 
-/* 保证文字和图片各自的空间 */
+/* 左侧文字 */
 .content.has-image .text {
   flex: 1;
   min-width: 200px;
 }
 
-/* 响应式图片样式 */
+/* 右侧图片样式 */
 .content.has-image img {
-  max-width: 100%;
+  width: 250px; /* 图片小一些 */
   height: auto;
-  flex-shrink: 0;
-  border: 1px solid #ddd; /* 可选：图片边框 */
-  padding: 4px;
-  box-sizing: border-box;
+  border-radius: 8px; /* 圆角 */
+  display: block;
+  object-fit: contain;
 }
 
-/* 在手机等小屏幕下图文上下排列 */
+/* 手机端：图文上下排列 */
 @media (max-width: 768px) {
   .content.has-image {
     flex-direction: column;
+  }
+  .content.has-image img {
+    width: 100%; /* 手机上占满宽度 */
+    max-width: 100%;
   }
 }
 
