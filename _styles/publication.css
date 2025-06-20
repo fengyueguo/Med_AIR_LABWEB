@@ -196,7 +196,9 @@
     text-align: left; /* Ensure text is aligned left */
   }
   .papericon {
-    width: 100%; /* Ensure image width is responsive */
+    width: 80%; /* Make the image responsive but limit its width to 80% */
+    margin-left: auto; /* Center the image horizontally */
+    margin-right: auto; /* Center the image horizontally */
     height: auto; /* Maintain aspect ratio */
   }
   .media-body {
