@@ -204,36 +204,3 @@ filter: invert(100%);
         font-size: 1rem; /* Smaller font for the publication name */
     }
 }
-
-/* Adjustments for mobile devices */
-@media (max-width: 768px) {
-    .carousel-caption {
-        position: absolute; /* Keep it absolutely positioned */
-        bottom: 20px; /* Position it near the bottom of the image */
-        left: 10px; /* Ensure it's not pushed to the far right */
-        right: 10px; /* Add some space from the right side */
-        width: auto; /* Let the width auto-adjust based on content */
-        text-align: left; /* Ensure text is aligned to the left */
-        padding: 10px; /* Add padding to make it more readable */
-        background-color: rgba(0, 0, 0, 0.5); /* Keep the background color for contrast */
-        opacity: 1; /* Ensure it’s fully visible */
-    }
-
-    /* Adjust the size of the text inside the caption */
-    .carousel-caption p {
-        font-size: 1.2rem; /* Make text slightly larger for better readability */
-        line-height: 1.4; /* Add line-height for better text spacing */
-    }
-
-    .carousel-img {
-        height: auto; /* Make sure the image adapts to screen size */
-    }
-
-    /* Optionally adjust carousel control button sizes if needed */
-    .carousel-control-prev, .carousel-control-next {
-        height: 40px; /* Adjust button size for smaller screens */
-        width: 40px;
-    }
-}
-
-
