@@ -179,11 +179,10 @@ filter: invert(100%);
     }
     
     .papericon {
-        width: 80%; /* Ensure the image width is responsive but limit it to 80% */
+        width: 100%; /* Ensure image width is responsive */
+        height: auto; /* Maintain aspect ratio */
         margin-left: auto; /* Center the image horizontally */
         margin-right: auto; /* Center the image horizontally */
-        display: block; /* Ensure it behaves as a block-level element */
-        height: auto; /* Maintain aspect ratio */
     }
     
     .media-body {
