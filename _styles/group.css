@@ -1,6 +1,7 @@
 .professor-container {
   display: flex;
   align-items: center;
+  max-width: 500px;
 }
 
 .professor-content {
