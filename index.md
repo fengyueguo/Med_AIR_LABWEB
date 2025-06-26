@@ -8,4 +8,4 @@ nav:
 <!-- # The Med-AIR Lab -->
 {%include introduction.html%}
 {%include news.html%}
-{%include gallery.html%}
+<!-- {%include gallery.html%} -->
