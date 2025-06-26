@@ -1,11 +1,10 @@
 .professor-container {
   display: flex;
   align-items: center;
-  max-width: 500px;
 }
 
 .professor-content {
-  width: 400px;
+  width: 500px;
   margin-right: 1rem;
 }
 
