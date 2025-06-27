@@ -30,13 +30,13 @@ This research topic aims to develop autonomous,multi-agent AI systems that integ
 
 **Robust Vision-Language-Action (VLA) Models with Adaptive Force Perception and Control**: This research aims to develop robust Vision-Language-Action (VLA) models that integrate multimodal inputs and adaptive force perception to enable fine-grained interaction with elderly individuals and their environments. The focus is on building systems that can interpret complex commands, perceive subtle force feedback, and adapt their actions accordingly during tasks like assisting with dressing and feeding. By combining vision, language, and force feedback, the robots can perform precise, safe, and context-aware interactions to support both physical and cognitive needs.
 {% endcapture %}
-{% include feature.html image="images/research/elderlycare.png" link="publication" title="Embodied AI for Elderly Care Robotics" text=text flip=true className="feature-image" %}
+{% include feature.html image="images/research/elderlycare.png" link="publication" title="Embodied AI for Elderly Care Robotics" text=text className="feature-image" %}
 
 {% capture text %}
 **LLMs for Medical Education**: We aim to reform and innovate research, applications, and design to advance the next generation of medical education. Our focus lies in creating a new paradigm for human-computer interaction in medical teaching, enabling medical students worldwide to access higher-quality, more reliable, and effective education and resources. Beyond professional medical training, we are equally committed to promoting public health education. By designing new interactive media and information dissemination methods, we strive to deliver health knowledge and information to people worldwide—particularly in underserved and underdeveloped regions—in a more accessible and impactful way.
 
 **Smart XR for Medical Education and Surgery Assistant**: This research topic focuses on developing intelligent XR (AR/VR) systems to enhance medical education and surgical assistance through immersive simulation and spatial computing. We aim to advance clinical training and intraoperative support by integrating patient-specific data, 3D anatomical modeling, and interactive visualization into adaptive XR environments. These systems combine real-time imaging, procedural guidance, and intuitive user interaction to improve anatomical understanding, skill acquisition, and surgical precision. The core goal is to bridge the gap between learning and practice by delivering context-aware, task-specific XR tools that elevate training quality, reduce surgical risk, and support decision-making in complex clinical settings.
 {% endcapture %}
-{% include feature.html image="images/research/llm_healthcare.jpg" link="publication" title="LLMs and Smart XR for Medical Education" text=text className="feature-image" %}
+{% include feature.html image="images/research/llm_healthcare.jpg" link="publication" title="LLMs and Smart XR for Medical Education" text=text flip=true className="feature-image" %}
 
 
