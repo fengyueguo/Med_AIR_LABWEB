@@ -4,8 +4,6 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: flex-start;
-  column-count: 4; /* 控制列数，适配宽度 */
-  column-gap: 5px; /* 控制列间距 */
 }
 
 .gallery-item {
@@ -22,10 +20,6 @@
   flex-direction: column;
   justify-content: flex-start;
   height: fit-content;
-  display: inline-block; /* ✅ 必须设置为 inline-block 以支持 column 布局 */
-  width: 100%;
-  margin-bottom: 5px; /* 控制行间距 */
-  break-inside: avoid; /* 防止卡片内容被截断 */
 }
 
 .gallery-item img {
