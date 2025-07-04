@@ -1,6 +1,6 @@
 <div class="talk_container">
   <h2 id="activities">Publicity</h2>
-  <div class="gallery">
+  <div id="publicity-gallery" class="gallery">
 
   <div class="gallery-item">
     <img src="../images/gallery/gallery2.png">
@@ -128,3 +128,35 @@
       <div class="caption">Invited Talk – “Innovation and Challenges in Embodied Intelligence for Surgical Robotics”, Forum on Graphics and Imaging Technologies for Embodied Intelligence, CSIG, Changsha, Hunan.</div>
     </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // 获取图片墙和创建模态框
+    const gallery = document.getElementById("publicity-gallery");
+    const modal = document.createElement("div");
+    modal.className = "image-modal";
+    modal.innerHTML = `
+      <span class="close-btn">&times;</span>
+      <img src="" alt="Full-size Image">
+    `;
+    document.body.appendChild(modal);
+
+    const modalImg = modal.querySelector("img");
+    const closeBtn = modal.querySelector(".close-btn");
+
+    // 点击图片时放大显示
+    gallery.addEventListener("click", function (e) {
+      if (e.target.tagName === "IMG") {
+        modalImg.src = e.target.getAttribute("data-src");
+        modal.classList.add("visible");
+      }
+    });
+
+    // 点击关闭按钮或模态框背景时关闭视图
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal || e.target === closeBtn) {
+        modal.classList.remove("visible");
+      }
+    });
+  });
+</script>
