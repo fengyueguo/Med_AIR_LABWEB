@@ -1,31 +1,54 @@
 ---
 ---
+// .gallery {
+//   display: flex;
+//   flex-wrap: wrap;
+//   gap: 20px;
+//   justify-content: flex-start;
+// }
+
+// .gallery-item {
+//   flex: 0 0 auto;
+//   background: #fff;
+//   border-radius: 8px;
+//   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+//   overflow: hidden;
+//   text-align: center;
+//   padding: 10px;
+//   box-sizing: border-box;
+//   width: 285px;
+// }
+
+// .gallery-item img {
+//   object-fit: contain;
+//   border-radius: 8px;
+//   display: block;
+//   width: 285px;
+// }
+
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px; /* 图片之间的间距 */
+  justify-content: center;
 }
 
 .gallery-item {
-  flex: 0 0 auto;
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   text-align: center;
   padding: 10px;
   box-sizing: border-box;
-  width: 285px;
 }
 
 .gallery-item img {
-  object-fit: contain;
+  aspect-ratio: 16 / 9; /* 固定为16:9比例 */
+  width: 100%;
+  object-fit: cover;
   border-radius: 8px;
-  display: block;
-  width: 285px;
 }
-
 .gallery-item .caption {
   font-size: 0.9em;
   color: #555;
