@@ -26,12 +26,12 @@
     // }
 
 function filterElements(tag) {
-    var publications = document.getElementsByClassName("publication");
-    var yearTitles = document.getElementsByClassName("paper-year");
+    const publications = document.getElementsByClassName("publication");
+    const yearTitles = document.getElementsByClassName("paper-year");
 
-    // 1. 显示/隐藏 publication 项
-    for (var i = 0; i < publications.length; i++) {
-        var el = publications[i];
+    // 显示/隐藏 publication
+    for (let i = 0; i < publications.length; i++) {
+        const el = publications[i];
         if (tag === "all" || el.classList.contains(tag)) {
             el.style.display = "flex";
         } else {
@@ -39,35 +39,30 @@ function filterElements(tag) {
         }
     }
 
-    // 2. 遍历每个 h5.paper-year，检查其后对应的 div.paper-XXXX 是否有可见 publication
-    for (var i = 0; i < yearTitles.length; i++) {
-        var yearTitle = yearTitles[i];
+    // 遍历年份标题，找对应年份容器，并判断是否含可见 publication
+    for (let i = 0; i < yearTitles.length; i++) {
+        const yearTitle = yearTitles[i];
+        let yearContainer = yearTitle.nextElementSibling;
 
-        // 获取下一个兄弟元素，期望是 .paper-2025、.paper-2024 等
-        var yearContainer = yearTitle.nextElementSibling;
+        if (!yearContainer || !yearContainer.className.startsWith("paper-")) continue;
 
-        // 防守式判断：跳过不符合条件的元素
-        if (!yearContainer || !yearContainer.className || !yearContainer.className.startsWith("paper-")) {
-            continue;
-        }
+        const pubItems = yearContainer.getElementsByClassName("publication");
+        let hasVisible = false;
 
-        var pubItems = yearContainer.getElementsByClassName("publication");
-        var hasVisible = false;
-
-        for (var j = 0; j < pubItems.length; j++) {
-            if (pubItems[j].style.display !== "none") {
+        for (let j = 0; j < pubItems.length; j++) {
+            const pub = pubItems[j];
+            const computedDisplay = window.getComputedStyle(pub).display;
+            if (computedDisplay !== "none") {
                 hasVisible = true;
                 break;
             }
         }
 
-        // 控制显示状态
+        // 显示或隐藏年份标题和容器
         yearTitle.style.display = hasVisible ? "block" : "none";
         yearContainer.style.display = hasVisible ? "block" : "none";
         yearTitle.style.left = "0";
     }
 }
-
-
 
 }
