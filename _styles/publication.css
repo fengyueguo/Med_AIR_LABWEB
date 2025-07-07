@@ -219,5 +219,8 @@
     font-size: 1rem; /* Smaller font for the publication name */
   }
 }
+div[class^=paper-] {
+  display: block;
+}
 
 /*# sourceMappingURL=publication.css.map */
