@@ -27,7 +27,8 @@
     function filterElements(tag) {
     var publications = document.getElementsByClassName("publication");
     var years = document.getElementsByClassName("paper-year");
-    var yearContainers = document.querySelectorAll("[class^='paper-']"); // e.g., paper-2025
+    var yearContainers = document.querySelectorAll("div[class^='paper-']:not(.publication)");
+
 
     // 控制 publication 显示
     for (var i = 0; i < publications.length; i++) {
