@@ -171,6 +171,11 @@ filter: invert(100%);
     display: flex;
 }
 
+.paper-year {
+    position: relative;
+    left: 15px;
+}
+
 @media (max-width: 768px) {
     .publication.media {
         display: block; /* Make each publication block-level to stack images and text */
