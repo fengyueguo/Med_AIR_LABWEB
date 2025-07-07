@@ -189,7 +189,7 @@
   display: flex;
 }
 
-.paper-year {
+.pt-2 .pb-1 .paper-year {
   position: relative;
   left: 15px;
 }
