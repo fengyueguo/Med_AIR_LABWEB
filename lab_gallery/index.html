@@ -456,6 +456,172 @@
   
  <section class="background" data-size="page">
   <div class="talk_container">
+  <h2 id="activities">Visiting</h2>
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="../images/lab_gallery/peter202506.png" data-src="../images/lab_gallery/peter202506.png">
+      <div class="caption">Visit by Prof. Peter Kazanzides from Johns Hopkins University, June 2025</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="../images/lab_gallery/mrc202505.png" data-src="../images/lab_gallery/mrc202505.png">
+      <div class="caption">Prof. Sophia Bano, Prof. Daniel Elson and Prof. Ferdinando Rodriguez y Baena visited in May 2025</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="../images/lab_gallery/visit202505.png" data-src="../images/lab_gallery/visit202505.png">
+      <div class="caption">Prof. Nassir Navab, Prof. M. Ali Nasseri (TUM), and Assoc. Prof. Michael Yip (UCSD) visited in May 2025.</div>
+    </div>
+
+    <div class="gallery-item multi">
+      <img src="../images/lab_gallery/nicolas202503.png" data-src="../images/lab_gallery/nicolas202503.png">
+      <img src="../images/lab_gallery/nicolas202503_poster.png" data-src="../images/lab_gallery/nicolas202503_poster.png">
+      <div class="caption">Visit and invited talk by Prof. Nicolas Padoy from the University of Strasbourg, Mar 2025.</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="../images/gallery/gallery14.png" data-src="../images/gallery/gallery14.png">
+      <div class="caption">...</div>
+    </div>
+  </div>
+
+  <h2 id="seminar">Seminar</h2>
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="../images/activities/tianjinu202505.png" data-src="../images/activities/tianjinu202505.png">
+      <div class="caption">Invited Talk – “A Step for AI CoPilot in Medical Diagnosis and Surgery”, Workshop on AI Medical Imaging &amp; Surgical Robotics, May 2025.</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="../images/activities/csig202505.png" data-src="../images/activities/csig202505.png">
+      <div class="caption">Invited Talk – “Innovation and Challenges in Embodied Intelligence for Surgical Robotics”, Forum on Graphics and Imaging Technologies, CSIG.</div>
+    </div>
+  </div>
+
+  <h2 id="publicity">Publicity</h2>
+  <div class="gallery">
+    
+    
+    <div class="gallery-item">
+      <img src="../images/gallery/gallery3.png" data-src="../images/gallery/gallery3.png">
+      <div class="caption"></div>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="../images/gallery/gallery4.png" data-src="../images/gallery/gallery4.png">
+      <div class="caption"></div>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="../images/gallery/gallery7.png" data-src="../images/gallery/gallery7.png">
+      <div class="caption"></div>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="../images/gallery/gallery11.png" data-src="../images/gallery/gallery11.png">
+      <div class="caption"></div>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="../images/gallery/gallery16.png" data-src="../images/gallery/gallery16.png">
+      <div class="caption"></div>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="../images/gallery/gallery17.png" data-src="../images/gallery/gallery17.png">
+      <div class="caption"></div>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="../images/gallery/gallery6.png" data-src="../images/gallery/gallery6.png">
+      <div class="caption"></div>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="../images/gallery/gallery8.png" data-src="../images/gallery/gallery8.png">
+      <div class="caption"></div>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="../images/gallery/gallery9.png" data-src="../images/gallery/gallery9.png">
+      <div class="caption"></div>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="../images/gallery/gallery10.png" data-src="../images/gallery/gallery10.png">
+      <div class="caption"></div>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="../images/gallery/gallery13.png" data-src="../images/gallery/gallery13.png">
+      <div class="caption"></div>
+    </div>
+    
+  </div>
+
+  <h2 id="award">Award</h2>
+  <div class="gallery">
+    
+    
+    <div class="gallery-item">
+      <img src="../images/gallery/gallery5.png" data-src="../images/gallery/gallery5.png">
+      <div class="caption"></div>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="../images/gallery/gallery12.png" data-src="../images/gallery/gallery12.png">
+      <div class="caption"></div>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="../images/gallery/gallery15.png" data-src="../images/gallery/gallery15.png">
+      <div class="caption"></div>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="../images/gallery/gallery1.png" data-src="../images/gallery/gallery1.png">
+      <div class="caption"></div>
+    </div>
+    
+  </div>
+
+  <h2 id="students">Student Activities</h2>
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="../images/gallery/gallery2.png" data-src="../images/gallery/gallery2.png">
+      <div class="caption"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal image viewer -->
+<div class="image-modal" id="imgModal">
+  <span class="close-btn">×</span>
+  <img id="modalImg" src="" alt="Full-size image">
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("imgModal");
+    const modalImg = document.getElementById("modalImg");
+    const closeBtn = modal.querySelector(".close-btn");
+
+    // 所有 gallery 中的图片均可放大
+    document.querySelectorAll(".gallery img").forEach(img => {
+      img.addEventListener("click", function () {
+        modalImg.src = this.getAttribute("data-src") || this.src;
+        modal.classList.add("visible");
+      });
+    });
+
+    closeBtn.addEventListener("click", () => modal.classList.remove("visible"));
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) modal.classList.remove("visible");
+    });
+  });
+</script>
+
+<!-- <div class="talk_container">
     <h2 id="activities">Visiting</h2>
     <div class="gallery">
     <div class="gallery-item">
@@ -491,7 +657,7 @@
     <div class="gallery">
       <div class="gallery-item">
       <img src="../images/activities/tianjinu202505.png">
-      <div class="caption">Invited Talk – “A Step for AI CoPilot in Medical Diagnosis and Surgery”, Workshop on AI Medical Imaging &amp; Surgical Robotics, May 2025.</div>
+      <div class="caption">Invited Talk – “A Step for AI CoPilot in Medical Diagnosis and Surgery”, Workshop on AI Medical Imaging & Surgical Robotics, May 2025.</div>
     </div>
   
       <div class="gallery-item">
@@ -508,12 +674,12 @@
     <div class="caption"></div>
   </div> -->
 
-  <div class="gallery-item">
+<div class="gallery-item">
     <img src="../images/gallery/gallery3.png" data-src="../images/gallery/gallery3.png">
     <div class="caption"></div>
   </div>
 
-  <div class="gallery-item">
+<div class="gallery-item">
     <img src="../images/gallery/gallery4.png" data-src="../images/gallery/gallery4.png">
     <div class="caption"></div>
   </div>
@@ -523,13 +689,12 @@
     <div class="caption"></div>
   </div> -->
 
-
-  <div class="gallery-item">
+<div class="gallery-item">
     <img src="../images/gallery/gallery7.png" data-src="../images/gallery/gallery7.png">
     <div class="caption"></div>
   </div>
 
-  <div class="gallery-item">
+<div class="gallery-item">
     <img src="../images/gallery/gallery11.png" data-src="../images/gallery/gallery11.png">
     <div class="caption"></div>
   </div>
@@ -549,12 +714,12 @@
     <div class="caption"></div>
   </div> -->
 
-  <div class="gallery-item">
+<div class="gallery-item">
     <img src="../images/gallery/gallery16.png" data-src="../images/gallery/gallery16.png">
     <div class="caption"></div>
   </div>
 
-  <div class="gallery-item">
+<div class="gallery-item">
     <img src="../images/gallery/gallery17.png" data-src="../images/gallery/gallery17.png">
     <div class="caption"></div>
   </div>
@@ -563,63 +728,64 @@
     <img src="../images/gallery/gallery1.png" data-src="../images/gallery/gallery1.png">
     <div class="caption"></div>
   </div> -->
-    
-  <div class="gallery-item">
+
+<div class="gallery-item">
     <img src="../images/gallery/gallery6.png" data-src="../images/gallery/gallery6.png">
     <div class="caption"></div>
   </div>
 
-  <div class="gallery-item">
+<div class="gallery-item">
     <img src="../images/gallery/gallery8.png" data-src="../images/gallery/gallery8.png">
     <div class="caption"></div>
   </div>
 
-  <div class="gallery-item">
+<div class="gallery-item">
     <img src="../images/gallery/gallery9.png" data-src="../images/gallery/gallery9.png">
     <div class="caption"></div>
   </div>
 
-  <div class="gallery-item">
+<div class="gallery-item">
     <img src="../images/gallery/gallery10.png" data-src="../images/gallery/gallery10.png">
     <div class="caption"></div>
   </div>
 
-  <div class="gallery-item">
+<div class="gallery-item">
     <img src="../images/gallery/gallery13.png" data-src="../images/gallery/gallery13.png">
     <div class="caption"></div>
   </div>
-</div>
-      
-    <h2 id="activities">Award</h2>
-      
-      <div class="gallery">
-        <div class="gallery-item">
-        <img src="../images/gallery/gallery5.png">
-      </div>
+<p>&lt;/div&gt;</p>
 
-      <div class="gallery">
-        <div class="gallery-item">
-        <img src="../images/gallery/gallery12.png">
-      </div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;h2 id="activities"&gt;Award&lt;/h2&gt;
+  
+  &lt;div class="gallery"&gt;
+    &lt;div class="gallery-item"&gt;
+    &lt;img src="../images/gallery/gallery5.png"&gt;
+  &lt;/div&gt;
 
-      <div class="gallery">
-        <div class="gallery-item">
-        <img src="../images/gallery/gallery15.png">
-      </div>
+  &lt;div class="gallery"&gt;
+    &lt;div class="gallery-item"&gt;
+    &lt;img src="../images/gallery/gallery12.png"&gt;
+  &lt;/div&gt;
 
-      <div class="gallery">
-        <div class="gallery-item">
-        <img src="../images/gallery/gallery1.png">
-      </div>
+  &lt;div class="gallery"&gt;
+    &lt;div class="gallery-item"&gt;
+    &lt;img src="../images/gallery/gallery15.png"&gt;
+  &lt;/div&gt;
 
-    <h2 id="activities">Student Activities</h2>
+  &lt;div class="gallery"&gt;
+    &lt;div class="gallery-item"&gt;
+    &lt;img src="../images/gallery/gallery1.png"&gt;
+  &lt;/div&gt;
 
-    <div class="gallery">
-      <div class="gallery-item">
-      <img src="../images/gallery/gallery2.png">
-    </div>
-      
-</div>
+&lt;h2 id="activities"&gt;Student Activities&lt;/h2&gt;
+
+&lt;div class="gallery"&gt;
+  &lt;div class="gallery-item"&gt;
+  &lt;img src="../images/gallery/gallery2.png"&gt;
+&lt;/div&gt;
+</code></pre></div></div>
+
+<p>&lt;/div&gt;</p>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -653,12 +819,7 @@
   });
 </script>
 
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<p>–&gt;</p>
 </section>
 
 </main>
