@@ -1,7 +1,7 @@
 ---
 title: Talks
 nav:
-  order: 4
+  order: 5
   tooltip: Invited talks
 ---
 
