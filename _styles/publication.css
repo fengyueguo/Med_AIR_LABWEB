@@ -219,7 +219,7 @@
     font-size: 1rem; /* Smaller font for the publication name */
   }
 }
-div[class^=paper-] {
+.paper-year {
   display: block;
 }
 
