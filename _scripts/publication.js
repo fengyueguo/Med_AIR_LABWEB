@@ -25,31 +25,44 @@
     // }
 
 function filterElements(tag) {
-    var publications = document.getElementsByClassName("publication");
-    var yearTitles = document.getElementsByClassName("paper-year");
-    var yearSections = document.querySelectorAll("div[class^='paper-']:not(.publication)");
+    var elements = document.getElementsByClassName("publication");
+    var years = document.getElementsByClassName("paper-year");
+    var yearContainers = document.querySelectorAll("div[class^='paper-']:not(.publication)");
 
-    // 控制 publication 显示（主内容）
-    for (var i = 0; i < publications.length; i++) {
-        var pub = publications[i];
-        if (tag === "all" || pub.classList.contains(tag)) {
-            pub.style.display = "flex";
+    // 控制每个 publication 是否显示
+    for (var i = 0; i < elements.length; i++) {
+        var element = elements[i];
+        if (tag === "all" || element.classList.contains(tag)) {
+            element.style.display = "flex";
         } else {
-            pub.style.display = "none";
+            element.style.display = "none";
         }
     }
 
-    // 控制年份标题和分区是否显示
-    var showYears = (tag === "all");
+    // 遍历年份容器，决定是否显示
+    for (var i = 0; i < yearContainers.length; i++) {
+        var container = yearContainers[i];
+        var pubs = container.getElementsByClassName("publication");
 
-    for (var i = 0; i < yearTitles.length; i++) {
-        yearTitles[i].style.display = showYears ? "block" : "none";
-    }
+        // 判断该年份容器中是否有任何一个 publication 是可见的
+        var hasVisible = false;
+        for (var j = 0; j < pubs.length; j++) {
+            if (pubs[j].style.display !== "none") {
+                hasVisible = true;
+                break;
+            }
+        }
 
-    for (var i = 0; i < yearSections.length; i++) {
-        yearSections[i].style.display = showYears ? "block" : "none";
+        // 设置年份容器和对应标题显示/隐藏
+        container.style.display = hasVisible ? "block" : "none";
+        if (years[i]) {
+            years[i].style.display = hasVisible ? "block" : "none";
+            years[i].style.position = "relative";
+            years[i].style.left = "0"; // 修正你之前写的 -45%
+        }
     }
 }
+
 
 
 }
