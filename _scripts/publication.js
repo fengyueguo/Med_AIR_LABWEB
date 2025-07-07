@@ -24,13 +24,12 @@
     //     }
     // }
 
-    function filterElements(tag) {
+function filterElements(tag) {
     var publications = document.getElementsByClassName("publication");
-    var years = document.getElementsByClassName("paper-year");
-    var yearContainers = document.querySelectorAll("div[class^='paper-']:not(.publication)");
+    var yearTitles = document.getElementsByClassName("paper-year");
+    var yearSections = document.querySelectorAll("div[class^='paper-']:not(.publication)");
 
-
-    // 控制 publication 显示
+    // 控制 publication 显示（主内容）
     for (var i = 0; i < publications.length; i++) {
         var pub = publications[i];
         if (tag === "all" || pub.classList.contains(tag)) {
@@ -40,27 +39,17 @@
         }
     }
 
-    // 显示年份标题
-    for (var i = 0; i < years.length; i++) {
-        var year = years[i];
-        if (tag === "all") {
-            year.style.display = "block";
-            year.style.position = "relative";
-            year.style.left = "0";  // 修复你之前设置的 -45%
-        } else {
-            year.style.display = "none";
-        }
+    // 控制年份标题和分区是否显示
+    var showYears = (tag === "all");
+
+    for (var i = 0; i < yearTitles.length; i++) {
+        yearTitles[i].style.display = showYears ? "block" : "none";
     }
 
-    // 显示每个年份容器（如 paper-2025）
-    for (var i = 0; i < yearContainers.length; i++) {
-        var container = yearContainers[i];
-        if (tag === "all") {
-            container.style.display = "block";
-        } else {
-            container.style.display = ""; // 可设置为 none 也行，看你结构
-        }
+    for (var i = 0; i < yearSections.length; i++) {
+        yearSections[i].style.display = showYears ? "block" : "none";
     }
 }
+
 
 }
