@@ -1,11 +1,12 @@
 ---
 ---
- #publicity-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 响应式布局 */
-    gap: 20px;
-    justify-content: center;
-  }
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start; /* 确保左对齐 */
+}
 
   #publicity-gallery .gallery-item {
     background: #fff;
