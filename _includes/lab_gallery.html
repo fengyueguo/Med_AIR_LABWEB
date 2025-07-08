@@ -140,7 +140,7 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     // 获取图片墙和创建模态框
-    const gallery = document.getElementById("publicity-gallery");
+    const gallery = document.querySelectorAll(".gallery")
     const modal = document.createElement("div");
     modal.className = "image-modal";
     modal.innerHTML = `
