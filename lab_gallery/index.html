@@ -595,9 +595,9 @@
   </div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     // 获取图片墙和创建模态框
-    const gallery = document.querySelectorAll(".gallery")
+    const galleries = document.querySelectorAll(".gallery"); // Changed variable name to 'galleries' for clarity
     const modal = document.createElement("div");
     modal.className = "image-modal";
     modal.innerHTML = `
@@ -609,21 +609,26 @@
     const modalImg = modal.querySelector("img");
     const closeBtn = modal.querySelector(".close-btn");
 
-    // 点击图片时放大显示
-    gallery.addEventListener("click", function (e) {
-      if (e.target.tagName === "IMG") {
-        modalImg.src = e.target.getAttribute("data-src");
-        modal.classList.add("visible");
-      }
+    // Iterate over each gallery and attach the click listener
+    galleries.forEach(gallery => { // Loop through each gallery element
+        gallery.addEventListener("click", function (e) {
+            if (e.target.tagName === "IMG" && e.target.closest('.gallery-item')) { // Ensure clicking on an image within a gallery-item
+                // Use data-src for the modal image if available, otherwise fall back to src
+                modalImg.src = e.target.getAttribute("data-src") || e.target.getAttribute("src");
+                modal.classList.add("visible");
+            }
+        });
     });
 
     // 点击关闭按钮或模态框背景时关闭视图
     modal.addEventListener("click", function (e) {
-      if (e.target === modal || e.target === closeBtn) {
-        modal.classList.remove("visible");
-      }
+        if (e.target === modal || e.target === closeBtn) {
+            modal.classList.remove("visible");
+            // Optional: Clear the image source when closing the modal to save memory
+            modalImg.src = "";
+        }
     });
-  });
+});
 </script>
 
 </div>
