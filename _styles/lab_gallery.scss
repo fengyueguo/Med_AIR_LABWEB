@@ -1,12 +1,12 @@
 ---
 ---
 
-// .gallery {
-//   display: flex;
-//   flex-wrap: wrap;
-//   gap: 20px;
-//   justify-content: flex-start; /* 确保左对齐 */
-// }
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start; /* 确保左对齐 */
+}
 
 //   #publicity-gallery .gallery-item {
 //     background: #fff;
@@ -148,12 +148,6 @@
 //   border-radius: 8px;
 // }
 
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* Adjust the gap between items as needed */
-  justify-content: space-between; /* Distribute items evenly */
-}
 
 #publicity-gallery .gallery-item {
   background: #fff;
