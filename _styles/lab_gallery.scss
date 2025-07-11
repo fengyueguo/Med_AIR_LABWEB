@@ -1,123 +1,97 @@
 ---
 ---
 
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: flex-start; /* 确保左对齐 */
-}
-
-//   #publicity-gallery .gallery-item {
-//     background: #fff;
-//     border-radius: 8px;
-//     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-//     overflow: hidden;
-//     text-align: center;
-//     padding: 10px;
-//     box-sizing: border-box;
-//    transition: transform 0.3s ease; /* 添加过渡效果 */
-//   }
-
-//  #publicity-gallery .gallery-item:hover {
-//     transform: scale(1.05); /* 鼠标悬停时轻微放大 */
-//     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* 鼠标悬停时增加阴影 */
-//   }
-
-//   #publicity-gallery .gallery-item img {
-//     width: 100%;
-//     height: 200px; /* 统一高度 */
-//     object-fit: cover; /* 自动裁剪图片 */
-//     border-radius: 8px;
-//     cursor: pointer; /* 鼠标指针变为手型 */
-//     transition: transform 0.3s ease; /* 鼠标悬停效果 */
-//   }
-
-//   #publicity-gallery .gallery-item img:hover {
-//     transform: scale(1.05); /* 鼠标悬停时图片轻微放大 */
-//   }
-
-
-//   #publicity-gallery .gallery-item .caption {
-//     font-size: 0.9em;
-//     color: #555;
-//     margin-top: 8px;
-//   }
-
-//   /* 放大图片的弹出视图样式 */
-//   .image-modal {
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     background: rgba(0, 0, 0, 0.8); /* 半透明黑色背景 */
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     z-index: 1000;
-//     opacity: 0;
-//     visibility: hidden;
-//     transition: opacity 0.3s ease, visibility 0.3s ease;
-//   }
-
-//   .image-modal img {
-//     max-width: 90%;
-//     max-height: 90%;
-//     border-radius: 8px;
-//     box-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
-//   }
-
-//   .image-modal.visible {
-//     opacity: 1;
-//     visibility: visible;
-//   }
-
-//   .image-modal .close-btn {
-//     position: absolute;
-//     top: 20px;
-//     right: 20px;
-//     font-size: 24px;
-//     color: white;
-//     cursor: pointer;
-//   }
-
 // .gallery {
 //   display: flex;
 //   flex-wrap: wrap;
 //   gap: 20px;
-//   justify-content: flex-start;
+//   justify-content: flex-start; /* 确保左对齐 */
 // }
 
+// //   #publicity-gallery .gallery-item {
+// //     background: #fff;
+// //     border-radius: 8px;
+// //     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+// //     overflow: hidden;
+// //     text-align: center;
+// //     padding: 10px;
+// //     box-sizing: border-box;
+// //    transition: transform 0.3s ease; /* 添加过渡效果 */
+// //   }
 
-.gallery-item {
-  flex: 0 0 auto;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  overflow: hidden;
-  text-align: center;
-  padding: 10px;
-  box-sizing: border-box;
-  width: 285px;
-}
+// //  #publicity-gallery .gallery-item:hover {
+// //     transform: scale(1.05); /* 鼠标悬停时轻微放大 */
+// //     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* 鼠标悬停时增加阴影 */
+// //   }
 
-.gallery-item img {
-  object-fit: contain;
-  border-radius: 8px;
-  display: block;
-  width: 285px;
-}
+// //   #publicity-gallery .gallery-item img {
+// //     width: 100%;
+// //     height: 200px; /* 统一高度 */
+// //     object-fit: cover; /* 自动裁剪图片 */
+// //     border-radius: 8px;
+// //     cursor: pointer; /* 鼠标指针变为手型 */
+// //     transition: transform 0.3s ease; /* 鼠标悬停效果 */
+// //   }
 
-.gallery-item .caption {
-  font-size: 0.9em;
-  color: #555;
-  margin-top: 8px;
-}
+// //   #publicity-gallery .gallery-item img:hover {
+// //     transform: scale(1.05); /* 鼠标悬停时图片轻微放大 */
+// //   }
 
-// .gallery-item.multi {
+
+// //   #publicity-gallery .gallery-item .caption {
+// //     font-size: 0.9em;
+// //     color: #555;
+// //     margin-top: 8px;
+// //   }
+
+// //   /* 放大图片的弹出视图样式 */
+// //   .image-modal {
+// //     position: fixed;
+// //     top: 0;
+// //     left: 0;
+// //     width: 100%;
+// //     height: 100%;
+// //     background: rgba(0, 0, 0, 0.8); /* 半透明黑色背景 */
+// //     display: flex;
+// //     justify-content: center;
+// //     align-items: center;
+// //     z-index: 1000;
+// //     opacity: 0;
+// //     visibility: hidden;
+// //     transition: opacity 0.3s ease, visibility 0.3s ease;
+// //   }
+
+// //   .image-modal img {
+// //     max-width: 90%;
+// //     max-height: 90%;
+// //     border-radius: 8px;
+// //     box-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
+// //   }
+
+// //   .image-modal.visible {
+// //     opacity: 1;
+// //     visibility: visible;
+// //   }
+
+// //   .image-modal .close-btn {
+// //     position: absolute;
+// //     top: 20px;
+// //     right: 20px;
+// //     font-size: 24px;
+// //     color: white;
+// //     cursor: pointer;
+// //   }
+
+// // .gallery {
+// //   display: flex;
+// //   flex-wrap: wrap;
+// //   gap: 20px;
+// //   justify-content: flex-start;
+// // }
+
+
+// .gallery-item {
 //   flex: 0 0 auto;
-//   width: fit-content;
 //   background: #fff;
 //   border-radius: 8px;
 //   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -125,6 +99,97 @@
 //   text-align: center;
 //   padding: 10px;
 //   box-sizing: border-box;
+//   width: 285px;
+// }
+
+// .gallery-item img {
+//   object-fit: contain;
+//   border-radius: 8px;
+//   display: block;
+//   width: 285px;
+// }
+
+// .gallery-item .caption {
+//   font-size: 0.9em;
+//   color: #555;
+//   margin-top: 8px;
+// }
+
+// // .gallery-item.multi {
+// //   flex: 0 0 auto;
+// //   width: fit-content;
+// //   background: #fff;
+// //   border-radius: 8px;
+// //   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+// //   overflow: hidden;
+// //   text-align: center;
+// //   padding: 10px;
+// //   box-sizing: border-box;
+// // }
+
+// // .gallery-item.multi .multi-images {
+// //   display: flex;
+// //   gap: 8px;
+// //   justify-content: center;
+// //   margin-bottom: 8px;
+// // }
+
+// .gallery-item.multi .multi-images .main-img {
+//   width: 285px;
+//   height: auto;
+//   object-fit: contain;
+//   border-radius: 8px;
+// }
+
+// // .gallery-item.multi .multi-images .poster-img {
+// //   width: auto;
+// //   height: 210px;
+// //   object-fit: contain;
+// //   border-radius: 8px;
+// // }
+
+
+// #publicity-gallery .gallery-item {
+//   background: #fff;
+//   border-radius: 8px;
+//   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+//   overflow: hidden;
+//   text-align: center;
+//   padding: 10px;
+//   box-sizing: border-box;
+//   /* Calculate width for three items per row, accounting for gaps */
+//   width: calc((100% - (2 * 20px)) / 3); /* 2 gaps of 20px each */
+//   transition: transform 0.3s ease; /* Add transition effect */
+// }
+
+// #publicity-gallery .gallery-item:hover {
+//   transform: scale(1.05); /* Slight enlarge on hover */
+//   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+// }
+
+// #publicity-gallery .gallery-item img {
+//   width: 100%;
+//   height: 200px; /* Unified height */
+//   object-fit: cover; /* Auto crop image */
+//   border-radius: 8px;
+//   cursor: pointer; /* Cursor becomes a hand */
+//   transition: transform 0.3s ease; /* Hover effect */
+// }
+
+// #publicity-gallery .gallery-item img:hover {
+//   transform: scale(1.05); /* Slight enlarge image on hover */
+// }
+
+// #publicity-gallery .gallery-item .caption {
+//   font-size: 0.9em;
+//   color: #555;
+//   margin-top: 8px;
+// }
+
+// /* Specific styles for the multi-image gallery item */
+// .gallery-item.multi {
+//   /* Apply the same width calculation for consistency */
+//   width: calc((100% - (2 * 20px)) / 3);
 // }
 
 // .gallery-item.multi .multi-images {
@@ -132,23 +197,71 @@
 //   gap: 8px;
 //   justify-content: center;
 //   margin-bottom: 8px;
+//   align-items: flex-start; /* Align images to the top within multi-item */
+//   flex-wrap: wrap; /* Allow images to wrap if they exceed width */
 // }
 
-.gallery-item.multi .multi-images .main-img {
-  width: 285px;
-  height: auto;
-  object-fit: contain;
-  border-radius: 8px;
-}
-
-// .gallery-item.multi .multi-images .poster-img {
-//   width: auto;
-//   height: 210px;
+// .gallery-item.multi .multi-images .main-img {
+//   width: 100%; /* Make main image take full width of its container */
+//   height: auto;
 //   object-fit: contain;
 //   border-radius: 8px;
 // }
 
+// .gallery-item.multi .multi-images .poster-img {
+//   width: auto;
+//   height: 210px; /* Keep consistent height for poster image */
+//   object-fit: contain;
+//   border-radius: 8px;
+// }
 
+// /* Styles for the full-size image modal popup */
+// .image-modal {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   z-index: 1000;
+//   opacity: 0;
+//   visibility: hidden;
+//   transition: opacity 0.3s ease, visibility 0.3s ease;
+// }
+
+// .image-modal img {
+//   max-width: 90%;
+//   max-height: 90%;
+//   border-radius: 8px;
+//   box-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
+// }
+
+// .image-modal.visible {
+//   opacity: 1;
+//   visibility: visible;
+// }
+
+// .image-modal .close-btn {
+//   position: absolute;
+//   top: 20px;
+//   right: 20px;
+//   font-size: 24px;
+//   color: white;
+//   cursor: pointer;
+// }
+
+/* Base styles for the gallery container */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Consistent gap between gallery items */
+  justify-content: space-between; /* Distribute items evenly across the row */
+}
+
+/* Styles for individual gallery items within the #publicity-gallery */
 #publicity-gallery .gallery-item {
   background: #fff;
   border-radius: 8px;
@@ -157,62 +270,63 @@
   text-align: center;
   padding: 10px;
   box-sizing: border-box;
-  /* Calculate width for three items per row, accounting for gaps */
-  width: calc((100% - (2 * 20px)) / 3); /* 2 gaps of 20px each */
-  transition: transform 0.3s ease; /* Add transition effect */
+  /* Calculate width for three items per row, accounting for two gaps */
+  width: calc((100% - (2 * 20px)) / 3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
 }
 
+/* Hover effects for gallery items */
 #publicity-gallery .gallery-item:hover {
-  transform: scale(1.05); /* Slight enlarge on hover */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
 }
 
+/* Styles for images within gallery items (default for single images) */
 #publicity-gallery .gallery-item img {
-  width: 100%;
-  height: 200px; /* Unified height */
-  object-fit: cover; /* Auto crop image */
+  width: 100%; /* Image takes full width of its container */
+  height: 200px; /* Unified height for all single images */
+  object-fit: cover; /* Crop image to fit the dimensions */
   border-radius: 8px;
-  cursor: pointer; /* Cursor becomes a hand */
-  transition: transform 0.3s ease; /* Hover effect */
+  cursor: pointer; /* Indicate interactivity */
+  transition: transform 0.3s ease; /* Smooth transition for image hover */
 }
 
+/* Hover effect for images within gallery items */
 #publicity-gallery .gallery-item img:hover {
-  transform: scale(1.05); /* Slight enlarge image on hover */
+  transform: scale(1.05); /* Slightly enlarge image on hover */
 }
 
+/* Styles for image captions */
 #publicity-gallery .gallery-item .caption {
   font-size: 0.9em;
   color: #555;
   margin-top: 8px;
 }
 
-/* Specific styles for the multi-image gallery item */
-.gallery-item.multi {
-  /* Apply the same width calculation for consistency */
-  width: calc((100% - (2 * 20px)) / 3);
+/* Specific styles for gallery items containing multiple images */
+#publicity-gallery .gallery-item.multi {
+  /* Inherits width from .gallery-item, no need to redefine */
 }
 
-.gallery-item.multi .multi-images {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
+/* Container for multiple images within a .multi gallery item */
+#publicity-gallery .gallery-item.multi .multi-images {
+  display: flex; /* Use flexbox to arrange images side-by-side */
+  gap: 8px; /* Gap between the two images */
+  justify-content: center; /* Center images horizontally */
+  align-items: flex-start; /* Align images to the top if their natural heights differ */
   margin-bottom: 8px;
-  align-items: flex-start; /* Align images to the top within multi-item */
-  flex-wrap: wrap; /* Allow images to wrap if they exceed width */
+  /* flex-wrap is not needed here as images are intended to be side-by-side */
 }
 
-.gallery-item.multi .multi-images .main-img {
-  width: 100%; /* Make main image take full width of its container */
-  height: auto;
-  object-fit: contain;
+/* Styles for both main and poster images within a .multi gallery item */
+#publicity-gallery .gallery-item.multi .multi-images .main-img,
+#publicity-gallery .gallery-item.multi .multi-images .poster-img {
+  flex: 1; /* Both images take equal available space within multi-images container */
+  height: 210px; /* Consistent height for both images in multi-item */
+  object-fit: contain; /* Ensure images fit without cropping, maintaining aspect ratio */
   border-radius: 8px;
-}
-
-.gallery-item.multi .multi-images .poster-img {
-  width: auto;
-  height: 210px; /* Keep consistent height for poster image */
-  object-fit: contain;
-  border-radius: 8px;
+  flex-shrink: 0; /* Prevent images from shrinking below their content size if space is tight */
+  width: auto; /* Allow width to adjust based on flex property and height */
 }
 
 /* Styles for the full-size image modal popup */
@@ -227,23 +341,26 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0; /* Initially hidden */
+  visibility: hidden; /* Initially hidden */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for showing/hiding */
 }
 
+/* Styles for the image inside the modal */
 .image-modal img {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 90%; /* Limit image width */
+  max-height: 90%; /* Limit image height */
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.5); /* White shadow for visibility */
 }
 
+/* Class to make the modal visible */
 .image-modal.visible {
   opacity: 1;
   visibility: visible;
 }
 
+/* Styles for the modal close button */
 .image-modal .close-btn {
   position: absolute;
   top: 20px;
@@ -252,3 +369,4 @@
   color: white;
   cursor: pointer;
 }
+
