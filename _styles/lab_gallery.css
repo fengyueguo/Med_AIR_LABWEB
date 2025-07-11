@@ -50,7 +50,12 @@
 
 /* Specific styles for gallery items containing multiple images */
 .gallery .gallery-item.multi {
-  /* Inherits width from .gallery-item, no need to redefine */
+  /* Override the default .gallery-item width to allow more space for two images.
+     這將使多圖片卡片更寬，可能會打破這些特定項目嚴格的三欄網格佈局，
+     但它會確保圖片的完整顯示。 */
+  width: fit-content; /* Allow the card to be as wide as its content */
+  min-width: calc((100% - 40px) / 3); /* Ensure it's at least as wide as a regular card */
+  max-width: 100%; /* Prevent it from exceeding the container width */
 }
 
 /* Container for multiple images within a .multi gallery item */
@@ -60,18 +65,24 @@
   justify-content: center; /* Center images horizontally */
   align-items: flex-start; /* Align images to the top if their natural heights differ */
   margin-bottom: 8px;
-  /* flex-wrap is not needed here as images are intended to be side-by-side */
 }
 
-/* Styles for both main and poster images within a .multi gallery item */
-.gallery .gallery-item.multi .multi-images .main-img,
-.gallery .gallery-item.multi .multi-images .poster-img {
-  flex: 1; /* Both images take equal available space within multi-images container */
-  height: 210px; /* Consistent height for both images in multi-item */
-  object-fit: contain; /* Ensure images fit without cropping, maintaining aspect ratio */
+/* Styles for the main image in a multi gallery item */
+.gallery .gallery-item.multi .multi-images .main-img {
+  width: 285px; /* Fixed width as per original request */
+  height: auto; /* Height adapts to maintain aspect ratio */
+  object-fit: contain; /* Ensure image fits without cropping */
   border-radius: 8px;
-  flex-shrink: 0; /* Prevent images from shrinking below their content size if space is tight */
-  width: auto; /* Allow width to adjust based on flex property and height */
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Styles for the poster image in a multi gallery item */
+.gallery .gallery-item.multi .multi-images .poster-img {
+  width: auto; /* Width adapts to maintain aspect ratio with fixed height */
+  height: 210px; /* Fixed height as per original request */
+  object-fit: contain; /* Ensure image fits without cropping */
+  border-radius: 8px;
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
 /* Styles for the full-size image modal popup */
