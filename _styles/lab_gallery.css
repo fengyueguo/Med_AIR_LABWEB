@@ -7,6 +7,7 @@
   justify-content: flex-start; /* 确保左对齐 */
 }
 
+/* Styles for individual gallery items within any .gallery container */
 .gallery .gallery-item {
   background: #fff;
   border-radius: 8px;
@@ -53,9 +54,9 @@
   /* Override the default .gallery-item width to allow more space for two images.
      這將使多圖片卡片更寬，可能會打破這些特定項目嚴格的三欄網格佈局，
      但它會確保圖片的完整顯示。 */
-  width: fit-content; /* Allow the card to be as wide as its content */
-  min-width: calc((100% - 40px) / 3); /* Ensure it's at least as wide as a regular card */
-  max-width: 100%; /* Prevent it from exceeding the container width */
+  width: max-content; /* 讓卡片寬度基於其最寬的內容（即並排的圖片） */
+  /* 移除了 min-width，因為它可能會與 max-content 產生衝突 */
+  max-width: 100%; /* 防止它超出父容器的寬度 */
 }
 
 /* Container for multiple images within a .multi gallery item */
