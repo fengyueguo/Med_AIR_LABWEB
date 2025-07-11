@@ -258,7 +258,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px; /* Consistent gap between gallery items */
-  justify-content: space-between; /* Distribute items evenly across the row */
+  justify-content: flex-start; /* 确保左对齐 */
 }
 
 /* Styles for individual gallery items within the #publicity-gallery */
