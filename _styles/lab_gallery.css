@@ -1,3 +1,11 @@
+@charset "UTF-8";
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start; /* 确保左对齐 */
+}
+
 .gallery-item {
   flex: 0 0 auto;
   background: #fff;
@@ -28,13 +36,6 @@
   height: auto;
   object-fit: contain;
   border-radius: 8px;
-}
-
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* Adjust the gap between items as needed */
-  justify-content: space-between; /* Distribute items evenly */
 }
 
 #publicity-gallery .gallery-item {
