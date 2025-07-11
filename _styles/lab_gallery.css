@@ -1,3 +1,35 @@
+.gallery-item {
+  flex: 0 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 285px;
+}
+
+.gallery-item img {
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+  width: 285px;
+}
+
+.gallery-item .caption {
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 8px;
+}
+
+.gallery-item.multi .multi-images .main-img {
+  width: 285px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
