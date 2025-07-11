@@ -7,8 +7,7 @@
   justify-content: flex-start; /* 确保左对齐 */
 }
 
-/* Styles for individual gallery items within the #publicity-gallery */
-#publicity-gallery .gallery-item {
+.gallery .gallery-item {
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -22,13 +21,13 @@
 }
 
 /* Hover effects for gallery items */
-#publicity-gallery .gallery-item:hover {
+.gallery .gallery-item:hover {
   transform: scale(1.05); /* Slightly enlarge on hover */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
 }
 
 /* Styles for images within gallery items (default for single images) */
-#publicity-gallery .gallery-item img {
+.gallery .gallery-item img {
   width: 100%; /* Image takes full width of its container */
   height: 200px; /* Unified height for all single images */
   object-fit: cover; /* Crop image to fit the dimensions */
@@ -38,24 +37,24 @@
 }
 
 /* Hover effect for images within gallery items */
-#publicity-gallery .gallery-item img:hover {
+.gallery .gallery-item img:hover {
   transform: scale(1.05); /* Slightly enlarge image on hover */
 }
 
 /* Styles for image captions */
-#publicity-gallery .gallery-item .caption {
+.gallery .gallery-item .caption {
   font-size: 0.9em;
   color: #555;
   margin-top: 8px;
 }
 
 /* Specific styles for gallery items containing multiple images */
-#publicity-gallery .gallery-item.multi {
+.gallery .gallery-item.multi {
   /* Inherits width from .gallery-item, no need to redefine */
 }
 
 /* Container for multiple images within a .multi gallery item */
-#publicity-gallery .gallery-item.multi .multi-images {
+.gallery .gallery-item.multi .multi-images {
   display: flex; /* Use flexbox to arrange images side-by-side */
   gap: 8px; /* Gap between the two images */
   justify-content: center; /* Center images horizontally */
@@ -65,8 +64,8 @@
 }
 
 /* Styles for both main and poster images within a .multi gallery item */
-#publicity-gallery .gallery-item.multi .multi-images .main-img,
-#publicity-gallery .gallery-item.multi .multi-images .poster-img {
+.gallery .gallery-item.multi .multi-images .main-img,
+.gallery .gallery-item.multi .multi-images .poster-img {
   flex: 1; /* Both images take equal available space within multi-images container */
   height: 210px; /* Consistent height for both images in multi-item */
   object-fit: contain; /* Ensure images fit without cropping, maintaining aspect ratio */
