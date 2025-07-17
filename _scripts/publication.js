@@ -53,17 +53,17 @@ function filterElements(tag) {
     for (let i = 0; i < elements.length; i++) {
         const el = elements[i];
         if (tag === "all" || el.classList.contains(tag)) {
-            el.removeAttribute("style"); // ✅ 彻底移除 display，恢复响应式
+            el.classList.remove("filtered-out");
         } else {
-            el.style.display = "none";   // ✅ 隐藏
+            el.classList.add("filtered-out");
         }
     }
 
     for (let i = 0; i < years.length; i++) {
         if (tag === "all") {
-            years[i].removeAttribute("style");
+            years[i].classList.remove("filtered-out");
         } else {
-            years[i].style.display = "none";
+            years[i].classList.add("filtered-out");
         }
     }
 }
