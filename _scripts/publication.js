@@ -52,17 +52,16 @@ function filterElements(tag) {
 
     for (let i = 0; i < elements.length; i++) {
         const el = elements[i];
-        // 仅隐藏或显示，不设置 flex
         if (tag === "all" || el.classList.contains(tag)) {
-            el.style.removeProperty('display'); 
+            el.style.removeProperty("display"); // ✅ 恢复为 CSS 控制
         } else {
-            el.style.display = "none";
+            el.style.display = "none"; // ✅ 隐藏
         }
     }
 
     for (let i = 0; i < years.length; i++) {
         if (tag === "all") {
-            years[i].style.removeProperty('display');
+            years[i].style.removeProperty("display");
         } else {
             years[i].style.display = "none";
         }
