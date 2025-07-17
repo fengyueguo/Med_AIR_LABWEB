@@ -17,7 +17,7 @@
   padding: 10px;
   box-sizing: border-box;
   /* Calculate width for three items per row, accounting for two gaps */
-  width: calc((100% - 40px) / 3);
+  width: calc((100% - 40px) / 3); /* 这是桌面端的3列布局 */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
 }
 
@@ -51,12 +51,12 @@
 
 /* Specific styles for gallery items containing multiple images */
 .gallery .gallery-item.multi {
-  /* Override the default .gallery-item width to allow more space for two images.
-     這將使多圖片卡片更寬，可能會打破這些特定項目嚴格的三欄網格佈局，
-     但它會確保圖片的完整顯示。 */
-  width: max-content; /* 讓卡片寬度基於其最寬的內容（即並排的圖片） */
-  /* 移除了 min-width，因為它可能會與 max-content 產生衝突 */
-  max-width: 100%; /* 防止它超出父容器的寬度 */
+  /* 调整 multi 项的宽度，使其能包含两张图片 */
+  width: auto; /* 让其宽度自适应内容 */
+  min-width: calc(293px + auto); /* 至少包含 main-img 宽度 + gap + poster-img 最小宽度 */
+  max-width: 100%; /* 防止超出父容器 */
+  flex-shrink: 0; /* 防止其在空间不足时收缩 */
+  flex-grow: 0; /* 防止其在空间充足时增长 */
 }
 
 /* Container for multiple images within a .multi gallery item */
@@ -125,6 +125,49 @@
   font-size: 24px;
   color: white;
   cursor: pointer;
+}
+
+/* --- 媒体查询，使图片跟随外框缩小 --- */
+@media (max-width: 1024px) {
+  .gallery .gallery-item {
+    width: calc((100% - 20px) / 2); /* 两列布局 */
+  }
+  .gallery .gallery-item.multi {
+    /* 在两列布局下，多图项仍然尝试自适应 */
+    width: auto;
+  }
+}
+@media (max-width: 768px) {
+  .gallery {
+    justify-content: center; /* 在小屏幕上居中 */
+  }
+  .gallery .gallery-item {
+    width: 90%; /* 单列布局，占父容器的90% */
+    max-width: 350px; /* 限制最大宽度，防止图片过大 */
+  }
+  /* 多图项在小屏幕下也要调整 */
+  .gallery .gallery-item.multi {
+    width: 90%; /* 单列布局，占父容器的90% */
+    max-width: 350px; /* 限制最大宽度 */
+  }
+  .gallery .gallery-item.multi .multi-images {
+    flex-direction: column; /* 多图片堆叠显示 */
+    align-items: center; /* 居中堆叠的图片 */
+  }
+  .gallery .gallery-item.multi .multi-images .main-img,
+  .gallery .gallery-item.multi .multi-images .poster-img {
+    width: 100%; /* 图片在多图项内占满宽度 */
+    height: auto; /* 高度自适应 */
+    max-width: 300px; /* 限制单张图片的最大宽度 */
+  }
+}
+@media (max-width: 480px) {
+  .gallery .gallery-item {
+    width: 95%; /* 进一步调整宽度以适应更小的屏幕 */
+  }
+  .gallery .gallery-item.multi {
+    width: 95%;
+  }
 }
 
 /*# sourceMappingURL=lab_gallery.css.map */
