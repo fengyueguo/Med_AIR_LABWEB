@@ -47,27 +47,27 @@
      //    }
 
 
-    function filterElements(tag) {
-    var elements = document.getElementsByClassName("publication");
-    var years = document.getElementsByClassName("paper-year");
+function filterElements(tag) {
+    const elements = document.getElementsByClassName("publication");
+    const years = document.getElementsByClassName("paper-year");
 
-    for (var i = 0; i < elements.length; i++) {
-        var element = elements[i];
-        if (tag === "all" || element.classList.contains(tag)) {
-            element.classList.remove("hidden");
+    for (let i = 0; i < elements.length; i++) {
+        const el = elements[i];
+        if (tag === "all" || el.classList.contains(tag)) {
+            el.style.display = "";  // ✅ 恢复默认样式（由CSS控制响应式）
         } else {
-            element.classList.add("hidden");
+            el.style.display = "none";
         }
     }
 
-    for (var i = 0; i < years.length; i++) {
-        var year = years[i];
+    for (let i = 0; i < years.length; i++) {
         if (tag === "all") {
-            year.classList.remove("hidden");
+            years[i].style.display = "";
         } else {
-            year.classList.add("hidden");
+            years[i].style.display = "none";
         }
     }
 }
+
 
 }
