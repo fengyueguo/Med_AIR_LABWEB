@@ -1,6 +1,6 @@
 <div class="talk_container">
     <h2 id="activities">Visiting</h2>
-    <div id="publicity-gallery" class="gallery">
+    <div class="publicity-gallery gallery">
       
       <div class="gallery-item">
         <img src="../images/lab_gallery/peter202506.png" data-src="../images/lab_gallery/peter202506.png">
@@ -33,7 +33,7 @@
   </div>
 
   <h2 id="activities">Seminar</h2>
-    <div id="publicity-gallery" class="gallery">
+    <div class="publicity-gallery gallery">
       
       <div class="gallery-item">
       <img src="../images/activities/tianjinu202505.png" data-src="../images/activities/tianjinu202505.png">
@@ -49,7 +49,7 @@
       
   
   <h2 id="activities">Publicity</h2>
-  <div id="publicity-gallery" class="gallery">
+  <div class="publicity-gallery gallery">
 
     <div class="gallery-item">
       <img src="../images/gallery/gallery3.png" data-src="../images/gallery/gallery3.png">
@@ -108,7 +108,7 @@
   </div>
       
   <h2 id="activities">Award</h2>
-  <div id="publicity-gallery" class="gallery">
+  <div class="publicity-gallery gallery">
     
     <div class="gallery-item">
       <img src="../images/gallery/gallery5.png">
@@ -129,7 +129,7 @@
   </div>
 
   <h2 id="activities">Student Activities</h2>
-  <div id="publicity-gallery" class="gallery">
+ <div class="publicity-gallery gallery">
 
     <div class="gallery-item">
       <img src="../images/gallery/gallery2.png">
@@ -138,14 +138,49 @@
   </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+// document.addEventListener("DOMContentLoaded", function () {
+//     // 获取图片墙和创建模态框
+//     const galleries = document.querySelectorAll(".gallery"); // Changed variable name to 'galleries' for clarity
+//     const modal = document.createElement("div");
+//     modal.className = "image-modal";
+//     modal.innerHTML = `
+//       <span class="close-btn">&times;</span>
+//       <img src="" alt="Full-size Image">
+//     `;
+//     document.body.appendChild(modal);
+
+//     const modalImg = modal.querySelector("img");
+//     const closeBtn = modal.querySelector(".close-btn");
+
+//     // Iterate over each gallery and attach the click listener
+//     galleries.forEach(gallery => { // Loop through each gallery element
+//         gallery.addEventListener("click", function (e) {
+//             if (e.target.tagName === "IMG" && e.target.closest('.gallery-item')) { // Ensure clicking on an image within a gallery-item
+//                 // Use data-src for the modal image if available, otherwise fall back to src
+//                 modalImg.src = e.target.getAttribute("data-src") || e.target.getAttribute("src");
+//                 modal.classList.add("visible");
+//             }
+//         });
+//     });
+
+//     // 点击关闭按钮或模态框背景时关闭视图
+//     modal.addEventListener("click", function (e) {
+//         if (e.target === modal || e.target === closeBtn) {
+//             modal.classList.remove("visible");
+//             // Optional: Clear the image source when closing the modal to save memory
+//             modalImg.src = "";
+//         }
+//     });
+// });
+    document.addEventListener("DOMContentLoaded", function () {
     // 获取图片墙和创建模态框
-    const galleries = document.querySelectorAll(".gallery"); // Changed variable name to 'galleries' for clarity
+    // 将 id 选择器改为 class 选择器
+    const galleries = document.querySelectorAll(".publicity-gallery.gallery"); 
     const modal = document.createElement("div");
     modal.className = "image-modal";
     modal.innerHTML = `
-      <span class="close-btn">&times;</span>
-      <img src="" alt="Full-size Image">
+        <span class="close-btn">&times;</span>
+        <img src="" alt="Full-size Image">
     `;
     document.body.appendChild(modal);
 
