@@ -194,4 +194,36 @@
   left: 15px;
 }
 
+@media (max-width: 768px) {
+  .publication.media {
+    display: block; /* Make each publication block-level to stack images and text */
+    margin-bottom: 20px; /* Add some space between publications */
+    text-align: left; /* Ensure text is aligned left */
+    display: flex;
+  }
+  .papericon {
+    width: 80%; /* Ensure the image width is responsive but limit it to 80% */
+    margin-left: auto; /* Center the image horizontally */
+    margin-right: auto; /* Center the image horizontally */
+    display: block; /* Ensure it behaves as a block-level element */
+    height: auto; /* Maintain aspect ratio */
+  }
+  .media-body {
+    padding-left: 10px; /* Add padding for text */
+  }
+  .media-body a.paper-title {
+    font-size: 1.1rem; /* Adjust font size for readability */
+    line-height: 1.4; /* Ensure good spacing between lines */
+  }
+  .publication.media .media-body {
+    margin-top: 10px; /* Add some spacing between the image and text */
+  }
+  .publication .media-body b {
+    font-size: 1.1rem; /* Make bold text more prominent */
+  }
+}
+.hidden {
+  display: none !important;
+}
+
 /*# sourceMappingURL=publication.css.map */
