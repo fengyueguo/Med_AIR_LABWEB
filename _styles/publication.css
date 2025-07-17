@@ -222,5 +222,8 @@
     font-size: 1.1rem; /* Make bold text more prominent */
   }
 }
+.publication.media {
+  display: flex;
+}
 
 /*# sourceMappingURL=publication.css.map */
