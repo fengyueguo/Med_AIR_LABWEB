@@ -209,43 +209,62 @@ filter: invert(100%);
 //     }
 
 .publication {
-    display: none !important; /* Ensure hidden by default, unless show-publication is there */
+    display: none !important; 
 }
 
-/* Base rules for filtering - apply flex on desktop */
+.paper-year {
+    display: none !important; 
+}
+
+/* 2. 当 .show-publication 类存在时，出版物显示为 flex 布局（适用于桌面端） */
 .show-publication {
     display: flex !important; 
 }
+
+/* 3. 当 .hide-publication 类存在时，出版物隐藏 */
 .hide-publication {
     display: none !important; 
 }
+
+/* 4. 当 .show-year 类存在时，年份显示为块级元素 */
 .show-year {
     display: block !important;
 }
+
+/* 5. 当 .hide-year 类存在时，年份隐藏 */
 .hide-year {
     display: none !important;
 }
 
-/* --- THE KEY MODIFICATIONS ARE BELOW IN THE MEDIA QUERY --- */
+/* 6. 按钮激活状态样式（可选，用于视觉反馈） */
+.tags button.tag.active {
+    background-color: var(--primary, #6495ED); /* 根据您的主题色调整 */
+    color: white;
+}
+
+---
+
+/* --- 移动端专用样式覆盖（@media max-width: 768px）--- */
 @media (max-width: 768px) {
-    /*
-     * Make sure .publication.media defaults to block on mobile.
-     * Use !important to override any less specific global flex rules.
+    /* * 在移动端，无论有没有 .show-publication，只要是 .publication.media，
+     * 都强制其显示为 block，以确保“上图下文”布局。
+     * 这条规则的特异性足以覆盖来自全局的 flex 规则。
      */
     .publication.media {
         display: block !important; 
-        margin-bottom: 20px; 
-        text-align: left; 
+        margin-bottom: 20px !important; 
+        text-align: left !important; 
     }
     
-    /* * When .show-publication is added, ensure .publication.media STILL stays block.
-     * This rule needs to be as specific as (or more specific than) .show-publication
-     * from the global scope, and needs !important.
+    /* * 明确指定当 .publication.media 同时有 .show-publication 类时，
+     * 在移动端依然保持 display: block。这是关键的覆盖，确保 JavaScript 
+     * 添加类后手机端版式不乱。
      */
     .publication.media.show-publication {
-        display: block !important; /* This is the critical line! */
+        display: block !important; 
     }
 
+    /* 以下是您原有的移动端内部元素样式，保持不变，但为了确保优先级，加上 !important */
     .publication.media .papericon {
         width: 80% !important; 
         margin-left: auto !important; 
@@ -272,13 +291,8 @@ filter: invert(100%);
         font-size: 1rem !important; 
     }
 
-    /* Ensure paper-year stays block on mobile when shown */
+    /* 确保 paper-year 在移动端显示时也是 block */
     .paper-year.show-year {
         display: block !important;
-    }
-}
-    
-    .publication .media-body i {
-        font-size: 1rem; /* Smaller font for the publication name */
     }
 }
