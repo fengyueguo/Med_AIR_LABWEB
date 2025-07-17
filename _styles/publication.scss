@@ -1,100 +1,224 @@
 ---
 ---
 
+// .media-body {
+//     text-align: left;
+// }
+
+// .cell {
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     padding: 10px;
+//     background-color: rgba(0, 0, 0, 0.5);
+//     color: white;
+// }
+
+// .carousel-item {
+//     position: relative;
+// }
+
+// .carousel-img {
+//     position: relative;
+// }
+
+// #portrait {
+//     /* color: #1367a7;
+// color: rgb(34, 110, 147); */
+//     height: 158px;
+// }
+
+// .paperlo,
+// .paperhi-only {
+//     color: rgb(20, 68, 106);
+// }
+
+// .text_container h2:hover {
+//     cursor: pointer;
+// }
+
+// .paperhi-only,
+// .paperlo:hover {
+//     cursor: pointer;
+// }
+
+// #paper-show {
+//     color: rgb(0, 85, 170);
+//     font-size: 80%;
+// }
+
+// #paper-show span:hover {
+//     text-decoration: underline;
+// }
+
+// #header_img {
+//     position: absolute;
+//     top: 0px;
+//     right: 0px;
+// }
+
+// .carousel-caption {
+//     position: absolute;
+//     z-index: 1;
+//     text-align: center;
+//     display: flex;
+//     padding-top: 80px;
+//     padding-bottom: auto;
+//     padding-left: 20px;
+//     padding-right: 20px;
+//     height: 100%;
+//     width: 20%;
+//     top: 0;
+//     left:80%;
+//     bottom: auto;
+//     background-color: var(--msk-navy);
+//     opacity: 1;
+// }
+
+// .carousel-img {
+//     display: flex;
+//     height: 400px;
+//     width: 80%;
+// }
+
+// .carousel-control-prev:hover
+// {
+// filter: invert(100%);
+// }
+
+// .carousel-control-next:hover {
+// filter: invert(100%);
+// }   
+
+// #running-bar {position: relative;border:0px solid #0ff;width:100%; height: 180px;margin:auto;overflow: hidden;
+// }
+// #running-bar ul{position: absolute;left: 0;}
+// #running-bar ul li{list-style: none;width:200px;float: left;padding: 10px;height: 160px;}
+// #running-bar ul li img{width:100%;height:100%;object-fit:cover}
+
+// .paper-title {
+//     color: black;
+//     text-decoration: none;
+// }
+
+// .papericon {
+//     width: 160px;
+//     margin-top: auto;
+//     margin-left: 5px;
+//     margin-bottom: auto;
+// }
+
+// .media {
+//     margin-bottom: 15px;
+//     margin-left: 10px;
+// }
+
+// .media-body {
+//     margin-top: 5px;
+//     padding-left: 20px;
+// }
+
+// .publication {
+//     margin-bottom: 15px;
+// }
+
+// .publication.show {
+//     display: flex;
+// }
+
+// .papers-selected .book-chapters {
+//     display: none;
+// }
+
+// .papers-selected #show-selected {
+//     color: black;
+//     text-decoration: underline;
+// }
+
+// .papers-selected .paperhi {
+//     display: flex;
+// }
+
+// .papers-selected .paper-year {
+//     display: none;
+// }
+
+// .papers-by-date #show-by-date {
+//     color: black;
+//     text-decoration: underline;
+// }
+
+// .papers-by-date .paper-selected {
+//     display: none;
+// }
+
+// .papers-by-date .book-chapters {
+//     display: none;
+// }
+
+// .book-chapters #book-chapters {
+//     color: black;
+//     text-decoration: underline;
+// }
+
+// .book-chapters .paper-selected,
+// .book-chapters .paper-year,
+// .book-chapters .publication {
+//     display: none;
+// }
+
+// .book-chapters .chapter {
+//     display: flex;
+// }
+
+// .pt-2 .pb-1 .paper-year {
+//     position: relative;
+//     left: 15px;
+// }
+
+// @media (max-width: 768px) {
+//     .publication.media {
+//         display: block; /* Make each publication block-level to stack images and text */
+//         margin-bottom: 20px; /* Add some space between publications */
+//         text-align: left; /* Ensure text is aligned left */
+//     }
+    
+//     .papericon {
+//         width: 80%; /* Ensure the image width is responsive but limit it to 80% */
+//         margin-left: auto; /* Center the image horizontally */
+//         margin-right: auto; /* Center the image horizontally */
+//         display: block; /* Ensure it behaves as a block-level element */
+//         height: auto; /* Maintain aspect ratio */
+//     }
+    
+//     .media-body {
+//         padding-left: 10px; /* Add padding for text */
+//     }
+    
+//     .media-body a.paper-title {
+//         font-size: 1.1rem; /* Adjust font size for readability */
+//         line-height: 1.4; /* Ensure good spacing between lines */
+//     }
+    
+//     .publication.media .media-body {
+//         margin-top: 10px; /* Add some spacing between the image and text */
+//     }
+    
+//     .publication .media-body b {
+//         font-size: 1.1rem; /* Make bold text more prominent */
+//     }
+    
+//     .publication .media-body i {
+//         font-size: 1rem; /* Smaller font for the publication name */
+//     }
+// }
+
+/* 公共样式 */
 .media-body {
     text-align: left;
-}
-
-.cell {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-}
-
-.carousel-item {
-    position: relative;
-}
-
-.carousel-img {
-    position: relative;
-}
-
-#portrait {
-    /* color: #1367a7;
-color: rgb(34, 110, 147); */
-    height: 158px;
-}
-
-.paperlo,
-.paperhi-only {
-    color: rgb(20, 68, 106);
-}
-
-.text_container h2:hover {
-    cursor: pointer;
-}
-
-.paperhi-only,
-.paperlo:hover {
-    cursor: pointer;
-}
-
-#paper-show {
-    color: rgb(0, 85, 170);
-    font-size: 80%;
-}
-
-#paper-show span:hover {
-    text-decoration: underline;
-}
-
-#header_img {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-}
-
-.carousel-caption {
-    position: absolute;
-    z-index: 1;
-    text-align: center;
-    display: flex;
-    padding-top: 80px;
-    padding-bottom: auto;
+    margin-top: 5px;
     padding-left: 20px;
-    padding-right: 20px;
-    height: 100%;
-    width: 20%;
-    top: 0;
-    left:80%;
-    bottom: auto;
-    background-color: var(--msk-navy);
-    opacity: 1;
 }
-
-.carousel-img {
-    display: flex;
-    height: 400px;
-    width: 80%;
-}
-
-.carousel-control-prev:hover
-{
-filter: invert(100%);
-}
-
-.carousel-control-next:hover {
-filter: invert(100%);
-}   
-
-#running-bar {position: relative;border:0px solid #0ff;width:100%; height: 180px;margin:auto;overflow: hidden;
-}
-#running-bar ul{position: absolute;left: 0;}
-#running-bar ul li{list-style: none;width:200px;float: left;padding: 10px;height: 160px;}
-#running-bar ul li img{width:100%;height:100%;object-fit:cover}
 
 .paper-title {
     color: black;
@@ -113,19 +237,31 @@ filter: invert(100%);
     margin-left: 10px;
 }
 
-.media-body {
-    margin-top: 5px;
-    padding-left: 20px;
-}
-
 .publication {
     margin-bottom: 15px;
+    display: none; /* 默认隐藏，由 JS 控制显示状态 */
 }
 
 .publication.show {
     display: flex;
 }
 
+.hide {
+    display: none !important;
+}
+
+/* 年份样式 */
+.paper-year {
+    color: var(--primary);
+    position: relative;
+}
+
+.pt-2.pb-1.paper-year {
+    position: relative;
+    left: 15px;
+}
+
+/* 各种分类显示控制 */
 .papers-selected .book-chapters {
     display: none;
 }
@@ -171,44 +307,133 @@ filter: invert(100%);
     display: flex;
 }
 
-.pt-2 .pb-1 .paper-year {
-    position: relative;
-    left: 15px;
+/* 轮播图和通用样式 */
+.cell {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
 }
 
+.carousel-item {
+    position: relative;
+}
+
+.carousel-img {
+    position: relative;
+    display: flex;
+    height: 400px;
+    width: 80%;
+}
+
+#portrait {
+    height: 158px;
+}
+
+.text_container h2:hover {
+    cursor: pointer;
+}
+
+#paper-show {
+    color: rgb(0, 85, 170);
+    font-size: 80%;
+}
+
+#paper-show span:hover {
+    text-decoration: underline;
+}
+
+#header_img {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.carousel-caption {
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    padding-top: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 100%;
+    width: 20%;
+    top: 0;
+    left: 80%;
+    background-color: var(--msk-navy);
+    opacity: 1;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    filter: invert(100%);
+}
+
+#running-bar {
+    position: relative;
+    border: 0px solid #0ff;
+    width: 100%;
+    height: 180px;
+    margin: auto;
+    overflow: hidden;
+}
+
+#running-bar ul {
+    position: absolute;
+    left: 0;
+}
+
+#running-bar ul li {
+    list-style: none;
+    width: 200px;
+    float: left;
+    padding: 10px;
+    height: 160px;
+}
+
+#running-bar ul li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 媒体查询：移动端适配 */
 @media (max-width: 768px) {
-    .publication.media {
-        display: block; /* Make each publication block-level to stack images and text */
-        margin-bottom: 20px; /* Add some space between publications */
-        text-align: left; /* Ensure text is aligned left */
+    .publication.media,
+    .publication.show {
+        display: block !important; /* 强制移动端垂直排列 */
     }
-    
+
     .papericon {
-        width: 80%; /* Ensure the image width is responsive but limit it to 80% */
-        margin-left: auto; /* Center the image horizontally */
-        margin-right: auto; /* Center the image horizontally */
-        display: block; /* Ensure it behaves as a block-level element */
-        height: auto; /* Maintain aspect ratio */
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        height: auto;
     }
-    
+
     .media-body {
-        padding-left: 10px; /* Add padding for text */
+        padding-left: 10px;
     }
-    
+
     .media-body a.paper-title {
-        font-size: 1.1rem; /* Adjust font size for readability */
-        line-height: 1.4; /* Ensure good spacing between lines */
+        font-size: 1.1rem;
+        line-height: 1.4;
     }
-    
-    .publication.media .media-body {
-        margin-top: 10px; /* Add some spacing between the image and text */
+
+    .publication .media-body {
+        margin-top: 10px;
     }
-    
+
     .publication .media-body b {
-        font-size: 1.1rem; /* Make bold text more prominent */
+        font-size: 1.1rem;
     }
-    
+
     .publication .media-body i {
-        font-size: 1rem; /* Smaller font for the publication name */
+        font-size: 1rem;
     }
 }
+
