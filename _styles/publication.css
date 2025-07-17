@@ -1,9 +1,118 @@
 @charset "UTF-8";
-/* 公共样式 */
 .media-body {
   text-align: left;
-  margin-top: 5px;
+}
+
+.cell {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.carousel-item {
+  position: relative;
+}
+
+.carousel-img {
+  position: relative;
+}
+
+#portrait {
+  /* color: #1367a7;
+  color: rgb(34, 110, 147); */
+  height: 158px;
+}
+
+.paperlo,
+.paperhi-only {
+  color: rgb(20, 68, 106);
+}
+
+.text_container h2:hover {
+  cursor: pointer;
+}
+
+.paperhi-only,
+.paperlo:hover {
+  cursor: pointer;
+}
+
+#paper-show {
+  color: rgb(0, 85, 170);
+  font-size: 80%;
+}
+
+#paper-show span:hover {
+  text-decoration: underline;
+}
+
+#header_img {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.carousel-caption {
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  padding-top: 80px;
+  padding-bottom: auto;
   padding-left: 20px;
+  padding-right: 20px;
+  height: 100%;
+  width: 20%;
+  top: 0;
+  left: 80%;
+  bottom: auto;
+  background-color: var(--msk-navy);
+  opacity: 1;
+}
+
+.carousel-img {
+  display: flex;
+  height: 400px;
+  width: 80%;
+}
+
+.carousel-control-prev:hover {
+  filter: invert(100%);
+}
+
+.carousel-control-next:hover {
+  filter: invert(100%);
+}
+
+#running-bar {
+  position: relative;
+  border: 0px solid #0ff;
+  width: 100%;
+  height: 180px;
+  margin: auto;
+  overflow: hidden;
+}
+
+#running-bar ul {
+  position: absolute;
+  left: 0;
+}
+
+#running-bar ul li {
+  list-style: none;
+  width: 200px;
+  float: left;
+  padding: 10px;
+  height: 160px;
+}
+
+#running-bar ul li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .paper-title {
@@ -23,31 +132,19 @@
   margin-left: 10px;
 }
 
+.media-body {
+  margin-top: 5px;
+  padding-left: 20px;
+}
+
 .publication {
   margin-bottom: 15px;
-  display: none; /* 默认隐藏，由 JS 控制显示状态 */
 }
 
 .publication.show {
   display: flex;
 }
 
-.hide {
-  display: none !important;
-}
-
-/* 年份样式 */
-.paper-year {
-  color: var(--primary);
-  position: relative;
-}
-
-.pt-2.pb-1.paper-year {
-  position: relative;
-  left: 15px;
-}
-
-/* 各种分类显示控制 */
 .papers-selected .book-chapters {
   display: none;
 }
@@ -93,104 +190,21 @@
   display: flex;
 }
 
-/* 轮播图和通用样式 */
-.cell {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-}
-
-.carousel-item {
+.pt-2 .pb-1 .paper-year {
   position: relative;
+  left: 15px;
 }
 
-.carousel-img {
-  position: relative;
-  display: flex;
-  height: 400px;
-  width: 80%;
-}
-
-#portrait {
-  height: 158px;
-}
-
-.text_container h2:hover {
-  cursor: pointer;
-}
-
-#paper-show {
-  color: rgb(0, 85, 170);
-  font-size: 80%;
-}
-
-#paper-show span:hover {
-  text-decoration: underline;
-}
-
-#header_img {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-}
-
-.carousel-caption {
-  position: absolute;
-  z-index: 1;
-  text-align: center;
-  display: flex;
-  padding-top: 80px;
-  padding-left: 20px;
-  padding-right: 20px;
-  height: 100%;
-  width: 20%;
-  top: 0;
-  left: 80%;
-  background-color: var(--msk-navy);
-  opacity: 1;
-}
-
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-  filter: invert(100%);
-}
-
-#running-bar {
-  position: relative;
-  border: 0px solid #0ff;
-  width: 100%;
-  height: 180px;
-  margin: auto;
-  overflow: hidden;
-}
-
-#running-bar ul {
-  position: absolute;
-  left: 0;
-}
-
-#running-bar ul li {
-  list-style: none;
-  width: 200px;
-  float: left;
-  padding: 10px;
-  height: 160px;
-}
-
-#running-bar ul li img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* 媒体查询：移动端适配 */
+/* ... (existing CSS) ... */
 @media (max-width: 768px) {
-  .publication.media,
-  .publication.show {
-    display: block !important; /* 强制移动端垂直排列 */
+  .publication.media {
+    display: block; /* Make each publication block-level to stack images and text */
+    margin-bottom: 20px; /* Add some space between publications */
+    text-align: left; /* Ensure text is aligned left */
+  }
+  /* 添加这条规则 */
+  .publication.media.show { /* 确保在移动端，即使有show类也保持block */
+    display: block;
   }
   .papericon {
     width: 80%;
@@ -206,7 +220,7 @@
     font-size: 1.1rem;
     line-height: 1.4;
   }
-  .publication .media-body {
+  .publication.media .media-body {
     margin-top: 10px;
   }
   .publication .media-body b {
