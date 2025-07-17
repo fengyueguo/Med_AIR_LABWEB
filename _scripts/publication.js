@@ -24,30 +24,24 @@
     //     }
     // }
 
-    function filterElements(tag) {
-        var elements = document.getElementsByClassName("publication");
-        var years = document.getElementsByClassName("paper-year");
-    
-        for (var i = 0; i < elements.length; i++) {
-            var element = elements[i];
-            if (tag === "all" || element.classList.contains(tag)) {
-                element.classList.add("show");
-                element.classList.remove("hide");
-            } else {
-                element.classList.remove("show");
-                element.classList.add("hide");
-            }
-        }
-    
-        for (var i = 0; i < years.length; i++) {
-            var year = years[i];
-            if (tag === "all") {
-                year.classList.remove("hide");
-            } else {
-                year.classList.add("hide");
-            }
+   function filterElements(tag) {
+    var elements = document.getElementsByClassName("publication");
+    var years = document.getElementsByClassName("paper-year");
+
+    for (var i = 0; i < elements.length; i++) {
+        var element = elements[i];
+        if (tag === "all" || element.classList.contains(tag)) {
+            element.classList.add("show");
+        } else {
+            element.classList.remove("show");
         }
     }
+
+    for (var i = 0; i < years.length; i++) {
+        var year = years[i];
+        year.style.display = (tag === "all") ? "block" : "none";
+    }
+}
 
 
 }
