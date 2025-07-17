@@ -27,22 +27,26 @@
     function filterElements(tag) {
         var elements = document.getElementsByClassName("publication");
         var years = document.getElementsByClassName("paper-year");
+    
         for (var i = 0; i < elements.length; i++) {
             var element = elements[i];
             if (tag === "all" || element.classList.contains(tag)) {
-                element.style.display = "flex";
+                element.classList.add("show");
+                element.classList.remove("hide");
             } else {
-                element.style.display = "none";
+                element.classList.remove("show");
+                element.classList.add("hide");
             }
         }
     
         for (var i = 0; i < years.length; i++) {
             var year = years[i];
             if (tag === "all") {
-                year.style.display = "block";
+                year.classList.remove("hide");
             } else {
-                year.style.display = "none";
+                year.classList.add("hide");
             }
         }
     }
+
 }
