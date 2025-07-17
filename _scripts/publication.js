@@ -46,60 +46,49 @@
      //        }
      //    }
 
-    function filterElements(tag) {
-        var elements = document.getElementsByClassName("publication");
-        var years = document.getElementsByClassName("paper-year");
-    
-        // Remove active state from all tag buttons
-        var tagButtons = document.querySelectorAll('.tags button.tag');
-        tagButtons.forEach(button => {
-            button.classList.remove('active');
-        });
-    
-        for (var i = 0; i < elements.length; i++) {
-            var element = elements[i];
-            element.classList.remove("show-publication", "hide-publication"); 
-    
-            if (tag === "all" || element.classList.contains(tag)) {
-                element.classList.add("show-publication"); 
-            } else {
-                element.classList.add("hide-publication"); 
-            }
-        }
-    
-        for (var i = 0; i < years.length; i++) {
-            var year = years[i];
-            year.classList.remove("show-year", "hide-year"); 
-    
-            if (tag === "all") {
-                year.classList.add("show-year");
-            } else {
-                // Check if there are any visible publications under this year before hiding the year
-                // This prevents years from showing if all their publications are filtered out
-                let yearPublications = year.nextElementSibling; // Assuming the publications are the next sibling div
-                let hasVisiblePublications = false;
-                if (yearPublications && yearPublications.className.includes('paper-')) { // Check if it's a paper-year container
-                    Array.from(yearPublications.children).forEach(pub => {
-                        if (pub.classList.contains('publication') && (tag === "all" || pub.classList.contains(tag))) {
-                            hasVisiblePublications = true;
-                        }
-                    });
-                }
-                
-                if (hasVisiblePublications) {
-                    year.classList.add("show-year"); // Keep year visible if any publications are visible
-                } else {
-                    year.classList.add("hide-year");
-                }
-            }
-        }
-    
-        var currentActiveButton = document.querySelector(`.tags button[onclick="filterElements('${tag}')"]`);
-        if (currentActiveButton) {
-            currentActiveButton.classList.add('active');
+function filterElements(tag) {
+    var elements = document.getElementsByClassName("publication");
+    var years = document.getElementsByClassName("paper-year");
+
+    // 移除所有按钮的 active 状态
+    var tagButtons = document.querySelectorAll('.tags button.tag');
+    tagButtons.forEach(button => {
+        button.classList.remove('active');
+    });
+
+    // 过滤出版物 (这部分逻辑不变)
+    for (var i = 0; i < elements.length; i++) {
+        var element = elements[i];
+        element.classList.remove("show-publication", "hide-publication"); 
+
+        if (tag === "all" || element.classList.contains(tag)) {
+            element.classList.add("show-publication"); 
+        } else {
+            element.classList.add("hide-publication"); 
         }
     }
-    document.addEventListener('DOMContentLoaded', () => {
-        filterElements('all'); 
-    });
+
+    // 过滤年份 (此处是主要修改点)
+    for (var i = 0; i < years.length; i++) {
+        var year = years[i];
+        year.classList.remove("show-year", "hide-year"); 
+
+        if (tag === "all") { // 只有在 "all" 模式下才显示年份
+            year.classList.add("show-year");
+        } else { // 其他任何模式下都隐藏年份
+            year.classList.add("hide-year");
+        }
+    }
+
+    // 为当前激活的按钮添加 active 状态
+    var currentActiveButton = document.querySelector(`.tags button[onclick="filterElements('${tag}')"]`);
+    if (currentActiveButton) {
+        currentActiveButton.classList.add('active');
+    }
+}
+
+// 页面加载时默认调用 filterElements('all')
+document.addEventListener('DOMContentLoaded', () => {
+    filterElements('all'); 
+});
 }
