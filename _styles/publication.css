@@ -257,5 +257,11 @@
     display: block !important;
   }
 }
+.tags button.tag.active {
+  /* Style for the active button */
+  background-color: var(--primary, #1a73e8); /* Use your primary color or choose a new one */
+  color: white;
+  /* You might want to adjust other styles like border, font-weight, etc. */
+}
 
 /*# sourceMappingURL=publication.css.map */
