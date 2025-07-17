@@ -181,6 +181,7 @@ filter: invert(100%);
         display: block; /* Make each publication block-level to stack images and text */
         margin-bottom: 20px; /* Add some space between publications */
         text-align: left; /* Ensure text is aligned left */
+        display: flex;
     }
     
     .papericon {
@@ -207,4 +208,7 @@ filter: invert(100%);
     .publication .media-body b {
         font-size: 1.1rem; /* Make bold text more prominent */
     }
+.hidden {
+    display: none !important;
+}
 
