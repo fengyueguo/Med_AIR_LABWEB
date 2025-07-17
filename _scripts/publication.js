@@ -46,15 +46,15 @@
      //        }
      //    }
 
-
 function filterElements(tag) {
     const elements = document.getElementsByClassName("publication");
     const years = document.getElementsByClassName("paper-year");
 
     for (let i = 0; i < elements.length; i++) {
         const el = elements[i];
+        // 仅隐藏或显示，不设置 flex
         if (tag === "all" || el.classList.contains(tag)) {
-            el.style.display = "";  // ✅ 恢复默认样式（由CSS控制响应式）
+            el.style.removeProperty('display'); 
         } else {
             el.style.display = "none";
         }
@@ -62,7 +62,7 @@ function filterElements(tag) {
 
     for (let i = 0; i < years.length; i++) {
         if (tag === "all") {
-            years[i].style.display = "";
+            years[i].style.removeProperty('display');
         } else {
             years[i].style.display = "none";
         }
