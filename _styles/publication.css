@@ -194,34 +194,67 @@
   left: 15px;
 }
 
+.publication {
+  display: none !important;
+}
+
+.paper-year {
+  display: none !important;
+}
+
+.show-publication {
+  display: flex !important;
+}
+
+.hide-publication {
+  display: none !important;
+}
+
+.show-year {
+  display: block !important;
+}
+
+.hide-year {
+  display: none !important;
+}
+
+.tags button.tag.active {
+  background-color: var(--primary, #6495ED);
+  color: white;
+}
+
 @media (max-width: 768px) {
   .publication.media {
-    display: block; /* Make each publication block-level to stack images and text */
-    margin-bottom: 20px; /* Add some space between publications */
-    text-align: left; /* Ensure text is aligned left */
+    display: block !important;
+    margin-bottom: 20px !important;
+    text-align: left !important;
   }
-  .papericon {
-    width: 80%; /* Ensure the image width is responsive but limit it to 80% */
-    margin-left: auto; /* Center the image horizontally */
-    margin-right: auto; /* Center the image horizontally */
-    display: block; /* Ensure it behaves as a block-level element */
-    height: auto; /* Maintain aspect ratio */
+  .publication.media.show-publication {
+    display: block !important;
   }
-  .media-body {
-    padding-left: 10px; /* Add padding for text */
-  }
-  .media-body a.paper-title {
-    font-size: 1.1rem; /* Adjust font size for readability */
-    line-height: 1.4; /* Ensure good spacing between lines */
+  .publication.media .papericon {
+    width: 80% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+    height: auto !important;
   }
   .publication.media .media-body {
-    margin-top: 10px; /* Add some spacing between the image and text */
+    padding-left: 10px !important;
+    margin-top: 10px !important;
   }
-  .publication .media-body b {
-    font-size: 1.1rem; /* Make bold text more prominent */
+  .publication.media .media-body a.paper-title {
+    font-size: 1.1rem !important;
+    line-height: 1.4 !important;
   }
-  .publication .media-body i {
-    font-size: 1rem; /* Smaller font for the publication name */
+  .publication.media .media-body b {
+    font-size: 1.1rem !important;
+  }
+  .publication.media .media-body i {
+    font-size: 1rem !important;
+  }
+  .paper-year.show-year {
+    display: block !important;
   }
 }
 
