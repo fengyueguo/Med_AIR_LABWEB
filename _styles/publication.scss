@@ -176,35 +176,104 @@ filter: invert(100%);
     left: 15px;
 }
 
+// @media (max-width: 768px) {
+//     .publication.media {
+//         display: block; /* Make each publication block-level to stack images and text */
+//         margin-bottom: 20px; /* Add some space between publications */
+//         text-align: left; /* Ensure text is aligned left */
+//     }
+    
+//     .papericon {
+//         width: 80%; /* Ensure the image width is responsive but limit it to 80% */
+//         margin-left: auto; /* Center the image horizontally */
+//         margin-right: auto; /* Center the image horizontally */
+//         display: block; /* Ensure it behaves as a block-level element */
+//         height: auto; /* Maintain aspect ratio */
+//     }
+    
+//     .media-body {
+//         padding-left: 10px; /* Add padding for text */
+//     }
+    
+//     .media-body a.paper-title {
+//         font-size: 1.1rem; /* Adjust font size for readability */
+//         line-height: 1.4; /* Ensure good spacing between lines */
+//     }
+    
+//     .publication.media .media-body {
+//         margin-top: 10px; /* Add some spacing between the image and text */
+//     }
+    
+//     .publication .media-body b {
+//         font-size: 1.1rem; /* Make bold text more prominent */
+//     }
+
+.publication {
+    display: none; /* 如果原有的.publication没有display:none，则需要加这一行 */
+}
+
+.paper-year {
+    display: none; /* 如果原有的.paper-year没有display:none，则需要加这一行 */
+}
+
+/* JS添加 show-publication 类时显示，桌面端默认是flex */
+.show-publication {
+    display: flex !important; /* 使用 !important 确保优先级最高 */
+}
+
+/* JS添加 hide-publication 类时隐藏 */
+.hide-publication {
+    display: none !important; /* 使用 !important 确保优先级最高 */
+}
+
+/* JS添加 show-year 类时显示年份 */
+.show-year {
+    display: block !important; /* 使用 !important 确保优先级最高 */
+}
+
+/* JS添加 hide-year 类时隐藏年份 */
+.hide-year {
+    display: none !important; /* 使用 !important 确保优先级最高 */
+}
+
+
 @media (max-width: 768px) {
-    .publication.media {
-        display: block; /* Make each publication block-level to stack images and text */
-        margin-bottom: 20px; /* Add some space between publications */
-        text-align: left; /* Ensure text is aligned left */
+    /* 确保在移动端，当JS添加 show-publication 类时，强制为 block */
+    .publication.media.show-publication {
+        display: block !important; /* 覆盖 .show-publication 的 flex，并使用 !important */
+        margin-bottom: 20px; /* 添加一些垂直间距 */
+        text-align: left; /* 确保文本左对齐 */
     }
     
-    .papericon {
-        width: 80%; /* Ensure the image width is responsive but limit it to 80% */
-        margin-left: auto; /* Center the image horizontally */
-        margin-right: auto; /* Center the image horizontally */
-        display: block; /* Ensure it behaves as a block-level element */
-        height: auto; /* Maintain aspect ratio */
-    }
-    
-    .media-body {
-        padding-left: 10px; /* Add padding for text */
-    }
-    
-    .media-body a.paper-title {
-        font-size: 1.1rem; /* Adjust font size for readability */
-        line-height: 1.4; /* Ensure good spacing between lines */
+    .publication.media .papericon {
+        width: 80% !important; /* 确保图片宽度响应式 */
+        margin-left: auto !important; /* 水平居中图片 */
+        margin-right: auto !important; /* 水平居中图片 */
+        display: block !important; /* 图片作为块级元素 */
+        height: auto !important; /* 保持宽高比 */
     }
     
     .publication.media .media-body {
-        margin-top: 10px; /* Add some spacing between the image and text */
+        padding-left: 10px !important; /* 为文本添加内边距 */
+        margin-top: 10px !important; /* 图片和文本之间留出空间 */
     }
     
-    .publication .media-body b {
-        font-size: 1.1rem; /* Make bold text more prominent */
+    .publication.media .media-body a.paper-title {
+        font-size: 1.1rem !important; /* 调整字体大小 */
+        line-height: 1.4 !important; /* 调整行高 */
     }
+    
+    .publication.media .media-body b {
+        font-size: 1.1rem !important; /* 粗体文本更突出 */
+    }
+    
+    .publication.media .media-body i {
+        font-size: 1rem !important; /* 出版物名称的字体小一些 */
+    }
+
+    /* 确保 paper-year 在移动端显示时也是 block */
+    .paper-year.show-year {
+        display: block !important;
+    }
+}
 
