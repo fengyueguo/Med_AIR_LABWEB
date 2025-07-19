@@ -77,12 +77,12 @@
   
     <div class="gallery-item">
       <img src="../images/gallery/gallery11.png">
-      <div class="caption"></div>
+      <div class="caption">CUHK News Centre Report: Artificial Intelligence Enables Autonomous Navigation for Micro-Robot Swarms.</div>
     </div>
   
     <div class="gallery-item">
       <img src="../images/gallery/gallery16.png">
-      <div class="caption"></div>
+      <div class="caption">CUHK News Centre Reports on Research Scheme Grant Reception</div>
     </div>
   
     <div class="gallery-item">
@@ -165,8 +165,6 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-    // 获取图片墙和创建模态框
-    // 将 id 选择器改为 class 选择器
     const galleries = document.querySelectorAll(".publicity-gallery.gallery"); 
     const modal = document.createElement("div");
     modal.className = "image-modal";
@@ -179,22 +177,19 @@
     const modalImg = modal.querySelector("img");
     const closeBtn = modal.querySelector(".close-btn");
 
-    // Iterate over each gallery and attach the click listener
-    galleries.forEach(gallery => { // Loop through each gallery element
+
+    galleries.forEach(gallery => { 
         gallery.addEventListener("click", function (e) {
-            if (e.target.tagName === "IMG" && e.target.closest('.gallery-item')) { // Ensure clicking on an image within a gallery-item
-                // Use data-src for the modal image if available, otherwise fall back to src
+            if (e.target.tagName === "IMG" && e.target.closest('.gallery-item'))
                 modalImg.src = e.target.getAttribute("src");
                 modal.classList.add("visible");
             }
         });
     });
 
-    // 点击关闭按钮或模态框背景时关闭视图
     modal.addEventListener("click", function (e) {
         if (e.target === modal || e.target === closeBtn) {
             modal.classList.remove("visible");
-            // Optional: Clear the image source when closing the modal to save memory
             modalImg.src = "";
         }
     });
