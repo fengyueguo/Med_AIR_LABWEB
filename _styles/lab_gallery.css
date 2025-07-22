@@ -1,13 +1,11 @@
 @charset "UTF-8";
 /* Base styles for the gallery container */
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* Consistent gap between gallery items */
-  justify-content: flex-start; /* 确保左对齐 */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
 }
 
-/* Styles for individual gallery items within any .gallery container */
 .gallery .gallery-item {
   background: #fff;
   border-radius: 8px;
@@ -16,11 +14,10 @@
   text-align: center;
   padding: 10px;
   box-sizing: border-box;
-  /* Calculate width for three items per row, accounting for two gaps */
-  width: calc((100% - 40px) / 3); /* 这是桌面端的3列布局 */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Styles for individual gallery items within any .gallery container */
 /* Hover effects for gallery items */
 .gallery .gallery-item:hover {
   transform: scale(1.05); /* Slightly enlarge on hover */
