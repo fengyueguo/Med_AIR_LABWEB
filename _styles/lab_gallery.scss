@@ -274,11 +274,11 @@
     }
 }
 
-// @media (max-width: 480px) {
-//     .gallery .gallery-item {
-//         width: 95%; /* 进一步调整宽度以适应更小的屏幕 */
-//     }
-//     .gallery .gallery-item.multi {
-//         width: 95%;
-//     }
-// }
+@media (max-width: 480px) {
+    .gallery .gallery-item {
+        width: 95%; /* 进一步调整宽度以适应更小的屏幕 */
+    }
+    .gallery .gallery-item.multi {
+        width: 95%;
+    }
+}
