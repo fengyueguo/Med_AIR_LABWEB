@@ -197,33 +197,29 @@
 .gallery .gallery-item.multi {
     width: 100%; /* 或者 grid-column: span 2; 在 grid 中 */
     box-sizing: border-box;
+    grid-column: span 2;  /* ✅ 跨两列显示 */
 }
+
 
 .gallery .gallery-item.multi .multi-images {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 12px;
-    justify-content: center;
-    align-items: flex-start;
-    margin-bottom: 8px;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
-/* 主图：大图，占固定宽度 */
 .gallery .gallery-item.multi .main-img {
-    width: 280px;
-    height: auto;
-    object-fit: contain;
-    border-radius: 8px;
-    flex-shrink: 0;
+  width: 285px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
-/* 海报图：高固定，宽自适应 */
 .gallery .gallery-item.multi .poster-img {
-    height: 210px;
-    width: auto;
-    object-fit: contain;
-    border-radius: 8px;
-    flex-shrink: 0;
+  height: 210px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 
