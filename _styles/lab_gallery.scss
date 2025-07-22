@@ -194,42 +194,75 @@
     margin-top: 8px;
 }
 
-/* Specific styles for gallery items containing multiple images */
 .gallery .gallery-item.multi {
-    /* 调整 multi 项的宽度，使其能包含两张图片 */
-    width: auto; /* 让其宽度自适应内容 */
-    min-width: calc(285px + 8px + auto); /* 至少包含 main-img 宽度 + gap + poster-img 最小宽度 */
-    max-width: 100%; /* 防止超出父容器 */
-    flex-shrink: 0; /* 防止其在空间不足时收缩 */
-    flex-grow: 0; /* 防止其在空间充足时增长 */
+    width: 100%; /* 或者 grid-column: span 2; 在 grid 中 */
+    box-sizing: border-box;
 }
 
-/* Container for multiple images within a .multi gallery item */
 .gallery .gallery-item.multi .multi-images {
-    display: flex; /* Use flexbox to arrange images side-by-side */
-    gap: 8px; /* Gap between the two images */
-    justify-content: center; /* Center images horizontally */
-    align-items: flex-start; /* Align images to the top if their natural heights differ */
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+    justify-content: center;
+    align-items: flex-start;
     margin-bottom: 8px;
 }
 
-/* Styles for the main image in a multi gallery item */
-.gallery .gallery-item.multi .multi-images .main-img {
-    width: 285px; /* Fixed width as per original request */
-    height: auto; /* Height adapts to maintain aspect ratio */
-    object-fit: contain; /* Ensure image fits without cropping */
+/* 主图：大图，占固定宽度 */
+.gallery .gallery-item.multi .main-img {
+    width: 280px;
+    height: auto;
+    object-fit: contain;
     border-radius: 8px;
-    flex-shrink: 0; /* Prevent shrinking */
+    flex-shrink: 0;
 }
 
-/* Styles for the poster image in a multi gallery item */
-.gallery .gallery-item.multi .multi-images .poster-img {
-    width: auto; /* Width adapts to maintain aspect ratio with fixed height */
-    height: 210px; /* Fixed height as per original request */
-    object-fit: contain; /* Ensure image fits without cropping */
+/* 海报图：高固定，宽自适应 */
+.gallery .gallery-item.multi .poster-img {
+    height: 210px;
+    width: auto;
+    object-fit: contain;
     border-radius: 8px;
-    flex-shrink: 0; /* Prevent shrinking */
+    flex-shrink: 0;
 }
+
+
+/* Specific styles for gallery items containing multiple images */
+// .gallery .gallery-item.multi {
+//     /* 调整 multi 项的宽度，使其能包含两张图片 */
+//     width: auto; /* 让其宽度自适应内容 */
+//     min-width: calc(285px + 8px + auto); /* 至少包含 main-img 宽度 + gap + poster-img 最小宽度 */
+//     max-width: 100%; /* 防止超出父容器 */
+//     flex-shrink: 0; /* 防止其在空间不足时收缩 */
+//     flex-grow: 0; /* 防止其在空间充足时增长 */
+// }
+
+// /* Container for multiple images within a .multi gallery item */
+// .gallery .gallery-item.multi .multi-images {
+//     display: flex; /* Use flexbox to arrange images side-by-side */
+//     gap: 8px; /* Gap between the two images */
+//     justify-content: center; /* Center images horizontally */
+//     align-items: flex-start; /* Align images to the top if their natural heights differ */
+//     margin-bottom: 8px;
+// }
+
+// /* Styles for the main image in a multi gallery item */
+// .gallery .gallery-item.multi .multi-images .main-img {
+//     width: 285px; /* Fixed width as per original request */
+//     height: auto; /* Height adapts to maintain aspect ratio */
+//     object-fit: contain; /* Ensure image fits without cropping */
+//     border-radius: 8px;
+//     flex-shrink: 0; /* Prevent shrinking */
+// }
+
+// /* Styles for the poster image in a multi gallery item */
+// .gallery .gallery-item.multi .multi-images .poster-img {
+//     width: auto; /* Width adapts to maintain aspect ratio with fixed height */
+//     height: 210px; /* Fixed height as per original request */
+//     object-fit: contain; /* Ensure image fits without cropping */
+//     border-radius: 8px;
+//     flex-shrink: 0; /* Prevent shrinking */
+// }
 
 /* Styles for the full-size image modal popup */
 .image-modal {
