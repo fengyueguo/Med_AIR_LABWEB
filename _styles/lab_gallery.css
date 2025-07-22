@@ -1,9 +1,8 @@
 @charset "UTF-8";
-/* Base styles for the gallery container */
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* Consistent gap between gallery items */
+  gap: 20px;
   justify-content: flex-start;
 }
 
