@@ -128,14 +128,18 @@
 //   cursor: pointer;
 // }
 
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Consistent gap between gallery items */
-    justify-content: flex-start; /* 确保左对齐 */
-}
+// .gallery {
+//     display: flex;
+//     flex-wrap: wrap;
+//     gap: 20px; /* Consistent gap between gallery items */
+//     justify-content: flex-start; /* 确保左对齐 */
+// }
 
-/* Styles for individual gallery items within any .gallery container */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
 .gallery .gallery-item {
     background: #fff;
     border-radius: 8px;
@@ -144,10 +148,23 @@
     text-align: center;
     padding: 10px;
     box-sizing: border-box;
-    /* Calculate width for three items per row, accounting for two gaps */
-    width: calc((100% - (2 * 20px)) / 3); /* 这是桌面端的3列布局 */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+
+/* Styles for individual gallery items within any .gallery container */
+// .gallery .gallery-item {
+//     background: #fff;
+//     border-radius: 8px;
+//     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+//     overflow: hidden;
+//     text-align: center;
+//     padding: 10px;
+//     box-sizing: border-box;
+//     /* Calculate width for three items per row, accounting for two gaps */
+//     width: calc((100% - (2 * 20px)) / 3); /* 这是桌面端的3列布局 */
+//     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+// }
 
 /* Hover effects for gallery items */
 .gallery .gallery-item:hover {
