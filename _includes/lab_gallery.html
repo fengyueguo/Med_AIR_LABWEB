@@ -177,16 +177,15 @@
     const modalImg = modal.querySelector("img");
     const closeBtn = modal.querySelector(".close-btn");
 
-
     galleries.forEach(gallery => { 
         gallery.addEventListener("click", function (e) {
-            if (e.target.tagName === "IMG" && e.target.closest('.gallery-item'))
+            if (e.target.tagName === "IMG" && e.target.closest('.gallery-item')) {
                 modalImg.src = e.target.getAttribute("src");
                 modal.classList.add("visible");
             }
         });
     });
-
+    
     modal.addEventListener("click", function (e) {
         if (e.target === modal || e.target === closeBtn) {
             modal.classList.remove("visible");
