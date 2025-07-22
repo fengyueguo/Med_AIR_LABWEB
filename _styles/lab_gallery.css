@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Base styles for the gallery container */
 .gallery {
   display: flex;
@@ -140,6 +141,14 @@
     width: 100%;
     height: auto;
     max-width: 300px;
+  }
+}
+@media (max-width: 480px) {
+  .gallery .gallery-item {
+    width: 95%; /* 进一步调整宽度以适应更小的屏幕 */
+  }
+  .gallery .gallery-item.multi {
+    width: 95%;
   }
 }
 
