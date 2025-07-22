@@ -128,18 +128,13 @@
 //   cursor: pointer;
 // }
 
-// .gallery {
-//     display: flex;
-//     flex-wrap: wrap;
-//     gap: 20px; /* Consistent gap between gallery items */
-//     justify-content: flex-start; /* 确保左对齐 */
-// }
-
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Consistent gap between gallery items */
+    justify-content: flex-start;
 }
+
 .gallery .gallery-item {
     background: #fff;
     border-radius: 8px;
@@ -148,46 +143,28 @@
     text-align: center;
     padding: 10px;
     box-sizing: border-box;
+    width: calc((100% - (2 * 20px)) / 3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-/* Styles for individual gallery items within any .gallery container */
-// .gallery .gallery-item {
-//     background: #fff;
-//     border-radius: 8px;
-//     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-//     overflow: hidden;
-//     text-align: center;
-//     padding: 10px;
-//     box-sizing: border-box;
-//     /* Calculate width for three items per row, accounting for two gaps */
-//     width: calc((100% - (2 * 20px)) / 3); /* 这是桌面端的3列布局 */
-//     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
-// }
-
-/* Hover effects for gallery items */
 .gallery .gallery-item:hover {
-    transform: scale(1.05); /* Slightly enlarge on hover */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Styles for images within gallery items (default for single images) */
 .gallery .gallery-item img {
-    width: 100%; /* Image takes full width of its container */
-    height: 200px; /* Unified height for all single images */
-    object-fit: cover; /* Crop image to fit the dimensions */
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
     border-radius: 8px;
-    cursor: pointer; /* Indicate interactivity */
-    transition: transform 0.3s ease; /* Smooth transition for image hover */
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-/* Hover effect for images within gallery items */
 .gallery .gallery-item img:hover {
-    transform: scale(1.05); /* Slightly enlarge image on hover */
+    transform: scale(1.05);
 }
 
-/* Styles for image captions */
 .gallery .gallery-item .caption {
     font-size: 0.9em;
     color: #555;
@@ -195,103 +172,65 @@
 }
 
 .gallery .gallery-item.multi {
-    width: 100%; /* 或者 grid-column: span 2; 在 grid 中 */
-    box-sizing: border-box;
-    grid-column: span 2;  /* ✅ 跨两列显示 */
+    width: auto;
+    min-width: calc(285px + 8px + auto);
+    max-width: 100%;
+    flex-shrink: 0;
+    flex-grow: 0;
 }
-
 
 .gallery .gallery-item.multi .multi-images {
-  display: flex;
-  gap: 12px;
-  justify-content: flex-start;
-  align-items: flex-start;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 8px;
 }
 
-.gallery .gallery-item.multi .main-img {
-  width: 285px;
-  height: auto;
-  object-fit: contain;
-  border-radius: 8px;
+.gallery .gallery-item.multi .multi-images .main-img {
+    width: 285px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    flex-shrink: 0;
 }
 
-.gallery .gallery-item.multi .poster-img {
-  height: 210px;
-  width: auto;
-  object-fit: contain;
-  border-radius: 8px;
+.gallery .gallery-item.multi .multi-images .poster-img {
+    width: auto;
+    height: 210px;
+    object-fit: contain; 
+    border-radius: 8px;
+    flex-shrink: 0;
 }
 
-
-/* Specific styles for gallery items containing multiple images */
-// .gallery .gallery-item.multi {
-//     /* 调整 multi 项的宽度，使其能包含两张图片 */
-//     width: auto; /* 让其宽度自适应内容 */
-//     min-width: calc(285px + 8px + auto); /* 至少包含 main-img 宽度 + gap + poster-img 最小宽度 */
-//     max-width: 100%; /* 防止超出父容器 */
-//     flex-shrink: 0; /* 防止其在空间不足时收缩 */
-//     flex-grow: 0; /* 防止其在空间充足时增长 */
-// }
-
-// /* Container for multiple images within a .multi gallery item */
-// .gallery .gallery-item.multi .multi-images {
-//     display: flex; /* Use flexbox to arrange images side-by-side */
-//     gap: 8px; /* Gap between the two images */
-//     justify-content: center; /* Center images horizontally */
-//     align-items: flex-start; /* Align images to the top if their natural heights differ */
-//     margin-bottom: 8px;
-// }
-
-// /* Styles for the main image in a multi gallery item */
-// .gallery .gallery-item.multi .multi-images .main-img {
-//     width: 285px; /* Fixed width as per original request */
-//     height: auto; /* Height adapts to maintain aspect ratio */
-//     object-fit: contain; /* Ensure image fits without cropping */
-//     border-radius: 8px;
-//     flex-shrink: 0; /* Prevent shrinking */
-// }
-
-// /* Styles for the poster image in a multi gallery item */
-// .gallery .gallery-item.multi .multi-images .poster-img {
-//     width: auto; /* Width adapts to maintain aspect ratio with fixed height */
-//     height: 210px; /* Fixed height as per original request */
-//     object-fit: contain; /* Ensure image fits without cropping */
-//     border-radius: 8px;
-//     flex-shrink: 0; /* Prevent shrinking */
-// }
-
-/* Styles for the full-size image modal popup */
 .image-modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    background: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    opacity: 0; /* Initially hidden */
-    visibility: hidden; /* Initially hidden */
-    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for showing/hiding */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Styles for the image inside the modal */
 .image-modal img {
-    max-width: 90%; /* Limit image width */
-    max-height: 90%; /* Limit image height */
+    max-width: 90%;
+    max-height: 90%;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.5); /* White shadow for visibility */
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
 }
 
-/* Class to make the modal visible */
 .image-modal.visible {
     opacity: 1;
     visibility: visible;
 }
 
-/* Styles for the modal close button */
 .image-modal .close-btn {
     position: absolute;
     top: 20px;
@@ -301,48 +240,45 @@
     cursor: pointer;
 }
 
-/* --- 媒体查询，使图片跟随外框缩小 --- */
-@media (max-width: 1024px) {
-    .gallery .gallery-item {
-        width: calc((100% - (1 * 20px)) / 2); /* 两列布局 */
-    }
-    .gallery .gallery-item.multi {
-        /* 在两列布局下，多图项仍然尝试自适应 */
-        width: auto; 
-    }
-}
+// @media (max-width: 1024px) {
+//     .gallery .gallery-item {
+//         width: calc((100% - (1 * 20px)) / 2);
+//     }
+//     .gallery .gallery-item.multi {
+//         width: auto; 
+//     }
+// }
 
 @media (max-width: 768px) {
     .gallery {
-        justify-content: center; /* 在小屏幕上居中 */
+        justify-content: center;
     }
     .gallery .gallery-item {
-        width: 90%; /* 单列布局，占父容器的90% */
-        max-width: 350px; /* 限制最大宽度，防止图片过大 */
+        width: 90%;
+        max-width: 350px;
     }
 
-    /* 多图项在小屏幕下也要调整 */
     .gallery .gallery-item.multi {
-        width: 90%; /* 单列布局，占父容器的90% */
-        max-width: 350px; /* 限制最大宽度 */
+        width: 90%;
+        max-width: 350px;
     }
     .gallery .gallery-item.multi .multi-images {
-        flex-direction: column; /* 多图片堆叠显示 */
-        align-items: center; /* 居中堆叠的图片 */
+        flex-direction: column;
+        align-items: center;
     }
     .gallery .gallery-item.multi .multi-images .main-img,
     .gallery .gallery-item.multi .multi-images .poster-img {
-        width: 100%; /* 图片在多图项内占满宽度 */
-        height: auto; /* 高度自适应 */
-        max-width: 300px; /* 限制单张图片的最大宽度 */
+        width: 100%;
+        height: auto;
+        max-width: 300px;
     }
 }
 
-@media (max-width: 480px) {
-    .gallery .gallery-item {
-        width: 95%; /* 进一步调整宽度以适应更小的屏幕 */
-    }
-    .gallery .gallery-item.multi {
-        width: 95%;
-    }
-}
+// @media (max-width: 480px) {
+//     .gallery .gallery-item {
+//         width: 95%; /* 进一步调整宽度以适应更小的屏幕 */
+//     }
+//     .gallery .gallery-item.multi {
+//         width: 95%;
+//     }
+// }
