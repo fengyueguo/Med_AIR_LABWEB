@@ -223,6 +223,8 @@
   document.querySelectorAll('.image-carousel').forEach(carousel => {
     const images = carousel.querySelectorAll('.carousel-image');
     let current = 0;
+    let intervalTime = 4000; // 自动轮播间隔（毫秒）
+    let autoPlay;
 
     const showImage = index => {
       images.forEach((img, i) => {
@@ -230,14 +232,40 @@
       });
     };
 
-    carousel.querySelector('.carousel-prev').addEventListener('click', () => {
+    const nextImage = () => {
+      current = (current + 1) % images.length;
+      showImage(current);
+    };
+
+    const prevImage = () => {
       current = (current - 1 + images.length) % images.length;
       showImage(current);
+    };
+
+    // 初始化显示第一张图
+    showImage(current);
+
+    // 按钮控制
+    carousel.querySelector('.carousel-prev').addEventListener('click', () => {
+      prevImage();
+      resetAutoplay();
     });
 
     carousel.querySelector('.carousel-next').addEventListener('click', () => {
-      current = (current + 1) % images.length;
-      showImage(current);
+      nextImage();
+      resetAutoplay();
     });
+
+    // 自动轮播功能
+    const startAutoplay = () => {
+      autoPlay = setInterval(nextImage, intervalTime);
+    };
+
+    const resetAutoplay = () => {
+      clearInterval(autoPlay);
+      startAutoplay();
+    };
+
+    startAutoplay(); // 开始自动轮播
   });
 </script>
