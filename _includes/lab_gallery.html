@@ -221,51 +221,48 @@
 });
 
   document.querySelectorAll('.image-carousel').forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
     const images = carousel.querySelectorAll('.carousel-image');
+    const total = images.length;
     let current = 0;
-    let intervalTime = 4000; // 自动轮播间隔（毫秒）
-    let autoPlay;
+    const intervalTime = 4000;
+    let autoplay;
 
-    const showImage = index => {
-      images.forEach((img, i) => {
-        img.classList.toggle('active', i === index);
-      });
+    const updateSlide = () => {
+      const offset = -current * 100;
+      track.style.transform = `translateX(${offset}%)`;
     };
 
-    const nextImage = () => {
-      current = (current + 1) % images.length;
-      showImage(current);
+    const nextSlide = () => {
+      current = (current + 1) % total;
+      updateSlide();
     };
 
-    const prevImage = () => {
-      current = (current - 1 + images.length) % images.length;
-      showImage(current);
+    const prevSlide = () => {
+      current = (current - 1 + total) % total;
+      updateSlide();
     };
 
-    // 初始化显示第一张图
-    showImage(current);
-
-    // 按钮控制
-    carousel.querySelector('.carousel-prev').addEventListener('click', () => {
-      prevImage();
-      resetAutoplay();
-    });
-
-    carousel.querySelector('.carousel-next').addEventListener('click', () => {
-      nextImage();
-      resetAutoplay();
-    });
-
-    // 自动轮播功能
     const startAutoplay = () => {
-      autoPlay = setInterval(nextImage, intervalTime);
+      autoplay = setInterval(nextSlide, intervalTime);
     };
 
     const resetAutoplay = () => {
-      clearInterval(autoPlay);
+      clearInterval(autoplay);
       startAutoplay();
     };
 
-    startAutoplay(); // 开始自动轮播
+    carousel.querySelector('.carousel-next').addEventListener('click', () => {
+      nextSlide();
+      resetAutoplay();
+    });
+
+    carousel.querySelector('.carousel-prev').addEventListener('click', () => {
+      prevSlide();
+      resetAutoplay();
+    });
+
+    updateSlide();
+    startAutoplay();
   });
 </script>
