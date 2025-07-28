@@ -220,42 +220,24 @@
     });
 });
 
-let currentIndex = 0;
-const slides = document.querySelector('.carousel-slide');
-const dots = document.querySelectorAll('.dot');
-const captions = [
-  "CUHK News Centre Report: AI System for Detecting COVID-19 Infections in CT.",
-  "Highlighted as a Woman in Science in RSIPvision Computer Vision News magazine."
-];
-const captionElement = document.querySelector('.carousel-caption');
-const totalSlides = dots.length;
+  document.querySelectorAll('.image-carousel').forEach(carousel => {
+    const images = carousel.querySelectorAll('.carousel-image');
+    let current = 0;
 
-function showSlide(index) {
-    if (index >= totalSlides) index = 0;
-    if (index < 0) index = totalSlides - 1;
-    
-    slides.style.transform = `translateX(-${index * 100}%)`;
+    const showImage = index => {
+      images.forEach((img, i) => {
+        img.classList.toggle('active', i === index);
+      });
+    };
 
-    dots.forEach(dot => dot.classList.remove('active'));
-    if (dots[index]) {
-        dots[index].classList.add('active');
-    }
+    carousel.querySelector('.carousel-prev').addEventListener('click', () => {
+      current = (current - 1 + images.length) % images.length;
+      showImage(current);
+    });
 
-    // 更新共用文字说明
-    captionElement.textContent = captions[index];
-
-    currentIndex = index;
-}
-
-function currentSlide(index) {
-    showSlide(index);
-}
-
-function autoSlide() {
-    currentIndex++;
-    showSlide(currentIndex);
-}
-
-let slideInterval = setInterval(autoSlide, 5000); // 每5秒自动轮播
-showSlide(currentIndex); // 初始化
+    carousel.querySelector('.carousel-next').addEventListener('click', () => {
+      current = (current + 1) % images.length;
+      showImage(current);
+    });
+  });
 </script>
