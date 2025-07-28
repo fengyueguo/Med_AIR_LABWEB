@@ -1,34 +1,25 @@
 ---
 ---
-.professor-top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 2rem;
-}
 
-.professor-info {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    text-align: center;
-}
 .professor-container {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
+    align-items: center;
+  }
+  
+  .professor-content {
+    width: 400px;
+    margin-right: 1rem;
+  }
+  
+  .professor-bio {
+    // width: 50%;
+    width: 600px;
+    word-wrap: break-word;
+    text-align: justify;
+    margin-right: 1rem;
+  }
 
-/* 调整两栏宽度一致性 */
-.professor-content, .professor-bio {
-    flex: 1;
-    min-width: 300px;
-    max-width: 600px;
-}
-
-/* 头像样式 */
-.profile-pic {
+ .professor img{
     width: 14rem;
     height: 14rem;
     border-radius: 7rem;
@@ -36,54 +27,14 @@
     border: rgba(4, 43, 64, 0.5) 0.5rem solid;
 }
 
-/* 社交图标样式 */
-.professor-widget img {
-    height: 30px;
-    width: auto;
-    margin: 0 4px;
+@media screen and (max-width: 992px) {
+    .professor img {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 5rem;
+        border: var(--primary) 0.3rem solid;
+    }
 }
-
-/* 避免全局 img 样式影响 */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-
-// .professor-container {
-//     display: flex;
-//     align-items: center;
-//   }
-  
-  // .professor-content {
-  //   width: 400px;
-  //   margin-right: 1rem;
-  // }
-  
-  // .professor-bio {
-  //   // width: 50%;
-  //   width: 600px;
-  //   word-wrap: break-word;
-  //   text-align: justify;
-  //   margin-right: 1rem;
-  // }
-
-//  .professor img{
-//     width: 14rem;
-//     height: 14rem;
-//     border-radius: 7rem;
-//     margin: 0.5rem;
-//     border: rgba(4, 43, 64, 0.5) 0.5rem solid;
-// }
-
-// @media screen and (max-width: 992px) {
-//     .professor img {
-//         width: 10rem;
-//         height: 10rem;
-//         border-radius: 5rem;
-//         border: var(--primary) 0.3rem solid;
-//     }
-// }
 
 @media screen and (max-width: 768px) {
   .professor-container {
