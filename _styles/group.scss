@@ -1,9 +1,18 @@
 ---
 ---
+// .professor-container {
+//     display: flex;
+//     align-items: center;
+//   }
 .professor-container {
-    display: flex;
-    align-items: center;
-  }
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;  /* 不换行 */
+  justify-content: center;
+  align-items: flex-start;
+  gap: 100px;
+}
+
   
   .professor-content {
     width: 400px;
