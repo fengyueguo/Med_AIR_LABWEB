@@ -1,144 +1,63 @@
 ---
 ---
 .professor-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem 1rem;
-}
-
-/* 顶部区域：图片 + 简介居中显示 */
-.professor-top {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.professor-top img {
-  width: 14rem;
-  height: 14rem;
-  border-radius: 50%;
-  margin: 1rem 0;
-  border: rgba(4, 43, 64, 0.5) 0.5rem solid;
-}
-
-.professor-intro {
-  max-width: 600px;
-  line-height: 1.6;
-  font-size: 1rem;
-}
-
-/* 下方区域：左右布局（Bio / Research Interests） */
-.professor-bottom {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 2rem;
-  width: 100%;
-  max-width: 1000px;
-  gap: 2rem;
-}
-
-.professor-bio,
-.professor-research {
-  width: 50%;
-  text-align: justify;
-  word-wrap: break-word;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-/* 图标或联系方式小工具区 */
-.professor-widget {
-  margin-top: 1rem;
-}
-
-.professor-widget img {
-  margin-right: 0.5rem;
-  vertical-align: middle;
-}
-
-/* 响应式支持 */
-@media screen and (max-width: 768px) {
-  .professor-top img {
-    width: 10rem;
-    height: 10rem;
-    border-radius: 5rem;
-    border: var(--primary) 0.3rem solid;
-  }
-
-  .professor-bottom {
-    flex-direction: column;
+    display: flex;
     align-items: center;
   }
+  
+  .professor-content {
+    width: 400px;
+    margin-right: 1rem;
+  }
+  
+  .professor-bio {
+    // width: 50%;
+    width: 600px;
+    word-wrap: break-word;
+    text-align: justify;
+    margin-right: 1rem;
+  }
 
-  .professor-bio,
-  .professor-research {
+ .professor img{
+    width: 14rem;
+    height: 14rem;
+    border-radius: 7rem;
+    margin: 0.5rem;
+    border: rgba(4, 43, 64, 0.5) 0.5rem solid;
+}
+
+@media screen and (max-width: 992px) {
+    .professor img {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 5rem;
+        border: var(--primary) 0.3rem solid;
+    }
+}
+
+@media screen and (max-width: 768px) {
+  .professor-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .professor-content {
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .professor-bio {
     width: 90%;
+    margin-right: 0;
+    text-align: justify;
+  }
+
+  .professor img {
+    margin: 0 auto 1rem auto; 
+    display: block;
   }
 }
-// .professor-container {
-//     display: flex;
-//     align-items: center;
-//   }
-  
-//   .professor-content {
-//     width: 400px;
-//     margin-right: 1rem;
-//   }
-  
-//   .professor-bio {
-//     // width: 50%;
-//     width: 600px;
-//     word-wrap: break-word;
-//     text-align: justify;
-//     margin-right: 1rem;
-//   }
-
-//  .professor img{
-//     width: 14rem;
-//     height: 14rem;
-//     border-radius: 7rem;
-//     margin: 0.5rem;
-//     border: rgba(4, 43, 64, 0.5) 0.5rem solid;
-// }
-
-// @media screen and (max-width: 992px) {
-//     .professor img {
-//         width: 10rem;
-//         height: 10rem;
-//         border-radius: 5rem;
-//         border: var(--primary) 0.3rem solid;
-//     }
-// }
-
-// @media screen and (max-width: 768px) {
-//   .professor-container {
-//     flex-direction: column;
-//     align-items: center;
-//     text-align: center;
-//   }
-
-//   .professor-content {
-//     margin-right: 0;
-//     width: 100%;
-//   }
-
-//   .professor-bio {
-//     width: 90%;
-//     margin-right: 0;
-//     text-align: justify;
-//   }
-
-//   .professor img {
-//     margin: 0 auto 1rem auto; 
-//     display: block;
-//   }
-// }
 
 .student-container {
 	display: flex;
