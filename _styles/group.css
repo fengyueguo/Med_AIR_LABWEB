@@ -67,7 +67,7 @@
   height: 14rem;
   border-radius: 7rem;
   margin: 0.5rem;
-  border: rgba(4, 43, 64, 0.5) 0.5rem solid;
+  border: #eee 0.5rem solid;
 }
 
 @media screen and (max-width: 992px) {
