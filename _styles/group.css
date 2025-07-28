@@ -1,11 +1,6 @@
-@charset "UTF-8";
-.professor-container {
+--- --- .professor-container {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap; /* 不换行 */
-  justify-content: center;
-  align-items: flex-start;
-  gap: 100px;
+  align-items: center;
 }
 
 .professor-content {
@@ -28,14 +23,6 @@
   border: rgba(4, 43, 64, 0.5) 0.5rem solid;
 }
 
-@media screen and (max-width: 992px) {
-  .professor img {
-    width: 10rem;
-    height: 10rem;
-    border-radius: 5rem;
-    border: var(--primary) 0.3rem solid;
-  }
-}
 @media screen and (max-width: 768px) {
   .professor-container {
     flex-direction: column;
