@@ -1,18 +1,37 @@
 ---
 ---
+.news-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.news-item {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: calc(50% - 10px);
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
 .image-carousel {
   position: relative;
   width: 100%;
   height: 200px;
   overflow: hidden;
-  border-radius: 8px;
 }
 
 .carousel-track {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  width: 100%;
-  height: 100%;
 }
 
 .carousel-image {
@@ -44,6 +63,92 @@
 .carousel-next {
   right: 10px;
 }
+
+.news-caption {
+  padding: 15px;
+  text-align: left;
+}
+
+.news-title {
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.news-text {
+  font-size: 0.95em;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.news-reported {
+  font-size: 0.9em;
+  color: #444;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-media-icons {
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.news-media-icons img {
+  height: 24px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+// .image-carousel {
+//   position: relative;
+//   width: 100%;
+//   height: 200px;
+//   overflow: hidden;
+//   border-radius: 8px;
+// }
+
+// .carousel-track {
+//   display: flex;
+//   transition: transform 0.5s ease-in-out;
+//   width: 100%;
+//   height: 100%;
+// }
+
+// .carousel-image {
+//   width: 100%;
+//   height: 200px;
+//   object-fit: cover;
+//   flex-shrink: 0;
+// }
+
+// .carousel-prev,
+// .carousel-next {
+//   position: absolute;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   background: rgba(0, 0, 0, 0.5);
+//   color: white;
+//   border: none;
+//   font-size: 18px;
+//   padding: 6px 10px;
+//   cursor: pointer;
+//   z-index: 2;
+//   border-radius: 4px;
+// }
+
+// .carousel-prev {
+//   left: 10px;
+// }
+
+// .carousel-next {
+//   right: 10px;
+// }
 
 
 .gallery {
