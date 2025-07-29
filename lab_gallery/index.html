@@ -710,51 +710,59 @@
     });
 });
 
-  document.querySelectorAll('.image-carousel').forEach(carousel => {
-    const track = carousel.querySelector('.carousel-track');
-    const images = carousel.querySelectorAll('.carousel-image');
-    const total = images.length;
-    let current = 0;
-    const intervalTime = 4000;
-    let autoplay;
+document.querySelectorAll('.image-carousel').forEach(carousel => {
+  const track = carousel.querySelector('.carousel-track');
+  const images = carousel.querySelectorAll('.carousel-image');
+  const total = images.length;
+  let currentIndex = 0;
+  const intervalTime = 4000;
+  let autoplay;
 
-    const updateSlide = () => {
-      const offset = -current * 100;
-      track.style.transform = `translateX(${offset}%)`;
-    };
+  const updateSlide = () => {
+    const offset = -currentIndex * 100;
+    track.style.transform = `translateX(${offset}%)`;
+  };
 
-    const nextSlide = () => {
-      current = (current + 1) % total;
-      updateSlide();
-    };
+  const nextSlide = () => {
+    currentIndex = (currentIndex + 1) % total;
+    updateSlide();
+  };
 
-    const prevSlide = () => {
-      current = (current - 1 + total) % total;
-      updateSlide();
-    };
+  const prevSlide = () => {
+    currentIndex = (currentIndex - 1 + total) % total;
+    updateSlide();
+  };
 
-    const startAutoplay = () => {
-      autoplay = setInterval(nextSlide, intervalTime);
-    };
+  const startAutoplay = () => {
+    autoplay = setInterval(nextSlide, intervalTime);
+  };
 
-    const resetAutoplay = () => {
-      clearInterval(autoplay);
-      startAutoplay();
-    };
+  const resetAutoplay = () => {
+    clearInterval(autoplay);
+    startAutoplay();
+  };
 
-    carousel.querySelector('.carousel-next').addEventListener('click', () => {
+  const nextBtn = carousel.querySelector('.carousel-next');
+  const prevBtn = carousel.querySelector('.carousel-prev');
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
       nextSlide();
       resetAutoplay();
     });
+  }
 
-    carousel.querySelector('.carousel-prev').addEventListener('click', () => {
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
       prevSlide();
       resetAutoplay();
     });
+  }
 
-    updateSlide();
-    startAutoplay();
-  });
+  updateSlide();
+  startAutoplay();
+});
+
 </script>
 
 </div>
