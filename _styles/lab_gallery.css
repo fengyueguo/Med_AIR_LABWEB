@@ -1,4 +1,30 @@
 @charset "UTF-8";
+/* 已有样式保持不变，补充如下 */
+.caption-title {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.caption-text {
+  text-align: left;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.report-section {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* 图标间距 */
+  flex-wrap: wrap; /* 如果太多可换行 */
+}
+
+.report-icon {
+  height: 20px; /* 缩小图标大小 */
+  width: auto;
+  vertical-align: middle;
+}
+
 .image-carousel {
   position: relative;
   width: 100%;
