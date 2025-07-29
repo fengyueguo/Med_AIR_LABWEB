@@ -1,0 +1,8 @@
+<div class="report-section">
+  <span>Reported by:</span>
+  {% for item in include.data %}
+    <a href="{{ item.link }}" target="_blank">
+      <img src="{{ item.image }}" alt="{{ item.title | escape }}" class="report-icon">
+    </a>
+  {% endfor %}
+</div>
