@@ -1,15 +1,33 @@
 ---
 ---
+@media (max-width: 768px) {
+  .news-card {
+    width: 90%;
+    max-width: 350px;
+  }
+}
+
 .news-card {
-  width: 100%;
-  max-width: 600px;
   background: white;
   border-radius: 20px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  margin: 20px auto;
-  font-family: 'Segoe UI', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  /* 👇 和 gallery-item 一致，一行放两个 */
+  width: calc((100% - 20px) / 2);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.news-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
 
 .news-carousel {
   position: relative;
