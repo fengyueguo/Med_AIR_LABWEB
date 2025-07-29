@@ -250,7 +250,7 @@
 
     galleries.forEach(gallery => { 
         gallery.addEventListener("click", function (e) {
-            if (e.target.tagName === "IMG" && e.target.closest('.gallery-item')) {
+            if (e.target.tagName === "IMG" && e.target.closest('.gallery-item') && !e.target.classList.contains("report-icon")) {
                 modalImg.src = e.target.getAttribute("src");
                 modal.classList.add("visible");
             }
