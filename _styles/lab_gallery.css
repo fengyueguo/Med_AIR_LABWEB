@@ -1,71 +1,4 @@
 @charset "UTF-8";
-/* ========== 浮动式 gallery 通用设置 ========== */
-.gallery.flow-layout {
-  display: block;
-}
-
-.gallery.flow-layout::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-/* ========== 卡片通用样式 ========== */
-.gallery.flow-layout .gallery-item {
-  float: left;
-  margin: 0 20px 20px 0;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  padding: 10px;
-  box-sizing: border-box;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery.flow-layout .gallery-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* ========== 不同尺寸设置 ========== */
-.gallery-item.news-card {
-  width: calc((100% - 20px) / 2); /* 一行两个 */
-}
-
-.gallery-item.standard-card {
-  width: calc((100% - 40px) / 3); /* 一行三个 */
-}
-
-/* ========== 图片通用样式 ========== */
-.gallery-image,
-.carousel-image {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.gallery-image:hover {
-  transform: scale(1.05);
-}
-
-.gallery .gallery-item .caption {
-  font-size: 0.9em;
-  color: #555;
-  margin-top: 8px;
-}
-
-/* ========== 响应式适配（小屏改为一列） ========== */
-@media (max-width: 768px) {
-  .gallery-item.news-card,
-  .gallery-item.standard-card {
-    width: 100% !important;
-    margin-right: 0;
-  }
-}
 /* 已有样式保持不变，补充如下 */
 .caption-title {
   text-align: center;
@@ -107,6 +40,13 @@
   height: 100%;
 }
 
+.carousel-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
 .carousel-prev,
 .carousel-next {
   position: absolute;
@@ -137,6 +77,32 @@
   justify-content: flex-start;
 }
 
+.gallery .gallery-item {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  width: calc((100% - 40px) / 3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery .gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.gallery .gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
 .gallery-image {
   width: 100%;
   height: 200px;
@@ -148,6 +114,16 @@
 
 .gallery-image:hover {
   transform: scale(1.05);
+}
+
+.gallery .gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+.gallery .gallery-item .caption {
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 8px;
 }
 
 .gallery .gallery-item.multi {
