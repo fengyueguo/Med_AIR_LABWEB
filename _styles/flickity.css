@@ -616,14 +616,7 @@
     style="--image: url('/Med_AIR_LABWEB/hsla(0,%200%25,%20100%25,%200.75)')"
   
 >
-  .carousel-nav .flickity-slider {
-  display: flex;
-  justify-content: center;
-}
-
-
-
-.flickity-enabled {
+  .flickity-enabled {
   position: relative;
 }
 
