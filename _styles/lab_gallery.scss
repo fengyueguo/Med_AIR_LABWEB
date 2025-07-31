@@ -120,46 +120,14 @@
 }
 
 
-.gallery .gallery-item img:hover {
-    transform: scale(1.05);
-}
+// .gallery .gallery-item img:hover {
+//     transform: scale(1.05);
+// }
 
 .gallery .gallery-item .caption {
     font-size: 0.9em;
     color: #555;
     margin-top: 8px;
-}
-
-.gallery .gallery-item.multi {
-    width: auto;
-    min-width: calc(285px + 8px + auto);
-    max-width: 100%;
-    flex-shrink: 0;
-    flex-grow: 0;
-}
-
-.gallery .gallery-item.multi .multi-images {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    align-items: flex-start;
-    margin-bottom: 8px;
-}
-
-.gallery .gallery-item.multi .multi-images .main-img {
-    width: 285px;
-    height: auto;
-    object-fit: contain;
-    border-radius: 8px;
-    flex-shrink: 0;
-}
-
-.gallery .gallery-item.multi .multi-images .poster-img {
-    width: auto;
-    height: 210px;
-    object-fit: contain; 
-    border-radius: 8px;
-    flex-shrink: 0;
 }
 
 .image-modal {
@@ -203,9 +171,6 @@
     .gallery .gallery-item {
         width: calc((100% - (1 * 20px)) / 2);
     }
-    .gallery .gallery-item.multi {
-        width: auto; 
-    }
 }
 
 @media (max-width: 768px) {
@@ -216,28 +181,10 @@
         width: 90%;
         max-width: 350px;
     }
-
-    .gallery .gallery-item.multi {
-        width: 90%;
-        max-width: 350px;
-    }
-    .gallery .gallery-item.multi .multi-images {
-        flex-direction: column;
-        align-items: center;
-    }
-    .gallery .gallery-item.multi .multi-images .main-img,
-    .gallery .gallery-item.multi .multi-images .poster-img {
-        width: 100%;
-        height: auto;
-        max-width: 300px;
-    }
 }
 
 @media (max-width: 480px) {
     .gallery .gallery-item {
         width: 95%; /* 进一步调整宽度以适应更小的屏幕 */
-    }
-    .gallery .gallery-item.multi {
-        width: 95%;
     }
 }
