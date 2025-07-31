@@ -1,11 +1,10 @@
 ---
 ---
 .carousel-nav .flickity-slider {
-  transform: translateX(-50%) !important;
-  left: 50% !important;
-  width: max-content;
-  position: relative;
+  display: flex;
+  justify-content: center;
 }
+
 
 
 .flickity-enabled {
