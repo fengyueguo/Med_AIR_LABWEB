@@ -47,6 +47,10 @@
   flex-shrink: 0;
 }
 
+.carousel-image:hover {
+  transform: scale(1.05);
+}
+
 .carousel-prev,
 .carousel-next {
   position: absolute;
