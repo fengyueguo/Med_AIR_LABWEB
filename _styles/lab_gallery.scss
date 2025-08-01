@@ -1,24 +1,6 @@
 ---
 ---
 
-/* 已有样式保持不变，补充如下 */
-.caption {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;  /* 保证上面文本内容在上，"Reported by"在底 */
-  height: 100%;
-}
-
-.report-section {
-  margin-top: auto; /* 推到底部 */
-  display: flex;
-  align-items: center;
-  gap: 8px; /* 图标之间间距 */
-}
-.report-icon {
-  height: 20px;  /* 你可以根据需求设置尺寸 */
-}
-
 .caption-title {
   text-align: center;
   font-weight: bold;
@@ -31,12 +13,12 @@
   line-height: 1.6;
 }
 
-// .report-section {
-//   display: flex;
-//   align-items: center;
-//   gap: 8px; /* 图标间距 */
-//   flex-wrap: wrap; /* 如果太多可换行 */
-// }
+.report-section {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* 图标间距 */
+  flex-wrap: wrap; /* 如果太多可换行 */
+}
 
 .report-icon {
   height: 40px; /* 缩小图标大小 */
