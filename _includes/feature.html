@@ -11,7 +11,7 @@
     class="{{ include.className | 'feature-image' }}"
     aria-label="{{ include.title | default: "feature link" }}"
   >
-<!--     <img
+    <img
       src="{{ include.image | relative_url }}"
       loading="lazy"
       style="
@@ -20,20 +20,7 @@
       "
       alt="{{ include.title | default: "feature image" }}"
       {% include fallback.html %}
-    > -->
-    <img
-  src="{{ include.image | relative_url }}"
-  loading="lazy"
-  style="
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    max-width: 100%;
-  "
-  alt="{{ include.title | default: "feature image" }}"
-  {% include fallback.html %}
-/>
+    >
 
   </a>
   <div class="feature-text">
