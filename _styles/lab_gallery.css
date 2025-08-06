@@ -14,12 +14,12 @@
 .report-section {
   display: flex;
   align-items: center;
-  gap: 8px; /* 图标间距 */
-  flex-wrap: wrap; /* 如果太多可换行 */
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .report-icon {
-  height: 40px; /* 缩小图标大小 */
+  height: 50px;
   width: auto;
   vertical-align: middle;
 }
