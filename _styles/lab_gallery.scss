@@ -1,5 +1,194 @@
 ---
 ---
+
+// .caption-title {
+//   text-align: center;
+//   font-weight: bold;
+//   margin-bottom: 10px;
+// }
+
+// .caption-text {
+//   text-align: left;
+//   margin-bottom: 10px;
+//   line-height: 1.6;
+// }
+
+// .report-section {
+//   display: flex;
+//   align-items: center;
+//   flex-wrap: wrap;
+// }
+
+// .report-icon {
+//   height: 50px;
+//   width: auto;
+//   vertical-align: middle;
+// }
+
+// .image-carousel {
+//   position: relative;
+//   width: 100%;
+//   height: 200px;
+//   overflow: hidden;
+//   border-radius: 8px;
+// }
+
+// .carousel-track {
+//   display: flex;
+//   transition: transform 0.5s ease-in-out;
+//   width: 100%;
+//   height: 100%;
+// }
+
+// .carousel-image {
+//   width: 100%;
+//   height: 200px;
+//   object-fit: cover;
+//   flex-shrink: 0;
+// }
+
+// .carousel-image:hover {
+//     transform: scale(1.05);
+// }
+
+// .carousel-prev,
+// .carousel-next {
+//   position: absolute;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   background: rgba(0, 0, 0, 0.5);
+//   color: white;
+//   border: none;
+//   font-size: 18px;
+//   padding: 6px 10px;
+//   cursor: pointer;
+//   z-index: 2;
+//   border-radius: 4px;
+// }
+
+// .carousel-prev {
+//   left: 10px;
+// }
+
+// .carousel-next {
+//   right: 10px;
+// }
+
+
+// .gallery {
+//     display: flex;
+//     flex-wrap: wrap;
+//     gap: 20px;
+//     justify-content: flex-start;
+// }
+
+// // .gallery .gallery-item {
+// //     background: #fff;
+// //     border-radius: 8px;
+// //     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+// //     overflow: hidden;
+// //     text-align: center;
+// //     padding: 10px;
+// //     box-sizing: border-box;
+// //     width: calc((100% - (2 * 20px)) / 3);
+// //     transition: transform 0.3s ease, box-shadow 0.3s ease;
+// // }
+
+// .gallery .gallery-item:hover {
+//     transform: scale(1.05);
+//     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+// }
+
+// // .gallery .gallery-item img {
+// //     width: 100%;
+// //     height: 200px;
+// //     object-fit: cover;
+// //     border-radius: 8px;
+// //     cursor: pointer;
+// //     transition: transform 0.3s ease;
+// // }
+// .gallery-image {
+//     width: 100%;
+//     height: 200px;
+//     object-fit: cover;
+//     border-radius: 8px;
+//     cursor: pointer;
+//     transition: transform 0.3s ease;
+// }
+
+// .gallery-image:hover {
+//     transform: scale(1.05);
+// }
+
+
+// // .gallery .gallery-item img:hover {
+// //     transform: scale(1.05);
+// // }
+
+// .gallery .gallery-item .caption {
+//     font-size: 0.9em;
+//     color: #555;
+//     margin-top: 8px;
+// }
+
+// .image-modal {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background: rgba(0, 0, 0, 0.8);
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     z-index: 1000;
+//     opacity: 0;
+//     visibility: hidden;
+//     transition: opacity 0.3s ease, visibility 0.3s ease;
+// }
+
+// .image-modal img {
+//     max-width: 90%;
+//     max-height: 90%;
+//     border-radius: 8px;
+//     box-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
+// }
+
+// .image-modal.visible {
+//     opacity: 1;
+//     visibility: visible;
+// }
+
+// .image-modal .close-btn {
+//     position: absolute;
+//     top: 20px;
+//     right: 20px;
+//     font-size: 24px;
+//     color: white;
+//     cursor: pointer;
+// }
+
+// @media (max-width: 1024px) {
+//     .gallery .gallery-item {
+//         width: calc((100% - (1 * 20px)) / 2);
+//     }
+// }
+
+// @media (max-width: 768px) {
+//     .gallery {
+//         justify-content: center;
+//     }
+//     .gallery .gallery-item {
+//         width: 90%;
+//         max-width: 350px;
+//     }
+// }
+
+// @media (max-width: 480px) {
+//     .gallery .gallery-item {
+//         width: 95%; /* 进一步调整宽度以适应更小的屏幕 */
+//     }
+// }
 .gallery-item {
   display: flex;
   flex-direction: column;
@@ -14,6 +203,24 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.gallery .gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+}
+
 .caption-wrapper {
   display: flex;
   flex-direction: column;
@@ -21,6 +228,7 @@
   margin-top: 8px;
   font-size: 0.9em;
   color: #555;
+  text-align: left;
 }
 
 .caption-content {
@@ -31,8 +239,6 @@
   margin-top: auto;
   text-align: left;
 }
-
-
 
 .caption-title {
   text-align: center;
@@ -46,6 +252,7 @@
   line-height: 1.6;
 }
 
+/* Existing styles retained */
 .report-section {
   display: flex;
   align-items: center;
@@ -81,7 +288,7 @@
 }
 
 .carousel-image:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .carousel-prev,
@@ -107,118 +314,71 @@
   right: 10px;
 }
 
-
 .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
 }
 
-// .gallery .gallery-item {
-//     background: #fff;
-//     border-radius: 8px;
-//     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-//     overflow: hidden;
-//     text-align: center;
-//     padding: 10px;
-//     box-sizing: border-box;
-//     width: calc((100% - (2 * 20px)) / 3);
-//     transition: transform 0.3s ease, box-shadow 0.3s ease;
-// }
-
-.gallery .gallery-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-// .gallery .gallery-item img {
-//     width: 100%;
-//     height: 200px;
-//     object-fit: cover;
-//     border-radius: 8px;
-//     cursor: pointer;
-//     transition: transform 0.3s ease;
-// }
-.gallery-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.gallery-image:hover {
-    transform: scale(1.05);
-}
-
-
-// .gallery .gallery-item img:hover {
-//     transform: scale(1.05);
-// }
-
-.gallery .gallery-item .caption {
-    font-size: 0.9em;
-    color: #555;
-    margin-top: 8px;
-}
-
+/* Modal image viewer */
 .image-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .image-modal img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
 }
 
 .image-modal.visible {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
 .image-modal .close-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
 }
 
+/* Responsive adjustments */
 @media (max-width: 1024px) {
-    .gallery .gallery-item {
-        width: calc((100% - (1 * 20px)) / 2);
-    }
+  .gallery .gallery-item {
+    width: calc((100% - (1 * 20px)) / 2);
+  }
 }
 
 @media (max-width: 768px) {
-    .gallery {
-        justify-content: center;
-    }
-    .gallery .gallery-item {
-        width: 90%;
-        max-width: 350px;
-    }
+  .gallery {
+    justify-content: center;
+  }
+
+  .gallery .gallery-item {
+    width: 90%;
+    max-width: 350px;
+  }
 }
 
 @media (max-width: 480px) {
-    .gallery .gallery-item {
-        width: 95%; /* 进一步调整宽度以适应更小的屏幕 */
-    }
+  .gallery .gallery-item {
+    width: 95%;
+  }
 }
