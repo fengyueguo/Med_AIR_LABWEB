@@ -72,7 +72,9 @@
           </div>
         </div>
         <div class="caption-footer">
-          Reported by CUHK
+          Reported by：          
+          {% assign media_icons = site.data.media | where: "group", "media15" %}
+        {% include publicity-icons.html data=media_icons %}
         </div>
       </div>
     </div>
