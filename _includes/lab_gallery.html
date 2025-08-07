@@ -60,6 +60,30 @@
   <h2>Publicity</h2>
   <div class="publicity-gallery gallery"> 
 
+    <div class="gallery-item">
+      <div class="image-carousel">
+        <div class="carousel-track">
+          <img src="../images/gallery/robot_1.jpg" class="carousel-image">
+          <img src="../images/gallery/robot_2.jpg" class="carousel-image">
+          <img src="../images/gallery/robot_3.jpg" class="carousel-image">
+           <img src="../images/gallery/robot_4.jpg" class="carousel-image">
+        </div>
+        <button class="carousel-prev">&#10094;</button>
+        <button class="carousel-next">&#10095;</button>
+      </div>
+      <div class="caption">
+        <div class="caption-title">
+          <b>AI Robotic Arm Completes Live Animal Testing — CUHK: A 'Third Hand' in Surgery"
+          </b>
+        </div>
+        <div class="caption-text">
+          An interdisciplinary research team from the Faculty of Engineering and the Faculty of Medicine at The Chinese University of Hong Kong (CUHK) has achieved a major breakthrough by developing a new AI-powered surgical robotics technology. In a world-first, the team successfully completed live animal testing to validate the automation of multifunctional surgical procedures.
+        </div>
+        {% assign media_icons = site.data.media | where: "group", "media15" %}
+        {% include publicity-icons.html data=media_icons %}
+      </div>
+    </div>
+    
     <div class="gallery-item" style="height:290px">
       <img src="../images/gallery/szshow202412.jpg" class="gallery-image">
       <div class="caption">2024 Shenzhen International High-Performance Medical Devices Exhibition Features AR Remote-Assisted Robotic Surgery System.</div>
