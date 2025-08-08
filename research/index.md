@@ -41,6 +41,6 @@ As robotic systems become increasingly prevalent in various scenarios of our dai
 
 **Smart XR for Medical Education and Surgery Assistant**: This research topic focuses on developing intelligent XR (AR/VR) systems to enhance medical education and surgical assistance through immersive simulation and spatial computing. We aim to advance clinical training and intraoperative support by integrating patient-specific data, 3D anatomical modeling, and interactive visualization into adaptive XR environments. These systems combine real-time imaging, procedural guidance, and intuitive user interaction to improve anatomical understanding, skill acquisition, and surgical precision. The core goal is to bridge the gap between learning and practice by delivering context-aware, task-specific XR tools that elevate training quality, reduce surgical risk, and support decision-making in complex clinical settings.
 {% endcapture %}
-{% include feature.html image="images/research/smartXR.png" link="publication/?tag=llm-xr" title="LLMs and Smart XR for Medical Education" text=text className="feature-image" %}
+{% include feature.html image="images/research/LLM_education.png" link="publication/?tag=llm-xr" title="LLMs and Smart XR for Medical Education" text=text className="feature-image" %}
 
 
