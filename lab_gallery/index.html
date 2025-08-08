@@ -1304,19 +1304,10 @@ document.querySelectorAll('.image-carousel').forEach(carousel => {
 }
 
 .news-item {
-  background-color: #f2f6fb;
-  padding: 20px;
-  border-radius: 8px;
-  width: calc(33.33% - 20px);
-  box-sizing: border-box;
-  font-family: sans-serif;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.news-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 20px 0;
 }
 
 .news-item a {
@@ -1329,6 +1320,7 @@ document.querySelectorAll('.image-carousel').forEach(carousel => {
   margin: 0 0 10px;
   font-size: 1.1em;
   font-weight: bold;
+  color: #000;
 }
 
 .news-item p {
