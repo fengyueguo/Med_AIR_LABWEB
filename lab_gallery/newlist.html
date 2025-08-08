@@ -458,45 +458,51 @@
   
   
   
- <section class="background" data-size="page">
-  <div id="news-container">
-  <h2 id="news-title"></h2>
-  <div id="news-images"></div>
-  <div id="news-content"></div>
+ <section class="background" data-size="28px; margin-bottom: 20px">
+  <div id="news-container" style="max-width: 800px; margin: auto; padding: 40px 20px;">
+  <h2 id="news-title" style="font-size: 28px; margin-bottom: 20px;"></h2>
+  <div id="news-images" style="margin-bottom: 20px;"></div>
+  <div id="news-content" style="line-height: 1.8; font-size: 16px; color: #333;"></div>
 </div>
 
 <script>
- const params = new URLSearchParams(window.location.search);
-    const newsId = params.get('id');
+  const params = new URLSearchParams(window.location.search);
+  const newsId = params.get('id');
 
-    // 异步读取 JSON 数据
-    fetch('/_data/news.json')
-      .then(response => response.json())
-      .then(data => {
-        // 找到匹配的新闻项
-        const item = data.find(news => news.id === newsId);
+  fetch('/data/news.json')  // Make sure the file is at this path!
+    .then(res => {
+      if (!res.ok) {
+        throw new Error('Failed to load news.json');
+      }
+      return res.json();
+    })
+    .then(data => {
+      const news = data.find(item => item.id === newsId);
+      if (!news) {
+        document.getElementById('news-container').innerHTML = '<p>News not found.</p>';
+        return;
+      }
 
-        if (!item) {
-          document.getElementById('news-detail').innerHTML = '<p>News not found.</p>';
-          return;
-        }
+      document.getElementById('news-title').innerText = news.title;
 
-        // 渲染新闻内容
-        const html = `
-          <h1>${item.title}</h1>
-          ${item.images.map(img => `<img src="${img}" style="max-width:100%;margin:10px 0;">`).join('')}
-          <div>${item.content}</div>
-        `;
-        document.getElementById('news-detail').innerHTML = html;
-      })
-      .catch(err => {
-        console.error('Error loading news:', err);
-        document.getElementById('news-detail').innerHTML = '<p>Error loading news.</p>';
+      // Load images
+      const imagesContainer = document.getElementById('news-images');
+      news.images.forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = 'news image';
+        img.style = "width: 100%; max-width: 100%; margin-bottom: 15px; border-radius: 6px;";
+        imagesContainer.appendChild(img);
       });
-</script>
 
-<!-- YAML Parser -->
-<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+      // Load content
+      document.getElementById('news-content').innerHTML = news.content;
+    })
+    .catch(err => {
+      console.error('Error loading news:', err);
+      document.getElementById('news-container').innerHTML = '<p>Error loading news.</p>';
+    });
+</script>
 </section>
 
 </main>
