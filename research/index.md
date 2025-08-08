@@ -23,7 +23,7 @@ Recent focus: 1) **Surgical Robotics**, 2) **Agentic AI Systems for Healthcare A
 This research topic aims to develop autonomous,multi-agent AI systems that integrate clinical and patient data to enable end-to-end automation of healthcare workflows. We aim to pioneer multimodal, multi-agent AI systems to revolutionize clinical intelligence by integrating diverse data streams—including medical imaging, genomic profiles, electronic health records (EHRs), and biomedical literature—into collaborative AI networks. These systems deploy specialized agents (e.g., diagnostic, predictive, and evidence-synthesis agents) that dynamically interact to enhance precision medicine, accelerate disease detection, and generate patient-specific therapeutic insights. The core aim is to overcome data fragmentation and clinical complexity through coordinated AI cognition, ultimately advancing diagnostic accuracy, treatment personalization, and real-time decision support in high-stakes healthcare scenarios.
 
 {% endcapture %}
-{% include feature.html image="images/research/agentic.jpg" link="publication/?tag=mia" flip=true title="Agentic AI Systems for Healthcare Applications" text=text className="feature-image" %}
+{% include feature.html image="images/research/agentic1.jpg" link="publication/?tag=mia" flip=true title="Agentic AI Systems for Healthcare Applications" text=text className="feature-image" %}
 
 
 {% capture text %}
