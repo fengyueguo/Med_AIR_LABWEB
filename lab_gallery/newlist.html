@@ -13,7 +13,7 @@ title: News
   const urlParams = new URLSearchParams(window.location.search);
   const newsId = urlParams.get("id");
 
-  fetch("/data/news.yml") // ✅ 你也可以换成 `/news.yml` 如果你放在根目录
+  fetch("/_data/news.json")
     .then(response => response.text())
     .then(yamlText => {
       const data = jsyaml.load(yamlText);
