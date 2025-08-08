@@ -86,7 +86,7 @@ nav:
 
 <!-- Card 4 -->
 <div class="research-card">
-  <img src="../images/research/emobioied_ai.jpg" alt="Safe Embodied AI">
+  <img src="../images/research/emobioied_ai1.jpg" alt="Safe Embodied AI">
   <div class="research-card-content">
     <h3>Safe Embodied AI</h3>
     <a href="/research/safe-ai.html">› Find out more</a>
