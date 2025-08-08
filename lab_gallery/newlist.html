@@ -1,55 +1,45 @@
 ---
-title: News Detail
 layout: default
+title: News
 ---
 
-<h2 id="news-title">Loading...</h2>
-
-<div id="news-images" style="margin-top: 20px;"></div>
-
-<div id="news-content" style="margin-top: 30px; line-height: 1.7; font-size: 1em;"></div>
-
-<style>
-#news-images img {
-  max-width: 100%;
-  width: 100%;
-  max-width: 800px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  display: block;
-}
-</style>
+<div id="news-container">
+  <h2 id="news-title"></h2>
+  <div id="news-images"></div>
+  <div id="news-content"></div>
+</div>
 
 <script>
-  const params = new URLSearchParams(window.location.search);
-  const newsId = params.get("id");
+  const urlParams = new URLSearchParams(window.location.search);
+  const newsId = urlParams.get("id");
 
-  fetch('/_data/news.json')
-    .then(response => response.json())
-    .then(data => {
-      const newsItem = data.find(item => item.id === newsId);
-      if (!newsItem) {
-        document.getElementById("news-title").innerText = "News Not Found";
+  fetch("/_data/news.yml") // ✅ 你也可以换成 `/news.yml` 如果你放在根目录
+    .then(response => response.text())
+    .then(yamlText => {
+      const data = jsyaml.load(yamlText);
+      const news = data.find(item => item.id === newsId);
+      if (!news) {
+        document.getElementById("news-container").innerHTML = "<p>News not found.</p>";
         return;
       }
 
-      // 设置标题
-      document.getElementById("news-title").innerText = newsItem.title;
+      document.getElementById("news-title").textContent = news.title;
 
-      // 加载图片
       const imgContainer = document.getElementById("news-images");
-      newsItem.images.forEach(src => {
+      news.images.forEach(src => {
         const img = document.createElement("img");
         img.src = src;
-        img.alt = newsItem.title;
+        img.style = "max-width: 100%; margin-bottom: 20px;";
         imgContainer.appendChild(img);
       });
 
-      // 加载正文
-      document.getElementById("news-content").innerHTML = newsItem.content;
+      document.getElementById("news-content").innerHTML = news.content;
     })
     .catch(error => {
       console.error("Error loading news:", error);
-      document.getElementById("news-title").innerText = "Failed to load news.";
+      document.getElementById("news-container").innerHTML = "<p>Failed to load news.</p>";
     });
 </script>
+
+<!-- YAML Parser -->
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
