@@ -1,0 +1,107 @@
+- id: ai-arm
+  title: "AI Robotic Arm Completes Live Animal Testing — CUHK: A 'Third Hand' in Surgery"
+  images:
+    - /images/gallery/robot_1.jpg
+    - /images/gallery/robot_2.jpg
+    - /images/gallery/robot_3.jpeg
+    - /images/gallery/robot_4.jpg
+    - /images/gallery/robot_5.jpg
+  content: |
+    <p>An interdisciplinary research team from the Faculty of Engineering and the Faculty of Medicine at CUHK has achieved a major breakthrough by developing a new AI-powered surgical robotics technology. In a world-first, the team successfully completed live animal testing to validate the automation of multifunctional surgical procedures.</p>
+
+- id: embodied-ai
+  title: "AI Exhibition - Interactive Surgical Embodied AI Simulator"
+  images:
+    - /images/gallery/embodied.jpg
+  content: |
+    <p>The CUHK Faculty of Engineering and University Library are co-organizing an exciting AI exhibition, showcasing the university’s commitment to advancing AI technology in various aspects of life. This exhibition is a testament to CUHK’s commitment to advancing AI technology in various aspects of life and will pay tribute to the late CUHK Professor Tang Xiao’ou, a great innovator in AI.</p>
+
+- id: szshow
+  title: "2024 Shenzhen International High-Performance Medical Devices Exhibition Features AR Remote-Assisted Robotic Surgery System"
+  images:
+    - /images/gallery/szshow202412.jpg
+  content: |
+    <p>Showcase innovative medical device research from university technology transfer centers, hospital departments such as science and education, information technology, and translational medicine. Promote the engineering of innovative projects and facilitate industry collaboration.</p>
+
+- id: ai-endo
+  title: "CUHK research team has established an AI surgical assistance platform for endoscopic submucosal dissection (ESD), AI-Endo"
+  images:
+    - /images/gallery/report1-1.jpg
+    - /images/gallery/report1-2.jpg
+  content: |
+    <p>The Chinese University of Hong Kong’s (CUHK) Faculty of Medicine (CU Medicine) has recently completed two studies on AI-assisted endoscopic technology, proving it has the potential to enhance performance in the diagnosis and treatment of gastrointestinal (GI) cancer, as well as to assist doctor training in endoscopy.</p>
+
+- id: sun-dong-visit
+  title: "CUHK in Focus, Sun Dong recounts his days at CUHK and pins high hopes on his alma mater"
+  images:
+    - /images/gallery/report9-1.png
+    - /images/gallery/report9-2.png
+  content: |
+    <p>Sun Dong, as the Secretary for Innovation, Technology and Industry, returned to his alma mater CUHK for a visit. He is given a demonstration of a mock simulation training system for robotic surgery at the CUHK T Stone Robotics Institute.</p>
+
+- id: ict-expo
+  title: "Exhibiting at the International ICT Expo 2022"
+  images:
+    - /images/gallery/gallery17.png
+  content: |
+    <p>HKTDC International ICT Expo 2022, a leading event for cutting-edge smart city solutions and ICT technologies in four areas: Digital Business, Smart Living, Transportation and Mobility, and Governance and Infrastructure, was held on 13-16 October at Hong Kong Convention and Exhibition Centre (HKCEC).</p>
+
+- id: moe-awards
+  title: "CUHK Receives Three Ministry of Education Higher Education Outstanding Scientific Research Output Awards"
+  images:
+    - /images/gallery/report2.jpg
+  content: |
+    <p>Three scientific research projects conducted by researchers from The Chinese University of Hong Kong (CUHK) have received Higher Education Outstanding Scientific Research Output Awards (Science and Technology) 2022 from the Ministry of Education (MOE), including a first-class and two second-class awards in natural sciences.</p>
+
+- id: microrobot-swarm
+  title: "CUHK AI technology navigates microrobot swarm in complex environments inside human body"
+  images:
+    - /images/gallery/report3.png
+  content: |
+    <p>The Chinese University of Hong Kong (CUHK)’s engineering team has recently built an artificial intelligence (AI) navigation system that can make millions of microrobots behave like a bee swarm, autonomously reconfiguring their motion and distribution according to environmental changes, such as going around obstacles inside a human body.</p>
+
+- id: rgc-grant
+  title: "Innovative CUHK research receives grant of over $50 million from RGC Theme-based Research Scheme"
+  images:
+    - /images/gallery/report10.png
+  content: |
+    <p>A research team led by Professor Pheng Ann Heng from CUHK has received over HK$50 million to establish a world-leading Institute of Medical Intelligence and XR, aiming to advance AI and XR for next-generation precision healthcare.</p>
+
+- id: icra-award
+  title: "CUHK Engineering Research Team Wins IEEE ICRA 2021 Best Paper Award in Medical Robotics"
+  images:
+    - /images/gallery/report4.jpg
+    - /images/gallery/gallery5.png
+  content: |
+    <p>An engineering team working on AI for surgical robotics at The Chinese University of Hong Kong (CUHK) T Stone Robotics Institute has recently won the Best Paper Award in Medical Robotics at the IEEE International Conference on Robotics and Automation 2021 (ICRA 2021).</p>
+
+- id: covid-ai
+  title: "CUHK featured research on AI for detecting COVID-19 infections in CT"
+  images:
+    - /images/gallery/report5-1.png
+    - /images/gallery/report5-2.png
+    - /images/gallery/report5-3.png
+    - /images/gallery/report5-4.png
+  content: |
+    <p>Radiological imaging complements clinical testing in COVID-19 diagnosis and helps assess disease severity and progression. The team in close collaboration with engineering and clinical experts has developed an accurate AI system for automated detection of COVID-19 lesions from CT images, which can provide immediately available results, alleviating the burden of clinicians in interpreting images.</p>
+
+- id: women-in-science
+  title: "Featured as Woman in Science by RSIPvision Computer Vision News international magazine"
+  images:
+    - /images/gallery/report6.png
+  content: |
+    <p>This interview was conducted to highlight advances in AI for healthcare, focusing on research in medical image analysis. It discusses topics such as algorithm development, clinical deployment, interdisciplinary collaboration, and the future of AI-assisted diagnosis and surgery. The conversation also covers academic motivation and the impact of technology in medicine.</p>
+
+- id: cancer-ai
+  title: "AI used to pinpoint head and neck cancer treatment"
+  images:
+    - /images/gallery/report7.jpg
+  content: |
+    <p>In collaboration with the Chinese University of Hong Kong, the center, based in the provincial capital city, Guangzhou, said it has realized automated tumor target contouring on magnetic resonance imaging (MRI) pictures of carcinoma patients thanks to AI technology. Thus, the efficiency and accuracy of radiation therapy on the tumor can be greatly enhanced.</p>
+
+- id: eagle-eye
+  title: "CUHK Updates, An Eagle Eye for Smart Diagnoses"
+  images:
+    - /images/gallery/report8.png
+  content: |
+    <p>With medical images playing an increasingly critical role in diagnoses, the workload of those responsible for the interpretation of the images will only get heavier. To relieve their workload and to enhance diagnostic accuracy, the research team led by Prof. Heng Pheng-Ann has developed an artificial intelligence (AI) platform for automated medical image analysis.</p>
