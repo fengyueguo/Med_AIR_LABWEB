@@ -64,7 +64,7 @@ nav:
   <img src="../images/research/robotic.jpg" alt="Surgical Robotics">
   <div class="research-card-content">
     <h3>Surgical Robotics</h3>
-    <a href="/research/surgical-robotics.html">› Find out more</a>
+    <a href="/research/topic.html?topic=surgical-robotics">› Find out more</a>
   </div>
 </div>
 
@@ -73,7 +73,7 @@ nav:
   <img src="../images/research/agentic1.jpg" alt="Agentic AI Systems">
   <div class="research-card-content">
     <h3>Agentic AI Systems for Healthcare Applications</h3>
-    <a href="/research/agentic-ai.html">› Find out more</a>
+    <a href="/research/topic.html?topic=agentic-ai">› Find out more</a>
   </div>
 </div>
 
@@ -82,7 +82,7 @@ nav:
   <img src="../images/research/elderlycare.png" alt="Humanoid Robots">
   <div class="research-card-content">
     <h3>Humanoid Robots for Elderly Care</h3>
-    <a href="/research/elderly-care.html">› Find out more</a>
+    <a href="/research/topic.html?topic=elderly-care">› Find out more</a>
   </div>
 </div>
 
@@ -91,7 +91,7 @@ nav:
   <img src="../images/research/emobioied_ai1.jpg" alt="Safe Embodied AI">
   <div class="research-card-content">
     <h3>Safe Embodied AI</h3>
-    <a href="/research/safe-ai.html">› Find out more</a>
+    <a href="/research/topic.html?topic=safe-ai">› Find out more</a>
   </div>
 </div>
 
@@ -100,7 +100,7 @@ nav:
   <img src="../images/research/LLM_education.png" alt="LLMs and Smart XR">
   <div class="research-card-content">
     <h3>LLMs and Smart XR for Medical Education</h3>
-    <a href="/research/llm-xr.html">› Find out more</a>
+    <a href="/research/topic.html?topic=llm-xr">› Find out more</a>
   </div>
 </div>
 
