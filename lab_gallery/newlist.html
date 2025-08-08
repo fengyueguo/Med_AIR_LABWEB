@@ -10,35 +10,33 @@ title: News
 </div>
 
 <script>
-  const urlParams = new URLSearchParams(window.location.search);
-  const newsId = urlParams.get("id");
+ const params = new URLSearchParams(window.location.search);
+    const newsId = params.get('id');
 
-  fetch("/_data/news.json")
-    .then(response => response.text())
-    .then(yamlText => {
-      const data = jsyaml.load(yamlText);
-      const news = data.find(item => item.id === newsId);
-      if (!news) {
-        document.getElementById("news-container").innerHTML = "<p>News not found.</p>";
-        return;
-      }
+    // 异步读取 JSON 数据
+    fetch('/_data/news.json')
+      .then(response => response.json())
+      .then(data => {
+        // 找到匹配的新闻项
+        const item = data.find(news => news.id === newsId);
 
-      document.getElementById("news-title").textContent = news.title;
+        if (!item) {
+          document.getElementById('news-detail').innerHTML = '<p>News not found.</p>';
+          return;
+        }
 
-      const imgContainer = document.getElementById("news-images");
-      news.images.forEach(src => {
-        const img = document.createElement("img");
-        img.src = src;
-        img.style = "max-width: 100%; margin-bottom: 20px;";
-        imgContainer.appendChild(img);
+        // 渲染新闻内容
+        const html = `
+          <h1>${item.title}</h1>
+          ${item.images.map(img => `<img src="${img}" style="max-width:100%;margin:10px 0;">`).join('')}
+          <div>${item.content}</div>
+        `;
+        document.getElementById('news-detail').innerHTML = html;
+      })
+      .catch(err => {
+        console.error('Error loading news:', err);
+        document.getElementById('news-detail').innerHTML = '<p>Error loading news.</p>';
       });
-
-      document.getElementById("news-content").innerHTML = news.content;
-    })
-    .catch(error => {
-      console.error("Error loading news:", error);
-      document.getElementById("news-container").innerHTML = "<p>Failed to load news.</p>";
-    });
 </script>
 
 <!-- YAML Parser -->
