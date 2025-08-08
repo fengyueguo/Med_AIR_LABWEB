@@ -480,7 +480,7 @@
   const params = new URLSearchParams(window.location.search);
   const newsId = params.get("id");
 
-  fetch('../_data/news.json')
+  fetch('/_data/news.json')
     .then(response => response.json())
     .then(data => {
       const newsItem = data.find(item => item.id === newsId);
