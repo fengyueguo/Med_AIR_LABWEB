@@ -59,7 +59,7 @@ nav:
 
 <!-- Card 1 -->
 <div class="research-card">
-  <img src="/images/research/robotic.jpg" alt="Surgical Robotics">
+  <img src="../images/research/robotic.jpg" alt="Surgical Robotics">
   <div class="research-card-content">
     <h3>Surgical Robotics</h3>
     <a href="/research/surgical-robotics.html">› Find out more</a>
@@ -68,7 +68,7 @@ nav:
 
 <!-- Card 2 -->
 <div class="research-card">
-  <img src="/images/research/agentic1.jpg" alt="Agentic AI Systems">
+  <img src="../images/research/agentic1.jpg" alt="Agentic AI Systems">
   <div class="research-card-content">
     <h3>Agentic AI Systems for Healthcare Applications</h3>
     <a href="/research/agentic-ai.html">› Find out more</a>
@@ -77,7 +77,7 @@ nav:
 
 <!-- Card 3 -->
 <div class="research-card">
-  <img src="/images/research/elderlycare.png" alt="Humanoid Robots">
+  <img src="../images/research/elderlycare.png" alt="Humanoid Robots">
   <div class="research-card-content">
     <h3>Humanoid Robots for Elderly Care</h3>
     <a href="/research/elderly-care.html">› Find out more</a>
@@ -86,7 +86,7 @@ nav:
 
 <!-- Card 4 -->
 <div class="research-card">
-  <img src="/images/research/emobioied_ai.jpg" alt="Safe Embodied AI">
+  <img src="../images/research/emobioied_ai.jpg" alt="Safe Embodied AI">
   <div class="research-card-content">
     <h3>Safe Embodied AI</h3>
     <a href="/research/safe-ai.html">› Find out more</a>
@@ -95,7 +95,7 @@ nav:
 
 <!-- Card 5 -->
 <div class="research-card">
-  <img src="/images/research/LLM_education.png" alt="LLMs and Smart XR">
+  <img src="../images/research/LLM_education.png" alt="LLMs and Smart XR">
   <div class="research-card-content">
     <h3>LLMs and Smart XR for Medical Education</h3>
     <a href="/research/llm-xr.html">› Find out more</a>
