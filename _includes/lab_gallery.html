@@ -58,9 +58,127 @@
   </div> -->
   
   <h2>Publicity</h2>
-  <div class="publicity-gallery gallery"> 
 
-    <div class="gallery-item">
+  <h2>News and Events</h2>
+<div class="news-grid">
+
+  <div class="news-item">
+    <a href="/news.html?id=ai-arm">
+      <h3>AI Robotic Arm Completes Live Animal Testing</h3>
+      <p>A 'third hand' for surgery — AI-powered robotic arm achieves live animal testing.</p>
+      <small>12.06.2025</small>
+    </a>
+  </div>
+
+  <div class="news-item">
+    <a href="/news.html?id=embodied-ai">
+      <h3>AI Exhibition – Interactive Surgical Embodied AI Simulator</h3>
+      <p>CUHK showcases surgical AI at the University Library in memory of Prof. Tang Xiao’ou.</p>
+      <small>05.06.2025</small>
+    </a>
+  </div>
+
+  <div class="news-item">
+    <a href="/news.html?id=szshow">
+      <h3>Shenzhen International Medical Devices Expo 2024</h3>
+      <p>AR remote-assisted robotic system featured in international expo.</p>
+      <small>10.12.2024</small>
+    </a>
+  </div>
+
+  <div class="news-item">
+    <a href="/news.html?id=ai-endo">
+      <h3>CUHK Launches AI-Endo Surgical Assistance Platform</h3>
+      <p>Enhancing ESD with AI technology to improve GI cancer treatment.</p>
+      <small>15.04.2025</small>
+    </a>
+  </div>
+
+  <div class="news-item">
+    <a href="/news.html?id=sun-dong-visit">
+      <h3>Sun Dong Visits CUHK T Stone Robotics Institute</h3>
+      <p>Secretary for Innovation and Tech returns to alma mater to witness surgical robotics demo.</p>
+      <small>10.03.2025</small>
+    </a>
+  </div>
+
+  <div class="news-item">
+    <a href="/news.html?id=ict-expo">
+      <h3>CUHK Exhibits at International ICT Expo 2022</h3>
+      <p>Showcasing smart city innovations including AI surgical tech.</p>
+      <small>13.10.2022</small>
+    </a>
+  </div>
+
+  <div class="news-item">
+    <a href="/news.html?id=moe-awards">
+      <h3>CUHK Wins Ministry of Education Research Awards</h3>
+      <p>Three CUHK projects recognized with prestigious science and tech awards.</p>
+      <small>20.02.2023</small>
+    </a>
+  </div>
+
+  <div class="news-item">
+    <a href="/news.html?id=microrobot-swarm">
+      <h3>AI Navigates Microrobot Swarm in Human Body</h3>
+      <p>Breakthrough in autonomous motion control for microrobots.</p>
+      <small>01.05.2023</small>
+    </a>
+  </div>
+
+  <div class="news-item">
+    <a href="/news.html?id=rgc-grant">
+      <h3>CUHK Receives $50M RGC Grant for Medical XR Institute</h3>
+      <p>New funding to build world-class AI + XR medical innovation hub.</p>
+      <small>10.06.2023</small>
+    </a>
+  </div>
+
+  <div class="news-item">
+    <a href="/news.html?id=icra-award">
+      <h3>CUHK Wins Best Paper Award at IEEE ICRA 2021</h3>
+      <p>Medical robotics paper honored at top robotics conference.</p>
+      <small>01.06.2021</small>
+    </a>
+  </div>
+
+  <div class="news-item">
+    <a href="/news.html?id=covid-ai">
+      <h3>CUHK Develops AI to Detect COVID-19 in CT Scans</h3>
+      <p>AI for accurate, automated COVID-19 detection from CT imaging.</p>
+      <small>20.05.2020</small>
+    </a>
+  </div>
+
+  <div class="news-item">
+    <a href="/news.html?id=women-in-science">
+      <h3>Featured in RSIPvision as Woman in Science</h3>
+      <p>CUHK researcher highlighted for advances in AI for healthcare.</p>
+      <small>08.03.2023</small>
+    </a>
+  </div>
+
+  <div class="news-item">
+    <a href="/news.html?id=cancer-ai">
+      <h3>AI for Head and Neck Cancer Treatment</h3>
+      <p>AI improves radiation therapy with automated MRI-based tumor contouring.</p>
+      <small>12.11.2023</small>
+    </a>
+  </div>
+
+  <div class="news-item">
+    <a href="/news.html?id=eagle-eye">
+      <h3>An Eagle Eye for Smart Diagnoses</h3>
+      <p>AI medical imaging platform alleviates radiologists' burden.</p>
+      <small>15.01.2024</small>
+    </a>
+  </div>
+
+</div>
+
+  
+<!--   <div class="publicity-gallery gallery">
+     <div class="gallery-item">
       <div class="image-carousel">
         <div class="carousel-track">
           <img src="../images/gallery/robot_1.jpg" class="carousel-image">
@@ -342,7 +460,7 @@
       {% include publicity-icons.html data=media_icons %}
     </div>
   </div>
-</div>
+</div> -->
 
 
         
@@ -403,7 +521,7 @@
          <div class="caption">IEEE ICRA 2021 Best Paper Award in Medical Robotics.</div>
     </div> -->
         
-    </div>
+<!--     </div> -->
     
 
 <!--     <div class="gallery-item">
@@ -534,3 +652,64 @@ document.querySelectorAll('.image-carousel').forEach(carousel => {
 });
 
 </script>
+  <style>
+.news-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.news-item {
+  background-color: #f2f6fb;
+  padding: 20px;
+  border-radius: 8px;
+  width: calc(33.33% - 20px);
+  box-sizing: border-box;
+  font-family: sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.news-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.news-item a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.news-item h3 {
+  margin: 0 0 10px;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.news-item p {
+  margin: 0 0 10px;
+  color: #333;
+  font-size: 0.95em;
+}
+
+.news-item small {
+  color: #888;
+  font-size: 0.8em;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .news-item {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .news-item {
+    width: 100%;
+  }
+}
+
+</style>
