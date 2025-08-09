@@ -1,5 +1,82 @@
 <h2 id="news">News</h2>
-<div class="news_block">
+<div class="news-grid">
+
+  <div class="news-item">
+    <h3>One paper accepted to ACL 2025</h3>
+    <small>05/2025</small>
+  </div>
+
+  <div class="news-item">
+    <h3>One paper accepted to Nature Communications</h3>
+    <small>05/2025</small>
+  </div>
+
+  <div class="news-item">
+    <h3>One paper accepted to ICML 2025</h3>
+    <small>05/2025</small>
+  </div>
+
+  <div class="news-item">
+    <h3>One paper accepted to MedIA</h3>
+    <small>04/2025</small>
+  </div>
+
+  <div class="news-item">
+    <h3>Area Chair for NeurIPS 2025</h3>
+    <small>02/2025</small>
+  </div>
+
+  <div class="news-item">
+    <h3>Three papers accepted to NeurIPS 2024</h3>
+    <small>10/2024</small>
+  </div>
+
+  <div class="news-item">
+    <h3>Listed in World's Top 2% Scientists 2023</h3>
+    <small>10/2024</small>
+  </div>
+
+  <div class="news-item">
+    <h3>One paper accepted to MedIA</h3>
+    <small>08/2024</small>
+  </div>
+
+  <div class="news-item">
+    <h3>One paper accepted to IEEE RA-L</h3>
+    <small>08/2024</small>
+  </div>
+
+  <div class="news-item">
+    <h3>Two papers accepted to ECCV 2024</h3>
+    <small>07/2024</small>
+  </div>
+
+  <div class="news-item">
+    <h3>IJCARS-MICCAI Best Paper Award 3rd Prize</h3>
+    <small>07/2024</small>
+  </div>
+
+  <div class="news-item">
+    <h3>Eight papers accepted to MICCAI 2024</h3>
+    <small>06/2024</small>
+  </div>
+
+  <div class="news-item">
+    <h3>One paper accepted to NEJM AI</h3>
+    <small>06/2024</small>
+  </div>
+
+  <div class="news-item">
+    <h3>One paper accepted to IEEE TMI and one to MedIA</h3>
+    <small>06/2024</small>
+  </div>
+
+  <div class="news-item">
+    <h3>Organization Committee of IROS 2025</h3>
+    <small>05/2024</small>
+  </div>
+</div>
+<!-- <div class="news_block">
       <ul>
         <li>[05/2025] One paper accepted to ACL 2025.</li>
         <li>[05/2025] One paper accepted to Nature Communications.</li>
@@ -17,7 +94,7 @@
         <li>[06/2024] One paper accepted to IEEE TMI and one paper accepted to MedIA.</li>
         <li>[05/2024] To serve in the Organization Committee of IROS 2025.</li>
     </ul>
-</div>
+</div> -->
 
 <h2 id="news">Selected Awards</h2>
 <div class="award_block">
@@ -93,3 +170,40 @@
 <!--         <li> Associate Editor, Journal of Machine Learning for Biomedical Imaging (<a href="https://www.melba-journal.org/" target="_blank">MELBA</a>), since 2021.</li> -->
     </ul>
 </div>
+<style>
+.news-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+ gap: 30px;
+ margin-top: 20px;
+}
+
+.news-item {
+ padding: 10px 0;
+}
+
+.news-item h3 {
+ margin: 0 0 5px;
+ font-size: 1em;
+ font-weight: normal; /* 去掉加粗 */
+ color: #000;
+}
+
+.news-item small {
+ color: #888;
+ font-size: 0.8em;
+}
+
+/* 响应式 */
+@media (max-width: 1024px) {
+ .news-grid {
+   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+ }
+}
+
+@media (max-width: 600px) {
+ .news-grid {
+   grid-template-columns: 1fr;
+ }
+}
+</style>
