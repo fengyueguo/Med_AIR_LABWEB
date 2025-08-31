@@ -645,34 +645,42 @@
     </div>
 </div>
 <style>
-/* 手机端收紧教授介绍模块 */
 @media (max-width: 768px) {
   .professor-container {
-    /* 覆盖内联 gap/对齐（有内联样式所以加 !important） */
     gap: 14px !important;
     justify-content: flex-start !important;
     align-items: center !important;
   }
 
   .professor-photo {
-    /* 缩小右侧照片容器 */
     flex: 0 0 120px !important;
   }
   .professor-photo img {
-    max-width: 110px !important;
+    max-width: 160px !important;
     height: auto !important;
+  }
+ .professor-bio,
+  .professor-bio p,
+  .professor-bio div,
+  .professor-info p,
+  .professor-info div {
+    text-align: justify;
+    text-justify: inter-ideograph;      /* CJK 两端对齐更自然（其他浏览器会忽略，兼容没问题） */
+    letter-spacing: -0.01em;            /* 略收紧字距；可在 -0.005em ~ -0.02em 间微调 */
+    font-kerning: normal;
+    font-feature-settings: "kern";
+    hyphens: auto;                      /* 英文自动断词，减少大空隙 */
+    word-break: break-word;             /* 防止长链接/英文撑破布局 */
   }
 
   .professor-info {
-    max-width: none !important;   /* 让文本区域不被 550px 限制 */
-    line-height: 1.35;            /* 行高略紧凑 */
+    max-width: none !important;
+    line-height: 1.35; 
   }
 
-  /* 删掉介绍内不必要的空白（用 <br> 撑开的） */
   .professor-info br { display: none; }
   .professor-bio br { display: none; }
 
-  /* 头像下方“Bio/Research Interest”区块也收一点 */
   .professor-bio {
     margin-top: 16px !important;
     line-height: 1.45;
@@ -681,14 +689,12 @@
     margin: 0.5rem 0 0.35rem !important;
   }
 
-  /* 社交图标稍微小一丢丢，避免撑高行距 */
   .professor-widget img {
     height: 24px !important;
     margin-bottom: -2px !important;
   }
 }
 
-/* 极小屏（比如 360px 宽以下）再紧一点，或直接堆叠 */
 @media (max-width: 400px) {
   .professor-container { gap: 12px !important; }
   /* 如果你想在极小屏改为上下堆叠，放开下面两行： */
