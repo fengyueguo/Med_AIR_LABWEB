@@ -149,3 +149,56 @@
         <b>Recent focus</b>: 1) Surgical Robotics, 2) Agentic AI Systems for Healthcare Applications, 3) Human Robots for Elderly Care, 4) Emobioied AI, 5) LLMs and Smart XR for Medical Education
     </div>
 </div>
+<style>
+/* 手机端收紧教授介绍模块 */
+@media (max-width: 768px) {
+  .professor-container {
+    /* 覆盖内联 gap/对齐（有内联样式所以加 !important） */
+    gap: 14px !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+  }
+
+  .professor-photo {
+    /* 缩小右侧照片容器 */
+    flex: 0 0 120px !important;
+  }
+  .professor-photo img {
+    max-width: 110px !important;
+    height: auto !important;
+  }
+
+  .professor-info {
+    max-width: none !important;   /* 让文本区域不被 550px 限制 */
+    line-height: 1.35;            /* 行高略紧凑 */
+  }
+
+  /* 删掉介绍内不必要的空白（用 <br> 撑开的） */
+  .professor-info br { display: none; }
+  .professor-bio br { display: none; }
+
+  /* 头像下方“Bio/Research Interest”区块也收一点 */
+  .professor-bio {
+    margin-top: 16px !important;
+    line-height: 1.45;
+  }
+  .professor-bio h6 {
+    margin: 0.5rem 0 0.35rem !important;
+  }
+
+  /* 社交图标稍微小一丢丢，避免撑高行距 */
+  .professor-widget img {
+    height: 24px !important;
+    margin-bottom: -2px !important;
+  }
+}
+
+/* 极小屏（比如 360px 宽以下）再紧一点，或直接堆叠 */
+@media (max-width: 400px) {
+  .professor-container { gap: 12px !important; }
+  /* 如果你想在极小屏改为上下堆叠，放开下面两行： */
+  /* .professor-container { flex-direction: column !important; align-items: flex-start !important; }
+  .professor-photo { order: -1; }  */  /* 照片放上方 */
+}
+</style>
+
