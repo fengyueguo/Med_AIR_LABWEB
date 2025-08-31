@@ -15,7 +15,6 @@ nav:
 .image-wrap{position:relative;overflow:hidden;border-radius:10px 10px 0 0}
 .research-card img{width:100%;height:auto;display:block}
 
-/* 点击后出现的白色遮罩（默认隐藏） */
 .research-overlay{
   position:absolute;inset:0;background:rgba(255,255,255,.92);color:#111;
   display:none
@@ -23,9 +22,9 @@ nav:
 .research-overlay.show{display:flex}
 .overlay-content{
   padding:16px 18px;box-sizing:border-box;width:100%;max-height:100%;
-  overflow:auto; /* 内容过长在图片内滚动，绝不溢出 */
+  overflow:auto;
   line-height:1.4;font-size:.95rem;
-  text-wrap:balance; /* 支持的浏览器里可更匀称排版 */
+  text-wrap:balance; 
   word-break:normal;overflow-wrap:break-word
 }
 .overlay-content p{margin:0 0 8px}
@@ -35,7 +34,7 @@ nav:
 .research-card h3{margin:0;color:#fff}
 .find-more{
   background:none;border:0;color:#fff;font-weight:700;text-decoration:none;
-  cursor:pointer;padding:0;font-size:1rem
+  cursor:pointer;padding:0;font-size:1rem;margin-top:15px;
 }
 .find-more:hover,.find-more:focus{text-decoration:underline;outline:none}
 
