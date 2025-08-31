@@ -459,7 +459,6 @@
 .image-wrap{position:relative;overflow:hidden;border-radius:10px 10px 0 0}
 .research-card img{width:100%;height:auto;display:block}
 
-/* 点击后出现的白色遮罩（默认隐藏） */
 .research-overlay{
   position:absolute;inset:0;background:rgba(255,255,255,.92);color:#111;
   display:none
@@ -467,23 +466,19 @@
 .research-overlay.show{display:flex}
 .overlay-content{
   padding:16px 18px;box-sizing:border-box;width:100%;max-height:100%;
-  overflow:auto; /* 内容过长时图片内滚动，绝不溢出 */
+  overflow:auto;
   line-height:1.4;font-size:.95rem;
-  text-wrap:balance; /* 支持的浏览器里可减少“丑”换行 */
+  text-wrap:balance;
   word-break:normal;overflow-wrap:break-word
 }
 .overlay-content p{margin:0 0 8px}
 .overlay-title{margin:0 0 6px;font-weight:700}
-.close-overlay{
-  position:absolute;top:8px;right:8px;background:#0000;border:0;
-  border-radius:6px;padding:6px 10px;cursor:pointer;color:#111;font-weight:700
-}
 
-.research-card-content{padding:20px}
+.research-card-content{padding:15 20 10 20px}
 .research-card h3{margin:0;color:#fff}
 .find-more{
   background:none;border:0;color:#fff;font-weight:700;text-decoration:none;
-  cursor:pointer;padding:0;font-size:1rem
+  cursor:pointer;padding:0;font-size:1rem;margin-top:15px;
 }
 .find-more:hover,.find-more:focus{text-decoration:underline;outline:none}
 
@@ -491,7 +486,9 @@
 </style>
 
 <h2 id="research-topics">Research Topics</h2>
-<p>Our research sits at the interdisciplinary nexus of <strong>machine learning</strong>, <strong>robotic surgical intelligence</strong> and <strong>medical image analysis</strong> …
+<p>Our research sits at the interdisciplinary nexus of <strong>machine learning</strong>, <strong>robotic surgical intelligence</strong> and <strong>medical image analysis</strong>, aiming to develop innovative intelligent systems that advance diagnosis, intervention, and medical education through next-generation healthcare technologies. Our work spans embodied AI for surgical robotics, medical image understanding, robot sensing and planning in dynamic environments, agentic AI systems for clinical decision-making, LLM for education and smart XR for medical training. Representative contributions include 3D deep learning for high-dimensional image computing, domain adaptation and generalization across heterogeneous medical data, surgical video analysis with efficient spatio-temporal learning, and visual-kinematic perception and automation in surgical robotics.</p>
+
+<p>Recent focus: 1) <strong>Surgical Robotics</strong>, 2) <strong>Agentic AI Systems for Healthcare Applications</strong>, 3) <strong>Human Robots</strong> for Elderly Care, 4) Safe <strong>Embodied AI</strong>, 5) <strong>LLMs and Smart XR</strong> for Medical Education
 <br></p>
 
 <div class="research-grid">
@@ -501,7 +498,6 @@
     <div class="image-wrap">
       <img src="../images/research/robotic.jpg" alt="Surgical Robotics">
       <div class="research-overlay" id="overlay-surgical-robotics" aria-hidden="true">
-        <button class="close-overlay" aria-label="Close">×</button>
         <div class="overlay-content"></div>
       </div>
     </div>
@@ -516,7 +512,6 @@
     <div class="image-wrap">
       <img src="../images/research/agentic1.jpg" alt="Agentic AI Systems">
       <div class="research-overlay" id="overlay-agentic-ai" aria-hidden="true">
-        <button class="close-overlay" aria-label="Close">×</button>
         <div class="overlay-content"></div>
       </div>
     </div>
@@ -531,7 +526,6 @@
     <div class="image-wrap">
       <img src="../images/research/elderlycare.png" alt="Humanoid Robots">
       <div class="research-overlay" id="overlay-elderly-care" aria-hidden="true">
-        <button class="close-overlay" aria-label="Close">×</button>
         <div class="overlay-content"></div>
       </div>
     </div>
@@ -546,7 +540,6 @@
     <div class="image-wrap">
       <img src="../images/research/emobioied_ai1.jpg" alt="Safe Embodied AI">
       <div class="research-overlay" id="overlay-safe-ai" aria-hidden="true">
-        <button class="close-overlay" aria-label="Close">×</button>
         <div class="overlay-content"></div>
       </div>
     </div>
@@ -561,7 +554,6 @@
     <div class="image-wrap">
       <img src="../images/research/LLM_education.png" alt="LLMs and Smart XR">
       <div class="research-overlay" id="overlay-llm-xr" aria-hidden="true">
-        <button class="close-overlay" aria-label="Close">×</button>
         <div class="overlay-content"></div>
       </div>
     </div>
@@ -573,7 +565,6 @@
 
 </div>
 
-<!-- topic 文本：用 <template>，不参与 JS 解析，避免奇怪转义 -->
 <template id="tpl-surgical-robotics">
   <p class="overlay-title">Data Analytics and Cognitive Augmentation</p>
   <p>It focuses on developing intelligent methods and systems that improve surgical efficiency. The work encompasses multi-modal data analysis to understand surgical scenes at multiple levels of granularity (i.e. surgical workflows, actions and anatomical structures), safety analysis to prevent adverse events during procedures, development of domain-specific large vision-language models, design of intelligent educational platforms, building augmented reality systems that provide intraoperative guidance, and virtual reality systems for immersive surgical simulation and training.</p>
@@ -603,47 +594,29 @@
 
 <script>
 (function(){
-  function openOverlay(btn){
+  function toggleOverlay(btn){
     var key = btn.getAttribute('data-topic');
     var overlay = document.getElementById('overlay-' + key);
     var contentBox = overlay.querySelector('.overlay-content');
     var tpl = document.getElementById('tpl-' + key);
 
+    // 首次打开时注入模板内容
     if (tpl && !contentBox.getAttribute('data-loaded')){
-      contentBox.innerHTML = tpl.innerHTML;     // 注入模板 HTML
+      contentBox.innerHTML = tpl.innerHTML;
       contentBox.setAttribute('data-loaded','1');
     }
-    overlay.classList.add('show');
-    overlay.setAttribute('aria-hidden','false');
-    btn.setAttribute('aria-expanded','true');
+
+    var isOpen = overlay.classList.contains('show');
+    overlay.classList.toggle('show', !isOpen);
+    overlay.setAttribute('aria-hidden', isOpen ? 'true' : 'false');
+    btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
   }
 
-  function closeOverlay(overlay){
-    overlay.classList.remove('show');
-    overlay.setAttribute('aria-hidden','true');
-    var controlBtn = document.querySelector('[aria-controls="'+ overlay.id +'"]');
-    if (controlBtn) controlBtn.setAttribute('aria-expanded','false');
-  }
-
-  // 绑定 open
+  // 绑定按钮，点击打开/关闭
   var buttons = document.querySelectorAll('.find-more');
   for (var i=0;i<buttons.length;i++){
-    buttons[i].addEventListener('click', function(){ openOverlay(this); });
+    buttons[i].addEventListener('click', function(){ toggleOverlay(this); });
   }
-
-  // 绑定 close（×）
-  var closers = document.querySelectorAll('.close-overlay');
-  for (var j=0;j<closers.length;j++){
-    closers[j].addEventListener('click', function(e){
-      closeOverlay(e.currentTarget.closest('.research-overlay'));
-    });
-  }
-
-  // 可选：点击遮罩空白处也关闭
-  document.addEventListener('click', function(e){
-    var ov = e.target.closest('.research-overlay');
-    if (ov && e.target === ov){ closeOverlay(ov); }
-  });
 })();
 </script>
 </section>
