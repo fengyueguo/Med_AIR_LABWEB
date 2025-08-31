@@ -103,6 +103,21 @@
     .student-container .student{
         width: 100%;	
     }
+	    .student-container {
+        justify-content: space-between; /* 可选：让两列分散排布更均匀 */
+    }
+
+    .student-container .student{
+        width: 50%;              /* 关键：手机端一行放2个人 */
+        /* 或者：flex: 0 0 50%; 也可以 */
+    }
+
+    /* 可选：手机端头像稍微小一点，更贴合两列布局 */
+    .student-container .student img {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 4rem;
+    }
 }
 
 .requirements .alumnus{
