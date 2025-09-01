@@ -652,7 +652,6 @@
 
 <script>
 (function () {
-  // 预加载 template 内容（保留你的原逻辑）
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.research-overlay').forEach(function (overlay) {
       var box = overlay.querySelector('.overlay-content');
@@ -673,13 +672,11 @@
     if (!overlay) return;
     var card = btn.closest('.research-card');
 
-    // hover 显示 / 离开隐藏（未固定时）
     btn.addEventListener('mouseenter', function () { overlay.classList.add('show'); });
     btn.addEventListener('mouseleave', function () {
       if (!overlay.classList.contains('pinned')) overlay.classList.remove('show');
     });
 
-    // 键盘无障碍：focus 显示 / blur 隐藏（未固定时）
     btn.addEventListener('focus', function () {
       overlay.classList.add('show');
       btn.setAttribute('aria-expanded', 'true');
@@ -689,7 +686,6 @@
       btn.setAttribute('aria-expanded', 'false');
     });
 
-    // 点击：切换“手动模式”（固定/取消固定）
     btn.addEventListener('click', function (e) {
       e.preventDefault();
       var pinned = overlay.classList.toggle('pinned');
@@ -698,12 +694,10 @@
       overlay.setAttribute('aria-hidden', pinned ? 'false' : 'true');
 
       if (pinned) {
-        // 进入手动模式：禁止 hover 干扰
         card.classList.add('suppress-hover');
       } else {
-        // 退出手动模式：先隐藏，并暂时抑制 hover，直到鼠标离开按钮
         overlay.classList.remove('show');
-        btn.blur(); // 防止 :focus 触发再次显示
+        btn.blur();
         card.classList.add('suppress-hover');
 
         var clearSuppress = function () {
@@ -712,7 +706,6 @@
         };
         btn.addEventListener('mouseleave', clearSuppress);
 
-        // 触屏设备（无 hover）：直接解除抑制
         if (window.matchMedia && window.matchMedia('(hover: none)').matches) {
           card.classList.remove('suppress-hover');
         }
