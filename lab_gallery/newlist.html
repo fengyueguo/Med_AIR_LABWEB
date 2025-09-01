@@ -473,10 +473,11 @@
 </div>
 
 <script>
+  const BASE = '/Med_AIR_LABWEB'; 
   const params = new URLSearchParams(window.location.search);
   const newsId = params.get('id');
 
-  fetch('/data/news.json')
+  fetch(`${BASE}/data/news.json`)
     .then(res => {
       if (!res.ok) {
         throw new Error('Failed to load news.json');
@@ -495,7 +496,7 @@
       const imagesContainer = document.getElementById('news-images');
       news.images.forEach(src => {
         const img = document.createElement('img');
-        img.src = src;
+        img.src = (/^https?:\/\//i.test(src)) ? src : `${BASE}/${src.replace(/^\/+/, '')}`;
         img.alt = 'news image';
         img.style = "width: 100%; max-width: 100%; margin-bottom: 15px; border-radius: 6px;";
         imagesContainer.appendChild(img);

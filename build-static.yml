@@ -1,0 +1,45 @@
+name: Build static ZIPs
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]   # 按你的默认分支改
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'         # 稳定新版本
+          bundler-cache: true
+
+      - name: Install deps
+        run: bundle install
+
+      # 产物 A：用于 www 根目录（/~qdou）
+      - name: Build WWW
+        run: |
+          JEKYLL_ENV=production bundle exec jekyll build \
+            --config _config.yml,_config_www.yml \
+            --destination _site_www
+          cd _site_www && zip -r ../site-www.zip .
+
+      # 产物 B：用于 appsrv 子目录（/~qdou/lab），如放根就把 _config_appsrv.yml 改成根配置
+      - name: Build APPSRV
+        run: |
+          JEKYLL_ENV=production bundle exec jekyll build \
+            --config _config.yml,_config_appsrv.yml \
+            --destination _site_appsrv
+          cd _site_appsrv && zip -r ../site-appsrv.zip .
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: static-zips
+          path: |
+            site-www.zip
+            site-appsrv.zip
