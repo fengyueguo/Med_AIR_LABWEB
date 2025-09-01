@@ -888,15 +888,26 @@
 </div>
 <style>
 @media (max-width: 768px) {
-  .services_block{
+  .news_block, .award_block, .teaching_block, .services_block,
+  .news_block *, .award_block *, .teaching_block *, .services_block * {
     text-align: left !important;
-    text-justify: auto !important;
-    text-align-last: left !important;
+    text-justify: none !important; 
     letter-spacing: normal !important;
+    word-spacing: normal !important; 
+    white-space: normal !important;
   }
-  .services_block p { margin: 0.25rem 0 0.35rem; }
-  .services_block ul { margin: 0.35rem 0; padding-left: 1.2rem; }
-  .services_block li { margin: 0.2rem 0; }
+
+  .news_block a, .award_block a, .teaching_block a, .services_block a,
+  .news_block li, .award_block li, .teaching_block li, .services_block li {
+    overflow-wrap: anywhere; 
+    word-break: break-word; 
+    hyphens: auto;    
+  }
+
+  .news_block li, .award_block li, .teaching_block li, .services_block li {
+    line-height: 1.6;
+    margin: .28rem 0;
+  }
 }
 </style>
 
