@@ -450,35 +450,42 @@
   
  <section class="background" data-size="page">
   <style>
-.research-grid{display:flex;flex-wrap:wrap;gap:40px;justify-content:flex-start}
-.research-card{
-  width:calc(50% - 20px);background:#007d99;color:#fff;text-align:left;
-  font-family:sans-serif;box-shadow:0 4px 8px rgba(0,0,0,.1);
-  border-radius:10px;overflow:hidden
+:root{
+  --card-bg:#007d99;
+  --overlay-bg:rgba(255,255,255,.96);
+  --radius:12px;
+  --space:20px;
+  --shadow:0 4px 8px rgba(0,0,0,.12);
+  --shadow-md:0 6px 16px rgba(0,0,0,.18);
+  --speed:.18s;
 }
-.image-wrap{position:relative;overflow:hidden;border-radius:10px 10px 0 0}
-.image-wrap:focus{outline:2px solid rgba(255,255,255,.6);outline-offset:-2px}
+
+/* ===== 布局 ===== */
+.research-grid{
+  display:flex;flex-wrap:wrap;gap:40px;justify-content:flex-start
+}
+.research-card{
+  width:calc(50% - 20px);
+  background:var(--card-bg);color:#fff;text-align:left;
+  font-family:sans-serif;box-shadow:var(--shadow);
+  border-radius:var(--radius);overflow:hidden
+}
+@media (max-width:800px){.research-card{width:100%}}
+
+.image-wrap{
+  position:relative;overflow:hidden;border-radius:var(--radius) var(--radius) 0 0
+}
+.image-wrap:focus{outline:2px solid rgba(255,255,255,.65);outline-offset:-2px}
 .research-card img{width:100%;height:auto;display:block}
 
-/* 默认隐藏，通过透明度/可见性控制，支持过渡 */
+/* ===== 覆盖层显示/隐藏 ===== */
 .research-overlay{
-  position:absolute;inset:0;background:rgba(255,255,255,.92);color:#111;
-  display:flex;opacity:0;visibility:hidden;transition:opacity .18s ease-in-out;
-  pointer-events:none;
+  position:absolute;inset:0;background:var(--overlay-bg);color:#111;
+  display:flex;opacity:0;visibility:hidden;transition:opacity var(--speed) ease-in-out;
+  pointer-events:none; /* 隐藏时不拦截事件 */
 }
-.overlay-content{
-  padding:16px 18px;box-sizing:border-box;width:100%;max-height:100%;
-  overflow:auto;line-height:1.4;font-size:.95rem;
-  text-wrap:balance; word-break:normal;overflow-wrap:break-word;
-  text-align:left !important;
-}
-.overlay-content p{margin:0 0 8px}
-.overlay-title{margin:0 0 6px;font-weight:700}
 
-.research-card-content{padding:20px}
-.research-card h3{margin:0;color:#fff}
-
-/* 触发显示：1) hover/聚焦在按钮；2) JS 加的 .show/.pinned 状态 */
+/* 触发显示：hover/聚焦在按钮；或由 JS 加 .show/.pinned；suppress-hover 为门控 */
 .research-card:not(.suppress-hover):has(.find-more:hover) .research-overlay,
 .research-card:not(.suppress-hover):has(.find-more:focus) .research-overlay,
 .research-overlay.show,
@@ -486,33 +493,55 @@
   opacity:1;visibility:visible;pointer-events:auto;
 }
 
+/* ===== 覆盖层内容排版 ===== */
+.overlay-content{
+  /* 文字排版更可读 */
+  padding:18px 20px;box-sizing:border-box;width:100%;max-height:100%;
+  overflow:auto;line-height:1.65;font-size:clamp(.95rem, .92rem + .2vw, 1rem);
+  text-wrap:balance;word-break:normal;overflow-wrap:break-word;
 
-/* 不再隐藏按钮（删除你原来的 @media (hover:hover){ .find-more{display:none;} }） */
-.find-more{
-  background:none;border:0;color:#fff;font-weight:700;text-decoration:none;
-  cursor:pointer;padding:0;font-size:1rem;margin-top:15px;display:inline-block;
+  /* 宽度限制，避免过宽难读 */
+  max-width:68ch;margin:0 auto;text-align:left;
+  -webkit-overflow-scrolling:touch;overscroll-behavior:contain;
 }
-.find-more:hover,.find-more:focus{text-decoration:underline;outline:none}
 
-/* 强制 overlay 内所有文本左对齐（包括 p / h1–h6 / li / a 等） */
+/* 强制左对齐（覆盖可能的全局居中），并修正 margin 居中带来的错觉 */
 .research-grid .research-card .research-overlay .overlay-content,
-.research-grid .research-card .research-overlay .overlay-content * {
-  text-align: left !important;
+.research-grid .research-card .research-overlay .overlay-content *{text-align:left !important}
+.research-grid .research-card .research-overlay .overlay-content > *{
+  margin-left:0 !important;margin-right:0 !important
 }
-
-/* 万一被“水平居中”的布局影响（margin:auto）导致看起来在中间，顺便重置一下外边距 */
-.research-grid .research-card .research-overlay .overlay-content > * {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+/* 标题占满行，避免被居中块影响 */
 .research-grid .research-card .research-overlay .overlay-content h1,
 .research-grid .research-card .research-overlay .overlay-content h2,
-.research-grid .research-card .research-overlay .overlay-content h3 {
-  width: 100% !important; /* 让标题占满行，就不会被 margin:auto 居中块 */
+.research-grid .research-card .research-overlay .overlay-content h3{width:100% !important}
+
+/* 段落/列表间距更清晰 */
+.overlay-content p{margin:0 0 12px}
+.overlay-content p + p{margin-top:4px}
+.overlay-content ul, .overlay-content ol{margin:0 0 12px 1.2em}
+.overlay-title{margin:0 0 8px;font-weight:700}
+
+/* 可选：轻微顶部/底部渐隐提示可滚动（不用 JS） */
+/* .overlay-content{mask-image:linear-gradient(to bottom, rgba(0,0,0,.7), #000 24px calc(100% - 24px), rgba(0,0,0,.7))} */
+
+/* ===== 卡片正文 ===== */
+.research-card-content{padding:20px}
+.research-card h3{margin:0;color:#fff;line-height:1.25}
+
+/* ===== 按钮（触发点） ===== */
+.find-more{
+  background:none;border:0;color:#fff;font-weight:700;text-decoration:none;
+  cursor:pointer;padding:2px 0;font-size:1rem;margin-top:14px;display:inline-flex;
+  align-items:center;gap:.25em
 }
+.find-more:hover,.find-more:focus{text-decoration:underline;outline:none}
+.find-more:focus-visible{outline:2px solid rgba(255,255,255,.85);outline-offset:2px;border-radius:4px}
 
-
-@media (max-width:800px){.research-card{width:100%}}
+/* ===== 降低动画偏好支持 ===== */
+@media (prefers-reduced-motion: reduce){
+  .research-overlay{transition:none}
+}
 </style>
 
 <h2 id="research-topics">Research Topics</h2>
