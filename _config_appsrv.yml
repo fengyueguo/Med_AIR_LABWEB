@@ -3,3 +3,5 @@ url: "http://appsrv.cse.cuhk.edu.hk"
 include:
   - _styles
   - _scripts
+  - images
+  - _data
