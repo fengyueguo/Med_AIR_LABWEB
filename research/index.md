@@ -49,6 +49,24 @@ nav:
 }
 .find-more:hover,.find-more:focus{text-decoration:underline;outline:none}
 
+/* 强制 overlay 内所有文本左对齐（包括 p / h1–h6 / li / a 等） */
+.research-grid .research-card .research-overlay .overlay-content,
+.research-grid .research-card .research-overlay .overlay-content * {
+  text-align: left !important;
+}
+
+/* 万一被“水平居中”的布局影响（margin:auto）导致看起来在中间，顺便重置一下外边距 */
+.research-grid .research-card .research-overlay .overlay-content > * {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.research-grid .research-card .research-overlay .overlay-content h1,
+.research-grid .research-card .research-overlay .overlay-content h2,
+.research-grid .research-card .research-overlay .overlay-content h3 {
+  width: 100% !important; /* 让标题占满行，就不会被 margin:auto 居中块 */
+}
+
+
 @media (max-width:800px){.research-card{width:100%}}
 </style>
 
