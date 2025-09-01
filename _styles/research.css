@@ -1,0 +1,165 @@
+:root {
+  --card-bg:#007d99;
+  --overlay-bg:rgba(255,255,255,.96);
+  --radius:12px;
+  --space:20px;
+  --shadow:0 4px 8px rgba(0,0,0,.12);
+  --shadow-md:0 6px 16px rgba(0,0,0,.18);
+  --speed:.18s;
+}
+
+.research-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: flex-start;
+}
+
+.research-card {
+  width: calc(50% - 20px);
+  background: var(--card-bg);
+  color: #fff;
+  text-align: left;
+  font-family: sans-serif;
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+@media (max-width: 800px) {
+  .research-card {
+    width: 100%;
+  }
+}
+.image-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.image-wrap:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.65);
+  outline-offset: -2px;
+}
+
+.research-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.research-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--overlay-bg);
+  color: #111;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--speed) ease-in-out;
+  pointer-events: none;
+}
+
+.research-card:not(.suppress-hover):has(.find-more:hover) .research-overlay,
+.research-card:not(.suppress-hover):has(.find-more:focus) .research-overlay,
+.research-overlay.show,
+.research-overlay.pinned {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.overlay-content {
+  padding: 18px 20px;
+  box-sizing: border-box;
+  width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  line-height: 1.65;
+  font-size: clamp(0.95rem, 0.92rem + 0.2vw, 1rem);
+  text-wrap: balance;
+  word-break: normal;
+  overflow-wrap: break-word;
+  max-width: 68ch;
+  margin: 0 auto;
+  text-align: left;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+.research-grid .research-card .research-overlay .overlay-content,
+.research-grid .research-card .research-overlay .overlay-content * {
+  text-align: left !important;
+}
+
+.research-grid .research-card .research-overlay .overlay-content > * {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.research-grid .research-card .research-overlay .overlay-content h1,
+.research-grid .research-card .research-overlay .overlay-content h2,
+.research-grid .research-card .research-overlay .overlay-content h3 {
+  width: 100% !important;
+}
+
+.overlay-content p {
+  margin: 0 0 12px;
+}
+
+.overlay-content p + p {
+  margin-top: 4px;
+}
+
+.overlay-content ul, .overlay-content ol {
+  margin: 0 0 12px 1.2em;
+}
+
+.overlay-title {
+  margin: 0 0 8px;
+  font-weight: 700;
+}
+
+.research-card-content {
+  padding: 20px;
+}
+
+.research-card h3 {
+  margin: 0;
+  color: #fff;
+  line-height: 1.25;
+}
+
+.find-more {
+  background: none;
+  border: 0;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 2px 0;
+  font-size: 1rem;
+  margin-top: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+}
+
+.find-more:hover, .find-more:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+.find-more:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.85);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .research-overlay {
+    transition: none;
+  }
+}
+
+/*# sourceMappingURL=research.css.map */

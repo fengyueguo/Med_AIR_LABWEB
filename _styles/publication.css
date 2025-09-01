@@ -20,8 +20,6 @@
 }
 
 #portrait {
-  /* color: #1367a7;
-  color: rgb(34, 110, 147); */
   height: 158px;
 }
 
@@ -203,24 +201,24 @@
     margin-bottom: 20px;
   }
   .papericon {
-    width: 80%; /* Ensure the image width is responsive but limit it to 80% */
-    margin-left: auto; /* Center the image horizontally */
-    margin-right: auto; /* Center the image horizontally */
-    display: block; /* Ensure it behaves as a block-level element */
-    height: auto; /* Maintain aspect ratio */
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: auto;
   }
   .media-body {
-    padding-left: 10px; /* Add padding for text */
+    padding-left: 10px;
   }
   .media-body a.paper-title {
-    font-size: 1.1rem; /* Adjust font size for readability */
-    line-height: 1.4; /* Ensure good spacing between lines */
+    font-size: 1.1rem;
+    line-height: 1.4;
   }
   .publication.media .media-body {
-    margin-top: 10px; /* Add some spacing between the image and text */
+    margin-top: 10px;
   }
   .publication .media-body b {
-    font-size: 1.1rem; /* Make bold text more prominent */
+    font-size: 1.1rem;
   }
 }
 .publication.media {

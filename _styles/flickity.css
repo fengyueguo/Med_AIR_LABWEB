@@ -341,6 +341,13 @@
 
   
     <link
+      href="/Med_AIR_LABWEB/_styles/research.css"
+      rel="stylesheet"
+    />
+  
+
+  
+    <link
       href="/Med_AIR_LABWEB/_styles/rule.css"
       rel="stylesheet"
     />
@@ -475,7 +482,11 @@
 
   <script src="/Med_AIR_LABWEB/_scripts/gallery.js"></script>
 
+  <script src="/Med_AIR_LABWEB/_scripts/lab_gallery.js"></script>
+
   <script src="/Med_AIR_LABWEB/_scripts/publication.js"></script>
+
+  <script src="/Med_AIR_LABWEB/_scripts/research.js"></script>
 
   <script src="/Med_AIR_LABWEB/_scripts/search.js"></script>
 
