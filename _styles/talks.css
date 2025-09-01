@@ -173,21 +173,17 @@
   }
   .talk_container .talk_content ul {
     margin: 0;
-    padding-left: 1rem; /* 缩小项目符号缩进 */
+    padding-left: 1rem; /* 左侧缩进更小（可调：0.8rem~1.2rem） */
   }
   .talk_container .talk_content li {
-    margin: 6px 0; /* 缩小上下间距（默认常见是 12~16px） */
-    line-height: 1.35; /* 稍微收紧行距 */
+    margin: 4px 0 8px; /* 条目之间更紧凑 */
+    line-height: 1.4; /* 仅收紧段落行距，不改标题样式 */
   }
-  .talk_container .talk_content li b {
-    display: block; /* 标题独占一行，更利于压缩 */
-    margin-bottom: 2px; /* 标题与地点/时间之间留一点点空 */
-    font-weight: 600;
-  }
-  /* 若希望进一步紧凑，可取消注释，移除 <br> 带来的额外空行 */
-  /* .talk_container .talk_content li br { display: none; } */
-  .talk_container .talk_content li::marker {
-    font-size: 0.8em; /* 项目符号更小，视觉更轻 */
+  /* 控制 <br> 的换行间距（不影响标题样式） */
+  .talk_container .talk_content li br {
+    content: "";
+    display: block;
+    margin: 2px 0; /* 行间距更小，可调 0~4px */
   }
 }
 
