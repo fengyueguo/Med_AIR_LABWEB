@@ -106,18 +106,4 @@
   <li>Last update on Sep 2025.</li>
 </ul>
 
-<div id="revolvermaps-container" aria-hidden="true"></div>
-<script>
-(function(){
-  var s = document.createElement('script');
-  s.src = 'https://ra.revolvermaps.com/0/0/4.js?i=0vb2r1idle1&m=0&h=128&c=ff0000&r=0'; // 显式 https
-  s.async = true;
-  s.onerror = function(){
-    console.warn('RevolverMaps failed to load (DNS). Hiding placeholder.');
-    var el = document.getElementById('revolvermaps-container');
-    if (el) el.style.display = 'none';
-  };
-  document.head.appendChild(s);
-})();
-</script>
 
