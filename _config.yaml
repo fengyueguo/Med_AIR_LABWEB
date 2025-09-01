@@ -48,6 +48,8 @@ sass:
 include:
   - _styles
   - _scripts
+  - images
+  - _data
 
 # force jekyll to exclude certain files/folders
 exclude:

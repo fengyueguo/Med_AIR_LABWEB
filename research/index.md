@@ -15,7 +15,7 @@ Recent focus: 1) **Surgical Robotics**, 2) **Agentic AI Systems for Healthcare A
   <!-- Card 1 -->
   <div class="research-card">
     <div class="image-wrap">
-      <img src="../images/research/robotic.png" alt="Surgical Robotics">
+      <img src="{{ '/images/research/robotic.png' | relative_url }}" alt="Surgical Robotics">
       <div class="research-overlay" id="overlay-surgical-robotics" aria-hidden="true">
         <div class="overlay-content"></div>
       </div>
@@ -29,7 +29,7 @@ Recent focus: 1) **Surgical Robotics**, 2) **Agentic AI Systems for Healthcare A
   <!-- Card 2 -->
   <div class="research-card">
     <div class="image-wrap">
-      <img src="../images/research/agentic.png" alt="Agentic AI Systems">
+      <img src="{{ '/images/research/agentic.png' | relative_url }}" alt="Agentic AI Systems">
       <div class="research-overlay" id="overlay-agentic-ai" aria-hidden="true">
         <div class="overlay-content"></div>
       </div>
@@ -43,7 +43,7 @@ Recent focus: 1) **Surgical Robotics**, 2) **Agentic AI Systems for Healthcare A
   <!-- Card 3 -->
   <div class="research-card">
     <div class="image-wrap">
-      <img src="../images/research/elderlycare.png" alt="Humanoid Robots">
+      <img src="{{ '/images/research/elderlycare.png' | relative_url }}" alt="Humanoid Robots">
       <div class="research-overlay" id="overlay-elderly-care" aria-hidden="true">
         <div class="overlay-content"></div>
       </div>
@@ -57,7 +57,7 @@ Recent focus: 1) **Surgical Robotics**, 2) **Agentic AI Systems for Healthcare A
   <!-- Card 4 -->
   <div class="research-card">
     <div class="image-wrap">
-      <img src="../images/research/emobioied_ai.png" alt="Safe Embodied AI">
+      <img src="{{ '/images/research/emobioied_ai.png' | relative_url }}" alt="Safe Embodied AI">
       <div class="research-overlay" id="overlay-safe-ai" aria-hidden="true">
         <div class="overlay-content"></div>
       </div>
@@ -71,7 +71,7 @@ Recent focus: 1) **Surgical Robotics**, 2) **Agentic AI Systems for Healthcare A
   <!-- Card 5 -->
   <div class="research-card">
     <div class="image-wrap">
-      <img src="../images/research/LLM_education.png" alt="LLMs and Smart XR">
+      <img src="{{ '/images/research/LLM_education.png' | relative_url }}" alt="LLMs and Smart XR">
       <div class="research-overlay" id="overlay-llm-xr" aria-hidden="true">
         <div class="overlay-content"></div>
       </div>
