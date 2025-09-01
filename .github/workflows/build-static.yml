@@ -17,7 +17,7 @@ jobs:
         run: |
           pwd
           ls -la
-          test -f _config.yml && echo "_config.yml found" || echo "NO _config.yml!"
+          test -f _config.yaml && echo "_config.yaml found" || echo "NO _config.yaml!"
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -36,7 +36,7 @@ jobs:
         run: |
           bundle exec jekyll --version
           bundle exec jekyll build --trace --verbose \
-            --config _config.yml,_config_appsrv.yml \
+            --config _config.yaml,_config_appsrv.yml \
             --destination ./_site_appsrv
           echo "List _site_appsrv:"
           ls -la _site_appsrv || (echo ">> _site_appsrv NOT FOUND" && exit 1)
@@ -46,7 +46,7 @@ jobs:
           JEKYLL_ENV: production
         run: |
           bundle exec jekyll build --trace --verbose \
-            --config _config.yml,_config_root.yml \
+            --config _config.yaml,_config_root.yml \
             --destination ./_site_root
           echo "List _site_root:"
           ls -la _site_root || (echo ">> _site_root NOT FOUND" && exit 1)
