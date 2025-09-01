@@ -10,8 +10,6 @@ Our research sits at the interdisciplinary nexus of **machine learning**, **robo
 
 Recent focus: 1) **Surgical Robotics**, 2) **Agentic AI Systems for Healthcare Applications**, 3) **Human Robots** for Elderly Care, 4) Safe **Embodied AI**, 5) **LLMs and Smart XR** for Medical Education
 <br>
-<link rel="stylesheet" href="./_styles/research.css" media="screen">
-<script src="_scripts/research.js"></script>
 <div class="research-grid">
 
   <!-- Card 1 -->
