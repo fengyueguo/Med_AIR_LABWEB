@@ -15,10 +15,10 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.gallery .gallery-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
+// .gallery .gallery-item:hover {
+//   transform: scale(1.05);
+//   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+// }
 
 .gallery-image {
   width: 100%;
@@ -30,9 +30,9 @@
   transition: transform 0.3s ease;
 }
 
-.gallery-image:hover {
-  transform: scale(1.05);
-}
+// .gallery-image:hover {
+//   transform: scale(1.05);
+// }
 
 .caption-wrapper {
   display: flex;
