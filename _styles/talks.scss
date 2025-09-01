@@ -185,4 +185,26 @@
         flex: unset;
         text-align: left;
     }
+  .talk_container .talk_content ul {
+    margin: 0;
+    padding-left: 1rem;      /* 缩小项目符号缩进 */
+  }
+
+  .talk_container .talk_content li {
+    margin: 6px 0;           /* 缩小上下间距（默认常见是 12~16px） */
+    line-height: 1.35;       /* 稍微收紧行距 */
+  }
+
+  .talk_container .talk_content li b {
+    display: block;          /* 标题独占一行，更利于压缩 */
+    margin-bottom: 2px;      /* 标题与地点/时间之间留一点点空 */
+    font-weight: 600;
+  }
+
+  /* 若希望进一步紧凑，可取消注释，移除 <br> 带来的额外空行 */
+  /* .talk_container .talk_content li br { display: none; } */
+
+  .talk_container .talk_content li::marker {
+    font-size: 0.8em;        /* 项目符号更小，视觉更轻 */
+  }
 }
