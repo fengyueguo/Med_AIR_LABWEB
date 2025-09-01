@@ -496,33 +496,33 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
     const galleries = document.querySelectorAll(".publicity-gallery.gallery"); 
-    const modal = document.createElement("div");
-    modal.className = "image-modal";
-    modal.innerHTML = `
-        <span class="close-btn">&times;</span>
-        <img src="" alt="Full-size Image">
-    `;
-    document.body.appendChild(modal);
+//     const modal = document.createElement("div");
+//     modal.className = "image-modal";
+//     modal.innerHTML = `
+//         <span class="close-btn">&times;</span>
+//         <img src="" alt="Full-size Image">
+//     `;
+//     document.body.appendChild(modal);
 
-    const modalImg = modal.querySelector("img");
-    const closeBtn = modal.querySelector(".close-btn");
+//     const modalImg = modal.querySelector("img");
+//     const closeBtn = modal.querySelector(".close-btn");
 
-    galleries.forEach(gallery => { 
-        gallery.addEventListener("click", function (e) {
-            if (e.target.tagName === "IMG" && e.target.closest('.gallery-item') && !e.target.classList.contains("report-icon")) {
-                modalImg.src = e.target.getAttribute("src");
-                modal.classList.add("visible");
-            }
-        });
-    });
+//     galleries.forEach(gallery => { 
+//         gallery.addEventListener("click", function (e) {
+//             if (e.target.tagName === "IMG" && e.target.closest('.gallery-item') && !e.target.classList.contains("report-icon")) {
+//                 modalImg.src = e.target.getAttribute("src");
+//                 modal.classList.add("visible");
+//             }
+//         });
+//     });
     
-    modal.addEventListener("click", function (e) {
-        if (e.target === modal || e.target === closeBtn) {
-            modal.classList.remove("visible");
-            modalImg.src = "";
-        }
-    });
-});
+//     modal.addEventListener("click", function (e) {
+//         if (e.target === modal || e.target === closeBtn) {
+//             modal.classList.remove("visible");
+//             modalImg.src = "";
+//         }
+//     });
+// });
 
 document.querySelectorAll('.image-carousel').forEach(carousel => {
   const track = carousel.querySelector('.carousel-track');
