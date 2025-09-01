@@ -2,7 +2,7 @@
   <span>Reported by:</span>
   {% for item in include.data %}
     <a href="{{ item.link }}" target="_blank">
-      <img src='{{"../{{ item.image }}" | relative_url }}' class="report-icon">
+      <img src='{{"/{{ item.image }}" | relative_url }}' class="report-icon">
     </a>
   {% endfor %}
 </div>
