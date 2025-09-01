@@ -97,13 +97,7 @@ nav:
 @media (prefers-reduced-motion: reduce){
   .research-overlay{transition:none}
 }
-@media (hover: none) {
-.research-card:has(.find-more:focus) .research-overlay {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-}
-}
+
 </style>
 
 
@@ -214,84 +208,73 @@ Recent focus: 1) **Surgical Robotics**, 2) **Agentic AI Systems for Healthcare A
 </template>
 
 <script>
-(function(){
+(function () {
   // 预加载 template 内容（保留你的原逻辑）
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.research-overlay').forEach(function(overlay){
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.research-overlay').forEach(function (overlay) {
       var box = overlay.querySelector('.overlay-content');
       if (!box) return;
-      var key = overlay.id.replace('overlay-','');
+      var key = overlay.id.replace('overlay-', '');
       var tpl = document.getElementById('tpl-' + key);
-      if (tpl) { box.innerHTML = tpl.innerHTML; box.setAttribute('data-loaded','1'); }
+      if (tpl) {
+        box.innerHTML = tpl.innerHTML;
+        box.setAttribute('data-loaded', '1');
+      }
     });
   });
 
   var buttons = document.querySelectorAll('.find-more');
-  buttons.forEach(function(btn){
+  buttons.forEach(function (btn) {
     var key = btn.getAttribute('data-topic');
     var overlay = document.getElementById('overlay-' + key);
     if (!overlay) return;
     var card = btn.closest('.research-card');
 
     // hover 显示 / 离开隐藏（未固定时）
-    btn.addEventListener('mouseenter', function(){ overlay.classList.add('show'); });
-    btn.addEventListener('mouseleave', function(){
+    btn.addEventListener('mouseenter', function () { overlay.classList.add('show'); });
+    btn.addEventListener('mouseleave', function () {
       if (!overlay.classList.contains('pinned')) overlay.classList.remove('show');
     });
 
     // 键盘无障碍：focus 显示 / blur 隐藏（未固定时）
-    btn.addEventListener('focus', function(){
+    btn.addEventListener('focus', function () {
       overlay.classList.add('show');
-      btn.setAttribute('aria-expanded','true');
+      btn.setAttribute('aria-expanded', 'true');
     });
-    btn.addEventListener('blur', function(){
+    btn.addEventListener('blur', function () {
       if (!overlay.classList.contains('pinned')) overlay.classList.remove('show');
-      btn.setAttribute('aria-expanded','false');
+      btn.setAttribute('aria-expanded', 'false');
     });
 
-// 点击：切换“手动模式”（固定/取消固定）
-btn.addEventListener('click', function(e){
-  e.preventDefault();
+    // 点击：切换“手动模式”（固定/取消固定）
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var pinned = overlay.classList.toggle('pinned');
+      overlay.classList.toggle('show', pinned);
+      btn.setAttribute('aria-expanded', pinned ? 'true' : 'false');
+      overlay.setAttribute('aria-hidden', pinned ? 'false' : 'true');
 
-  var pinned = overlay.classList.toggle('pinned');
-  overlay.classList.toggle('show', pinned);
-  btn.setAttribute('aria-expanded', pinned ? 'true' : 'false');
-  overlay.setAttribute('aria-hidden', pinned ? 'false' : 'true');
+      if (pinned) {
+        // 进入手动模式：禁止 hover 干扰
+        card.classList.add('suppress-hover');
+      } else {
+        // 退出手动模式：先隐藏，并暂时抑制 hover，直到鼠标离开按钮
+        overlay.classList.remove('show');
+        btn.blur(); // 防止 :focus 触发再次显示
+        card.classList.add('suppress-hover');
 
-  if (pinned) {
-    // 进入手动模式：禁止 hover/focus 干扰
-    card.classList.add('suppress-hover');
-  } else {
-    // 退出手动模式：立即隐藏，并短暂压制 hover/focus，避免“未及时失焦”导致回显
-    overlay.classList.remove('show');
-    btn.blur(); // 主动失焦
-    card.classList.add('suppress-hover');
+        var clearSuppress = function () {
+          card.classList.remove('suppress-hover');
+          btn.removeEventListener('mouseleave', clearSuppress);
+        };
+        btn.addEventListener('mouseleave', clearSuppress);
 
-    // 在下一帧（待浏览器处理完焦点变更）再解除压制
-    // 兼容性更好：两次 rAF + 多路兜底（pointerup/touchend/focusin/timeout）
-    var released = false;
-    var release = function(){
-      if (released) return;
-      released = true;
-      card.classList.remove('suppress-hover');
-      document.removeEventListener('pointerup', release, true);
-      document.removeEventListener('touchend', release, true);
-      document.removeEventListener('focusin', release, true);
-    };
-
-    requestAnimationFrame(function(){
-      requestAnimationFrame(function(){
-        if (document.activeElement !== btn) release();
-      });
+        // 触屏设备（无 hover）：直接解除抑制
+        if (window.matchMedia && window.matchMedia('(hover: none)').matches) {
+          card.classList.remove('suppress-hover');
+        }
+      }
     });
-
-    document.addEventListener('pointerup', release, true);
-    document.addEventListener('touchend', release, true);
-    document.addEventListener('focusin', release, true);
-    setTimeout(release, 300); // 兜底
-  }
-});
-
   });
 })();
 </script>
