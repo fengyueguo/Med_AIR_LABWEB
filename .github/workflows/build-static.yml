@@ -1,0 +1,49 @@
+name: Build static site (downloadable)
+
+on:
+  workflow_dispatch:    # 手动触发
+  push:
+    branches: [ main ]  # 也可在 push 时自动构建
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Install deps
+        run: |
+          bundle config set path 'vendor/bundle'
+          bundle install --without development
+
+      - name: Build (appsrv)
+        run: bundle exec jekyll build \
+               --config _config.yml,_config_appsrv.yml \
+               --destination _site_appsrv
+
+      - name: Build (root)
+        run: bundle exec jekyll build \
+               --config _config.yml,_config_root.yml \
+               --destination _site_root
+
+      - name: Upload artifact (appsrv)
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-appsrv
+          path: _site_appsrv
+          if-no-files-found: error
+
+      - name: Upload artifact (root)
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-root
+          path: _site_root
+          if-no-files-found: error
