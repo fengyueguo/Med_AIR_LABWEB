@@ -12,22 +12,20 @@ nav:
   border-radius:10px;overflow:hidden
 }
 .image-wrap{position:relative;overflow:hidden;border-radius:10px 10px 0 0}
-/* 为键盘可聚焦做个轻微可视提示 */
 .image-wrap:focus{outline:2px solid rgba(255,255,255,.6);outline-offset:-2px}
-
 .research-card img{width:100%;height:auto;display:block}
 
-/* —— 关键变化：默认隐藏通过透明度/可见性控制，支持过渡 —— */
+/* 默认隐藏，通过透明度/可见性控制，支持过渡 */
 .research-overlay{
   position:absolute;inset:0;background:rgba(255,255,255,.92);color:#111;
   display:flex;opacity:0;visibility:hidden;transition:opacity .18s ease-in-out;
-  pointer-events:none; /* 隐藏时不拦截事件 */
+  pointer-events:none;
 }
 .overlay-content{
   padding:16px 18px;box-sizing:border-box;width:100%;max-height:100%;
   overflow:auto;line-height:1.4;font-size:.95rem;
   text-wrap:balance; word-break:normal;overflow-wrap:break-word;
-  text-align: left;
+  text-align:left;
 }
 .overlay-content p{margin:0 0 8px}
 .overlay-title{margin:0 0 6px;font-weight:700}
@@ -35,25 +33,24 @@ nav:
 .research-card-content{padding:20px}
 .research-card h3{margin:0;color:#fff}
 
-/* 桌面端鼠标悬停 & 键盘聚焦时显示；点击展开时（触屏）也显示 */
-.image-wrap:hover .research-overlay,
-.image-wrap:focus-within .research-overlay,
-.research-overlay.show{
+/* 触发显示：1) hover/聚焦在“Find out more”按钮；2) JS 加的 .show/.pinned 状态 */
+.research-card:has(.find-more:hover) .research-overlay,
+.research-card:has(.find-more:focus) .research-overlay,
+.research-overlay.show,
+.research-overlay.pinned{
   opacity:1;visibility:visible;pointer-events:auto;
 }
 
-/* 按钮仅在无 hover 的设备上显示（触屏兜底）；桌面端隐藏 */
+/* 不再隐藏按钮（删除你原来的 @media (hover:hover){ .find-more{display:none;} }） */
 .find-more{
   background:none;border:0;color:#fff;font-weight:700;text-decoration:none;
-  cursor:pointer;padding:0;font-size:1rem;margin-top:15px;
+  cursor:pointer;padding:0;font-size:1rem;margin-top:15px;display:inline-block;
 }
 .find-more:hover,.find-more:focus{text-decoration:underline;outline:none}
-@media (hover:hover){
-  .find-more{display:none;}
-}
 
 @media (max-width:800px){.research-card{width:100%}}
 </style>
+
 
 
 ## Research Topics
@@ -163,42 +160,55 @@ Recent focus: 1) **Surgical Robotics**, 2) **Agentic AI Systems for Healthcare A
 
 <script>
 (function(){
-  // 1) 预先把 <template> 内容灌入对应 overlay，避免第一次 hover 才加载导致闪烁
+  // 预加载 template 内容，避免首次显示闪烁
   document.addEventListener('DOMContentLoaded', function() {
-    var overlays = document.querySelectorAll('.research-overlay');
-    overlays.forEach(function(overlay){
-      var contentBox = overlay.querySelector('.overlay-content');
-      if (!contentBox) return;
-      var key = overlay.id.replace('overlay-',''); // overlay-surgical-robotics -> surgical-robotics
+    document.querySelectorAll('.research-overlay').forEach(function(overlay){
+      var box = overlay.querySelector('.overlay-content');
+      if (!box) return;
+      var key = overlay.id.replace('overlay-','');
       var tpl = document.getElementById('tpl-' + key);
       if (tpl) {
-        contentBox.innerHTML = tpl.innerHTML;
-        contentBox.setAttribute('data-loaded','1');
+        box.innerHTML = tpl.innerHTML;
+        box.setAttribute('data-loaded','1');
       }
-    });
-
-    // 2) 让图片区域可键盘聚焦（:focus-within 可触发显示）
-    document.querySelectorAll('.image-wrap').forEach(function(wrap){
-      wrap.setAttribute('tabindex','0');
     });
   });
 
-  // 3) 触屏设备兜底：点击按钮切换 .show（与 hover 规则并存）
-  function toggleOverlay(btn){
+  // 让按钮控制对应 overlay：hover/focus 显示；click 作为触屏“固定/取消固定”
+  var buttons = document.querySelectorAll('.find-more');
+  buttons.forEach(function(btn){
     var key = btn.getAttribute('data-topic');
     var overlay = document.getElementById('overlay-' + key);
-    var isOpen = overlay.classList.contains('show');
-    overlay.classList.toggle('show', !isOpen);
-    btn.setAttribute('aria-expanded', !isOpen ? 'true' : 'false');
-  }
 
-  var buttons = document.querySelectorAll('.find-more');
-  for (var i=0;i<buttons.length;i++){
-    buttons[i].addEventListener('click', function(e){
-      e.preventDefault();
-      toggleOverlay(this);
+    if (!overlay) return;
+
+    // 鼠标移入/移出：显示/隐藏（若未被点击固定）
+    btn.addEventListener('mouseenter', function(){
+      overlay.classList.add('show');
     });
-  }
+    btn.addEventListener('mouseleave', function(){
+      if (!overlay.classList.contains('pinned')) overlay.classList.remove('show');
+    });
+
+    // 键盘聚焦/失焦：显示/隐藏（无障碍）
+    btn.addEventListener('focus', function(){
+      overlay.classList.add('show');
+      btn.setAttribute('aria-expanded','true');
+    });
+    btn.addEventListener('blur', function(){
+      if (!overlay.classList.contains('pinned')) overlay.classList.remove('show');
+      btn.setAttribute('aria-expanded','false');
+    });
+
+    // 触屏/点击兜底：点击可固定/取消固定
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      var pinned = overlay.classList.toggle('pinned');
+      overlay.classList.toggle('show', pinned); // 固定时确保显示
+      btn.setAttribute('aria-expanded', pinned ? 'true' : 'false');
+    });
+  });
 })();
 </script>
+
 
