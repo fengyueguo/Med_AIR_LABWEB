@@ -457,30 +457,45 @@
   border-radius:10px;overflow:hidden
 }
 .image-wrap{position:relative;overflow:hidden;border-radius:10px 10px 0 0}
+/* 为键盘可聚焦做个轻微可视提示 */
+.image-wrap:focus{outline:2px solid rgba(255,255,255,.6);outline-offset:-2px}
+
 .research-card img{width:100%;height:auto;display:block}
 
+/* —— 关键变化：默认隐藏通过透明度/可见性控制，支持过渡 —— */
 .research-overlay{
   position:absolute;inset:0;background:rgba(255,255,255,.92);color:#111;
-  display:none
+  display:flex;opacity:0;visibility:hidden;transition:opacity .18s ease-in-out;
+  pointer-events:none; /* 隐藏时不拦截事件 */
 }
-.research-overlay.show{display:flex}
 .overlay-content{
   padding:16px 18px;box-sizing:border-box;width:100%;max-height:100%;
-  overflow:auto;
-  line-height:1.4;font-size:.95rem;
-  text-wrap:balance; 
-  word-break:normal;overflow-wrap:break-word
+  overflow:auto;line-height:1.4;font-size:.95rem;
+  text-wrap:balance; word-break:normal;overflow-wrap:break-word;
+  text-align: left;
 }
 .overlay-content p{margin:0 0 8px}
 .overlay-title{margin:0 0 6px;font-weight:700}
 
 .research-card-content{padding:20px}
 .research-card h3{margin:0;color:#fff}
+
+/* 桌面端鼠标悬停 & 键盘聚焦时显示；点击展开时（触屏）也显示 */
+.image-wrap:hover .research-overlay,
+.image-wrap:focus-within .research-overlay,
+.research-overlay.show{
+  opacity:1;visibility:visible;pointer-events:auto;
+}
+
+/* 按钮仅在无 hover 的设备上显示（触屏兜底）；桌面端隐藏 */
 .find-more{
   background:none;border:0;color:#fff;font-weight:700;text-decoration:none;
   cursor:pointer;padding:0;font-size:1rem;margin-top:15px;
 }
 .find-more:hover,.find-more:focus{text-decoration:underline;outline:none}
+@media (hover:hover){
+  .find-more{display:none;}
+}
 
 @media (max-width:800px){.research-card{width:100%}}
 </style>
@@ -592,26 +607,41 @@
 
 <script>
 (function(){
+  // 1) 预先把 <template> 内容灌入对应 overlay，避免第一次 hover 才加载导致闪烁
+  document.addEventListener('DOMContentLoaded', function() {
+    var overlays = document.querySelectorAll('.research-overlay');
+    overlays.forEach(function(overlay){
+      var contentBox = overlay.querySelector('.overlay-content');
+      if (!contentBox) return;
+      var key = overlay.id.replace('overlay-',''); // overlay-surgical-robotics -> surgical-robotics
+      var tpl = document.getElementById('tpl-' + key);
+      if (tpl) {
+        contentBox.innerHTML = tpl.innerHTML;
+        contentBox.setAttribute('data-loaded','1');
+      }
+    });
+
+    // 2) 让图片区域可键盘聚焦（:focus-within 可触发显示）
+    document.querySelectorAll('.image-wrap').forEach(function(wrap){
+      wrap.setAttribute('tabindex','0');
+    });
+  });
+
+  // 3) 触屏设备兜底：点击按钮切换 .show（与 hover 规则并存）
   function toggleOverlay(btn){
     var key = btn.getAttribute('data-topic');
     var overlay = document.getElementById('overlay-' + key);
-    var contentBox = overlay.querySelector('.overlay-content');
-    var tpl = document.getElementById('tpl-' + key);
-
-    if (tpl && !contentBox.getAttribute('data-loaded')){
-      contentBox.innerHTML = tpl.innerHTML;
-      contentBox.setAttribute('data-loaded','1');
-    }
-
     var isOpen = overlay.classList.contains('show');
     overlay.classList.toggle('show', !isOpen);
-    overlay.setAttribute('aria-hidden', isOpen ? 'true' : 'false');
-    btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+    btn.setAttribute('aria-expanded', !isOpen ? 'true' : 'false');
   }
 
   var buttons = document.querySelectorAll('.find-more');
   for (var i=0;i<buttons.length;i++){
-    buttons[i].addEventListener('click', function(){ toggleOverlay(this); });
+    buttons[i].addEventListener('click', function(e){
+      e.preventDefault();
+      toggleOverlay(this);
+    });
   }
 })();
 </script>
