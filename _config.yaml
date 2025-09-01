@@ -54,5 +54,10 @@ include:
 # force jekyll to exclude certain files/folders
 exclude:
   - README.md
-  - LICENSE.md
+  - Gemfile
+  - Gemfile.lock
+  - requirements.txt
   - CITATION.cff
+  - .github
+  - _config*.yml
+  - node_modules
