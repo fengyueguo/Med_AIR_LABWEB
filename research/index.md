@@ -25,7 +25,7 @@ nav:
   padding:16px 18px;box-sizing:border-box;width:100%;max-height:100%;
   overflow:auto;line-height:1.4;font-size:.95rem;
   text-wrap:balance; word-break:normal;overflow-wrap:break-word;
-  text-align:left;
+  text-align:left !important;
 }
 .overlay-content p{margin:0 0 8px}
 .overlay-title{margin:0 0 6px;font-weight:700}
