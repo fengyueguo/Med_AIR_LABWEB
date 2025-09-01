@@ -5,7 +5,4 @@ nav:
   tooltip: Invited talks
 ---
 
-
-<!-- Collection of research and clinical support tools that extend our research in computational oncology. -->
-
 {%include seminar.html%} {%include talks.html%}
