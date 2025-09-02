@@ -87,11 +87,6 @@
   overscroll-behavior: contain;
 }
 
-.research-grid .research-card .research-overlay .overlay-content,
-.research-grid .research-card .research-overlay .overlay-content * {
-  text-align: left !important;
-}
-
 .research-grid .research-card .research-overlay .overlay-content > * {
   margin-left: 0 !important;
   margin-right: 0 !important;
