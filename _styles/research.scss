@@ -8,8 +8,6 @@
   --shadow:0 4px 8px rgba(0,0,0,.12);
   --shadow-md:0 6px 16px rgba(0,0,0,.18);
   --speed:.18s;
-  --intro-color-fallback:#0aa7ff;
-  --intro-color: color-mix(in srgb, var(--card-bg) 72%, #6fe1ff 28%);
 }
 
 .research-grid{
@@ -61,7 +59,7 @@
 .research-grid .research-card .research-overlay .overlay-content h2,
 .research-grid .research-card .research-overlay .overlay-content h3{width:100% !important}
 
-.overlay-content p{margin:0 0 12px}
+.overlay-content p{margin:0 0 12px; color: #007d99}
 .overlay-content p + p{margin-top:4px}
 .overlay-content ul, .overlay-content ol{margin:0 0 12px 1.2em}
 .overlay-title{margin:0 0 8px;font-weight:700}
