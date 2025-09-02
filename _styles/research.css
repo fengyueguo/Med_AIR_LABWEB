@@ -1,7 +1,7 @@
 :root {
   --card-bg: #0A86A8;
   --card-text: #fff;
-  --overlay-bg: rgba(245,250,255,.96);
+  --overlay-bg: rgba(245,250,255,.86);
   --overlay-text: #111;
   --intro-color: #17586E;
   --scrim-top: rgba(15,23,42,.05);
