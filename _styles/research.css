@@ -1,4 +1,3 @@
-@charset "UTF-8";
 :root {
   --card-bg:#007d99;
   --overlay-bg:rgba(255,255,255,.96);
@@ -106,7 +105,7 @@
 
 .overlay-content p {
   margin: 0 0 12px;
-  color: #007d99;
+  color: #00708A;
 }
 
 .overlay-content p + p {
@@ -162,22 +161,6 @@
   .research-overlay {
     transition: none;
   }
-}
-.research-card .research-card-content p,
-.research-card .research-card-content ul,
-.research-card .research-card-content ol,
-.research-card .research-card-content li,
-.research-card .research-card-content span,
-.research-card .research-card-content small,
-.research-card .research-card-content .desc,
-.research-card .research-card-content .intro {
-  color: var(--intro-color, var(--intro-color-fallback));
-}
-
-/* 正文里的链接跟随文字色（保持一体感） */
-.research-card .research-card-content a {
-  color: currentColor;
-  text-decoration-color: currentColor;
 }
 
 /*# sourceMappingURL=research.css.map */
