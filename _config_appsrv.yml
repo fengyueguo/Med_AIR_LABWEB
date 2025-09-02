@@ -1,5 +1,5 @@
 url: "https://www.cse.cuhk.edu.hk"
-baseurl: "/~qdou"
+baseurl: "/~qdou/homepage"
 include:
   - _styles
   - _scripts
