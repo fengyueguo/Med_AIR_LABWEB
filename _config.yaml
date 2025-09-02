@@ -1,7 +1,7 @@
 # site properties and page defaults
 title: Qi Dou
 subtitle: Department of Computer Science and Engineering @ CUHK
-description: Medical Image Analysis, Machine Learning, Surgical Data Science, Robotics.
+description: Surgical Robotics, Agentic AI Systems for Healthcare Applications, Human Robots for Elderly Care, Emobioied AI, LLMs and Smart XR for Medical Education
 header: images/cuhk_background.jpg
 footer: images/CUHK_edge.png
 header-dark: true
