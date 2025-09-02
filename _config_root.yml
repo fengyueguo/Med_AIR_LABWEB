@@ -1,5 +1,5 @@
 baseurl: "" 
-url: ""
+url: "/~qdou/homepage"
 include:
   - _styles
   - _scripts
