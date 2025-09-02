@@ -1,6 +1,6 @@
 :root {
-  --card-bg:#007d99;
-  --overlay-bg:rgba(255,255,255,.96);
+  --card-bg:#0A86A8;
+  --overlay-bg:rgba(245, 250, 255,.96);
   --radius:12px;
   --space:20px;
   --shadow:0 4px 8px rgba(0,0,0,.12);
@@ -105,7 +105,7 @@
 
 .overlay-content p {
   margin: 0 0 12px;
-  color: #00708A;
+  color: #1E6E8A;
 }
 
 .overlay-content p + p {
