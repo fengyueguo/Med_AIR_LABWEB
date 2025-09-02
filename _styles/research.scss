@@ -8,11 +8,8 @@
   --shadow:0 4px 8px rgba(0,0,0,.12);
   --shadow-md:0 6px 16px rgba(0,0,0,.18);
   --speed:.18s;
-  --text-accent-fallback:#0aa7ff; 
-  --text-accent: color-mix(in srgb, var(--card-bg) 70%, #4fd8ff 30%);
-  --text-mask: rgba(255,255,255,.85); /* 常用 0.82–0.90，默认 0.85 */
-  --mask-radius:8px;
-  --mask-pad:2px 6px;
+  --intro-color-fallback:#0aa7ff;
+  --intro-color: color-mix(in srgb, var(--card-bg) 72%, #6fe1ff 28%);
 }
 
 .research-grid{
@@ -82,4 +79,21 @@
 
 @media (prefers-reduced-motion: reduce){
   .research-overlay{transition:none}
+}
+
+.research-card .research-card-content p,
+.research-card .research-card-content ul,
+.research-card .research-card-content ol,
+.research-card .research-card-content li,
+.research-card .research-card-content span,
+.research-card .research-card-content small,
+.research-card .research-card-content .desc,
+.research-card .research-card-content .intro{
+  color: var(--intro-color, var(--intro-color-fallback));
+}
+
+/* 正文里的链接跟随文字色（保持一体感） */
+.research-card .research-card-content a{
+  color: currentColor;
+  text-decoration-color: currentColor;
 }
