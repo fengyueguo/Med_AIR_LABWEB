@@ -1,37 +1,68 @@
 ---
 ---
 
+---
+---
+
 :root{
-  --card-bg:#007d99;
-  --overlay-bg:rgba(255,255,255,.96);
+  /* 科技蓝主色 + 渐变 & 辅助色 */
+  --card-bg:#0a63ff;                     /* 纯色兜底 */
+  --card-bg-2:#00c2ff;                   /* 渐变第二色 */
+  --card-gradient:linear-gradient(150deg, #0a63ff 0%, #0db2ff 55%, #63f0ff 100%);
+  --accent:#8ae7ff;                      /* 高亮/描边/焦点 */
+  --text-on-card:#ecf8ff;
+
+  /* 更通透的白色遮罩（带玻璃化） */
+  --overlay-bg:rgba(255,255,255,.86);    /* 原来是 .96 */
+  --overlay-stroke:rgba(12,66,104,.10);  /* 轻描边 */
+
   --radius:12px;
   --space:20px;
+
   --shadow:0 4px 8px rgba(0,0,0,.12);
   --shadow-md:0 6px 16px rgba(0,0,0,.18);
-  --speed:.18s;
+  --card-glow:0 14px 30px rgba(0,178,255,.28);   /* 霓虹微光 */
+
+  --speed:.22s;
 }
 
 .research-grid{
   display:flex;flex-wrap:wrap;gap:40px;justify-content:flex-start
 }
+
 .research-card{
   width:calc(50% - 20px);
-  background:var(--card-bg);color:#fff;text-align:left;
-  font-family:sans-serif;box-shadow:var(--shadow);
-  border-radius:var(--radius);overflow:hidden
+  /* 渐变 > 纯色兜底 */
+  background:var(--card-gradient, var(--card-bg));
+  color:var(--text-on-card);
+  text-align:left;
+  font-family:sans-serif;
+  box-shadow:var(--shadow), var(--card-glow);
+  border-radius:var(--radius);
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.10);
+  transition:transform var(--speed) ease, box-shadow var(--speed) ease;
+}
+.research-card:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--shadow-md), var(--card-glow);
 }
 @media (max-width:800px){.research-card{width:100%}}
 
 .image-wrap{
   position:relative;overflow:hidden;border-radius:var(--radius) var(--radius) 0 0
 }
-.image-wrap:focus{outline:2px solid rgba(255,255,255,.65);outline-offset:-2px}
+.image-wrap:focus{outline:2px solid color-mix(in srgb, var(--accent) 70%, white);outline-offset:-2px}
 .research-card img{width:100%;height:auto;display:block}
 
+/* 半透明白 + 玻璃模糊（有兼容兜底） */
 .research-overlay{
-  position:absolute;inset:0;background:var(--overlay-bg);color:#111;
+  position:absolute;inset:0;background:var(--overlay-bg);color:#0b1a2a;
   display:flex;opacity:0;visibility:hidden;transition:opacity var(--speed) ease-in-out;
   pointer-events:none;
+  backdrop-filter:blur(10px) saturate(120%);
+  -webkit-backdrop-filter:blur(10px) saturate(120%);
+  border-top:1px solid var(--overlay-stroke);
 }
 
 .research-card:not(.suppress-hover):has(.find-more:hover) .research-overlay,
@@ -66,15 +97,18 @@
 .overlay-title{margin:0 0 8px;font-weight:700}
 
 .research-card-content{padding:20px}
-.research-card h3{margin:0;color:#fff;line-height:1.25}
+.research-card h3{margin:0;color:var(--text-on-card);line-height:1.25}
 
 .find-more{
-  background:none;border:0;color:#fff;font-weight:700;text-decoration:none;
+  background:none;border:0;color:var(--text-on-card);font-weight:700;text-decoration:none;
   cursor:pointer;padding:2px 0;font-size:1rem;margin-top:14px;display:inline-flex;
   align-items:center;gap:.25em
 }
 .find-more:hover,.find-more:focus{text-decoration:underline;outline:none}
-.find-more:focus-visible{outline:2px solid rgba(255,255,255,.85);outline-offset:2px;border-radius:4px}
+.find-more:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:2px;border-radius:4px
+}
 
 @media (prefers-reduced-motion: reduce){
   .research-overlay{transition:none}
