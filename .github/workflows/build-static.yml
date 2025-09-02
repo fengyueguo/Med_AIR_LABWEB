@@ -55,7 +55,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: site-appsrv
-          path: site-appsrv/
+          path: _site-appsrv/
           if-no-files-found: error
 
       - name: Upload artifact (root)
