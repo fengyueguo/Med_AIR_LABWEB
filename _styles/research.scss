@@ -59,7 +59,7 @@
 .research-grid .research-card .research-overlay .overlay-content h2,
 .research-grid .research-card .research-overlay .overlay-content h3{width:100% !important}
 
-.overlay-content p{margin:0 0 12px; color: #007d99}
+.overlay-content p{margin:0 0 12px; color: #00708A}
 .overlay-content p + p{margin-top:4px}
 .overlay-content ul, .overlay-content ol{margin:0 0 12px 1.2em}
 .overlay-title{margin:0 0 8px;font-weight:700}
@@ -77,21 +77,4 @@
 
 @media (prefers-reduced-motion: reduce){
   .research-overlay{transition:none}
-}
-
-.research-card .research-card-content p,
-.research-card .research-card-content ul,
-.research-card .research-card-content ol,
-.research-card .research-card-content li,
-.research-card .research-card-content span,
-.research-card .research-card-content small,
-.research-card .research-card-content .desc,
-.research-card .research-card-content .intro{
-  color: var(--intro-color, var(--intro-color-fallback));
-}
-
-/* 正文里的链接跟随文字色（保持一体感） */
-.research-card .research-card-content a{
-  color: currentColor;
-  text-decoration-color: currentColor;
 }
