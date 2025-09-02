@@ -1,112 +1,47 @@
 ---
 ---
-
+/* === 追加在样式末尾：文字蓝色 + 白色遮罩 === */
 :root{
-  /* 科技蓝主色 + 渐变 & 辅助色 */
-  --card-bg:#0a63ff;                     /* 纯色兜底 */
-  --card-bg-2:#00c2ff;                   /* 渐变第二色 */
-  --card-gradient:linear-gradient(150deg, #0a63ff 0%, #0db2ff 55%, #63f0ff 100%);
-  --accent:#8ae7ff;                      /* 高亮/描边/焦点 */
-  --text-on-card:#ecf8ff;
+  /* 科技感的文字蓝（在白底也清晰） */
+  --text-accent-fallback:#0aa7ff; 
+  /* 如果浏览器支持 color-mix，会更贴近你的 --card-bg */
+  --text-accent: color-mix(in srgb, var(--card-bg) 70%, #4fd8ff 30%);
 
-  /* 更通透的白色遮罩（带玻璃化） */
-  --overlay-bg:rgba(255,255,255,.86);    /* 原来是 .96 */
-  --overlay-stroke:rgba(12,66,104,.10);  /* 轻描边 */
-
-  --radius:12px;
-  --space:20px;
-
-  --shadow:0 4px 8px rgba(0,0,0,.12);
-  --shadow-md:0 6px 16px rgba(0,0,0,.18);
-  --card-glow:0 14px 30px rgba(0,178,255,.28);   /* 霓虹微光 */
-
-  --speed:.22s;
+  /* 文字下的白色遮罩（多行自动贴合） */
+  --text-mask: rgba(255,255,255,.85); /* 常用 0.82–0.90，默认 0.85 */
+  --mask-radius:8px;
+  --mask-pad:2px 6px;
 }
 
-.research-grid{
-  display:flex;flex-wrap:wrap;gap:40px;justify-content:flex-start
+/* 卡片与遮罩上的文字统一换成蓝色 */
+.research-card h3,
+.research-card p,
+.research-card li,
+.research-card .find-more,
+.research-overlay .overlay-content,
+.research-overlay .overlay-content *{
+  color: var(--text-accent, var(--text-accent-fallback));
 }
 
-.research-card{
-  width:calc(50% - 20px);
-  /* 渐变 > 纯色兜底 */
-  background:var(--card-gradient, var(--card-bg));
-  color:var(--text-on-card);
-  text-align:left;
-  font-family:sans-serif;
-  box-shadow:var(--shadow), var(--card-glow);
-  border-radius:var(--radius);
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.10);
-  transition:transform var(--speed) ease, box-shadow var(--speed) ease;
-}
-.research-card:hover{
-  transform:translateY(-2px);
-  box-shadow:var(--shadow-md), var(--card-glow);
-}
-@media (max-width:800px){.research-card{width:100%}}
-
-.image-wrap{
-  position:relative;overflow:hidden;border-radius:var(--radius) var(--radius) 0 0
-}
-.image-wrap:focus{outline:2px solid color-mix(in srgb, var(--accent) 70%, white);outline-offset:-2px}
-.research-card img{width:100%;height:auto;display:block}
-
-/* 半透明白 + 玻璃模糊（有兼容兜底） */
-.research-overlay{
-  position:absolute;inset:0;background:var(--overlay-bg);color:#0b1a2a;
-  display:flex;opacity:0;visibility:hidden;transition:opacity var(--speed) ease-in-out;
-  pointer-events:none;
-  backdrop-filter:blur(10px) saturate(120%);
-  -webkit-backdrop-filter:blur(10px) saturate(120%);
-  border-top:1px solid var(--overlay-stroke);
+/* “文字底白色遮罩”：默认给标题；段落/列表可按需加 .mask 类 */
+.research-card h3,
+.research-overlay .overlay-content h1,
+.research-overlay .overlay-content h2,
+.research-overlay .overlay-content h3,
+.mask{
+  background: var(--text-mask);
+  display:inline;
+  padding: var(--mask-pad);
+  border-radius: var(--mask-radius);
+  box-decoration-break: clone;        /* 多行也能整块遮罩 */
+  -webkit-box-decoration-break: clone;
 }
 
-.research-card:not(.suppress-hover):has(.find-more:hover) .research-overlay,
-.research-card:not(.suppress-hover):has(.find-more:focus) .research-overlay,
-.research-overlay.show,
-.research-overlay.pinned{
-  opacity:1;visibility:visible;pointer-events:auto;
-}
-
-.overlay-content{
-  padding:18px 20px;box-sizing:border-box;width:100%;max-height:100%;
-  overflow:auto;line-height:1.65;font-size:clamp(.95rem, .92rem + .2vw, 1rem);
-  text-wrap:balance;word-break:normal;overflow-wrap:break-word;
-
-  max-width:68ch;margin:0 auto;text-align:left;
-  -webkit-overflow-scrolling:touch;overscroll-behavior:contain;
-}
-
-.research-grid .research-card .research-overlay .overlay-content,
-.research-grid .research-card .research-overlay .overlay-content *{text-align:left !important}
-.research-grid .research-card .research-overlay .overlay-content > *{
-  margin-left:0 !important;margin-right:0 !important
-}
-
-.research-grid .research-card .research-overlay .overlay-content h1,
-.research-grid .research-card .research-overlay .overlay-content h2,
-.research-grid .research-card .research-overlay .overlay-content h3{width:100% !important}
-
-.overlay-content p{margin:0 0 12px}
-.overlay-content p + p{margin-top:4px}
-.overlay-content ul, .overlay-content ol{margin:0 0 12px 1.2em}
-.overlay-title{margin:0 0 8px;font-weight:700}
-
-.research-card-content{padding:20px}
-.research-card h3{margin:0;color:var(--text-on-card);line-height:1.25}
-
+/* 链接按钮也用蓝色，并保留可访问性焦点 */
 .find-more{
-  background:none;border:0;color:var(--text-on-card);font-weight:700;text-decoration:none;
-  cursor:pointer;padding:2px 0;font-size:1rem;margin-top:14px;display:inline-flex;
-  align-items:center;gap:.25em
+  color: var(--text-accent, var(--text-accent-fallback));
+  text-underline-offset:3px;
 }
-.find-more:hover,.find-more:focus{text-decoration:underline;outline:none}
 .find-more:focus-visible{
-  outline:2px solid var(--accent);
-  outline-offset:2px;border-radius:4px
-}
-
-@media (prefers-reduced-motion: reduce){
-  .research-overlay{transition:none}
+  outline-color: var(--text-accent, var(--text-accent-fallback));
 }
