@@ -1,11 +1,16 @@
 :root {
-  --card-bg:#0A86A8;
-  --overlay-bg:rgba(245, 250, 255,.96);
-  --radius:12px;
-  --space:20px;
-  --shadow:0 4px 8px rgba(0,0,0,.12);
-  --shadow-md:0 6px 16px rgba(0,0,0,.18);
-  --speed:.18s;
+  --card-bg: #0A86A8;
+  --card-text: #fff;
+  --overlay-bg: rgba(245,250,255,.96);
+  --overlay-text: #111;
+  --intro-color: #17586E;
+  --scrim-top: rgba(15,23,42,.05);
+  --radius: 12px;
+  --space: 20px;
+  --shadow: 0 4px 8px rgba(0,0,0,.12);
+  --shadow-md: 0 6px 16px rgba(0,0,0,.18);
+  --speed: .18s;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
 }
 
 .research-grid {
@@ -18,9 +23,9 @@
 .research-card {
   width: calc(50% - 20px);
   background: var(--card-bg);
-  color: #fff;
+  color: var(--card-text);
   text-align: left;
-  font-family: sans-serif;
+  font-family: var(--font-sans);
   box-shadow: var(--shadow);
   border-radius: var(--radius);
   overflow: hidden;
@@ -52,24 +57,28 @@
   position: absolute;
   inset: 0;
   background: var(--overlay-bg);
-  color: #111;
+  color: var(--overlay-text);
   display: flex;
   opacity: 0;
   visibility: hidden;
   transition: opacity var(--speed) ease-in-out;
   pointer-events: none;
+  z-index: 0;
 }
 
-.research-card:not(.suppress-hover):has(.find-more:hover) .research-overlay,
-.research-card:not(.suppress-hover):has(.find-more:focus) .research-overlay,
+.research-overlay[aria-hidden=false],
 .research-overlay.show,
-.research-overlay.pinned {
+.research-overlay.pinned,
+.research-card:not(.suppress-hover):has(.find-more:hover) .research-overlay,
+.research-card:not(.suppress-hover):has(.find-more:focus) .research-overlay {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
 }
 
 .overlay-content {
+  position: relative;
+  z-index: 1;
   padding: 18px 20px;
   box-sizing: border-box;
   width: 100%;
@@ -87,27 +96,28 @@
   overscroll-behavior: contain;
 }
 
-.research-grid .research-card .research-overlay .overlay-content > * {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+.overlay-content > * {
+  margin-left: 0;
+  margin-right: 0;
 }
 
-.research-grid .research-card .research-overlay .overlay-content h1,
-.research-grid .research-card .research-overlay .overlay-content h2,
-.research-grid .research-card .research-overlay .overlay-content h3 {
-  width: 100% !important;
+.overlay-content h1,
+.overlay-content h2,
+.overlay-content h3 {
+  width: 100%;
 }
 
 .overlay-content p {
   margin: 0 0 12px;
-  color: #17586E;
+  color: var(--intro-color);
 }
 
 .overlay-content p + p {
   margin-top: 4px;
 }
 
-.overlay-content ul, .overlay-content ol {
+.overlay-content ul,
+.overlay-content ol {
   margin: 0 0 12px 1.2em;
 }
 
@@ -117,19 +127,19 @@
 }
 
 .research-card-content {
-  padding: 20px;
+  padding: var(--space);
 }
 
 .research-card h3 {
   margin: 0;
-  color: #fff;
+  color: var(--card-text);
   line-height: 1.25;
 }
 
 .find-more {
   background: none;
   border: 0;
-  color: #fff;
+  color: var(--card-text);
   font-weight: 700;
   text-decoration: none;
   cursor: pointer;
@@ -141,7 +151,8 @@
   gap: 0.25em;
 }
 
-.find-more:hover, .find-more:focus {
+.find-more:hover,
+.find-more:focus {
   text-decoration: underline;
   outline: none;
 }
@@ -150,25 +161,6 @@
   outline: 2px solid rgba(255, 255, 255, 0.85);
   outline-offset: 2px;
   border-radius: 4px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .research-overlay {
-    transition: none;
-  }
-}
-:root {
-  --scrim-top: rgba(15, 23, 42, .05);
-}
-
-.research-overlay {
-  position: absolute;
-  z-index: 0;
-}
-
-.research-overlay .overlay-content {
-  position: relative;
-  z-index: 1;
 }
 
 .research-overlay::after {
@@ -183,11 +175,21 @@
   z-index: 2;
 }
 
-.research-card:not(.suppress-hover):has(.find-more:hover) .research-overlay::after,
-.research-card:not(.suppress-hover):has(.find-more:focus) .research-overlay::after,
+.research-overlay[aria-hidden=false]::after,
 .research-overlay.show::after,
-.research-overlay.pinned::after {
+.research-overlay.pinned::after,
+.research-card:not(.suppress-hover):has(.find-more:hover) .research-overlay::after,
+.research-card:not(.suppress-hover):has(.find-more:focus) .research-overlay::after {
   opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .research-overlay {
+    transition: none;
+  }
+  .research-overlay::after {
+    transition: none;
+  }
 }
 
 /*# sourceMappingURL=research.css.map */
